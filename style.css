@@ -14,6 +14,30 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+/images
+  linkedin-icon.png
+  instagram-icon.png
+/* Social Media Links */
+.social-links {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 30px; /* Adjust the size of the icons */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
 
 /* Header */
 header {

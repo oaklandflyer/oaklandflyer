@@ -4,7 +4,7 @@ body {
     font-family: "Source Code Pro ExtraLight", Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #d3d3d3, #2f2f2f); /* Grey to Dark Grey */
+    background: linear-gradient(to bottom, #d3d3d3, #a9a9a9, #2f2f2f);
     color: #f4f4f4;
     line-height: 1.6;
 }
@@ -52,11 +52,13 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #3a7bd5, #3a6073);
+    background: url("images/photo1.jpg") no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 5rem 0;
+    position: relative;
 }
+
 
 .hero h2 {
     font-size: 3rem;

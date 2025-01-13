@@ -1,15 +1,62 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Coutinho's Photography Portfolio</title>
     <meta name="description" content="Andrew Coutinho's photography portfolio showcasing drone photography and more.">
-    <meta name="keywords" content="photography, drone photography, Andrew Coutinho, oaklandflyer">
     <meta name="author" content="Andrew Coutinho">
+    <title>Andrew Coutinho Photography</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Andrew Coutinho's Photography Portfolio</h1>
-    <p>Explore my drone photography and more!</p>
+    <header>
+        <div class="container">
+            <h1>Andrew Coutinho Photography</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Andrew Coutinho, a passionate photographer specializing in drone photography, landscapes, and more. Explore my work and feel free to reach out for collaborations or inquiries.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="images/photo1.jpg" alt="Photo 1"></div>
+                <div class="gallery-item"><img src="images/photo2.jpg" alt="Photo 2"></div>
+                <div class="gallery-item"><img src="images/photo3.jpg" alt="Photo 3"></div>
+                <div class="gallery-item"><img src="images/photo4.jpg" alt="Photo 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you'd like to collaborate or have any questions, feel free to reach out:</p>
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Andrew Coutinho Photography. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

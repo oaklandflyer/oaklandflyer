@@ -13,6 +13,18 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+/* Header Branding */
+header .brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    display: inline-block;
+}
+
+header .brand:hover {
+    color: #ddd; /* Optional hover effect */
+}
 
 /* Header */
 header {

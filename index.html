@@ -6,11 +6,16 @@
     <meta name="description" content="Showcasing stunning photography by OaklandFlyer.">
     <title>Coutinho Services</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add this in the <head> section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>OaklandFlyer Photography</h1>
+            <a href="index.html">
+                <img src="images/OFLogo.png" alt="OaklandFlyer Logo" class="logo">
+            </a>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -20,6 +25,7 @@
             </nav>
         </div>
     </header>
+    
 
     <section id="hero" class="hero">
         <div class="hero-content">
@@ -40,14 +46,32 @@
         <div class="container">
             <h2>Portfolio</h2>
             <div class="gallery">
-                <div class="gallery-item"><img src="images/photo1.jpg" alt="Drone Photography"></div>
+                <div class="gallery-item"><img src="images/DowntownClouds.jpg" alt="Drone Photography"></div>
                 <div class="gallery-item"><img src="images/TowerBridge.jpg" alt="Landscape Photography"></div>
                 <div class="gallery-item"><img src="images/Downtown.jpg" alt="Urban Aerial"></div>
                 <div class="gallery-item"><img src="images/DowntownSunset.jpg" alt="Nature Captures"></div>
             </div>
         </div>
     </section>
-
+    <section id="gallery" class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-item">
+            <a href="images/DowntownClouds.jpg" data-fancybox="gallery" data-caption="Caption for Photo 1">
+                <img src="images/DowntownCloudsReduced.jpg" alt="Photo 1">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/TowerBridge.jpg" data-fancybox="gallery" data-caption="Caption for Photo 2">
+                <img src="images/TowerBridgeReduced.jpg" alt="Photo 2">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="images/Downtown.jpg" data-fancybox="gallery" data-caption="Caption for Photo 3">
+                <img src="images/DowntownReduced.jpg" alt="Photo 3">
+            </a>
+        </div>
+    </section>
+    
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact OaklandFlyer</h2>
@@ -74,7 +98,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>
 

@@ -38,6 +38,22 @@ body {
 .social-links img:hover {
     transform: scale(1.2); /* Zoom effect on hover */
 }
+/* Logo Styles */
+.logo {
+    width: 150px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the logo in the container */
+    margin: 0 auto; /* Optional: Center the logo horizontally */
+}
+header .logo {
+    float: left; /* Align the logo to the left */
+    margin-right: 20px; /* Add spacing between the logo and navigation */
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 100px; /* Smaller logo for mobile devices */
+    }
+}
 
 /* Header */
 header {
@@ -73,7 +89,6 @@ header nav ul li a {
 header nav ul li a:hover {
     text-decoration: underline;
 }
-
 /* Hero Section */
 .hero {
     background: url("images/photo1.jpg") no-repeat center center/cover; /* Adjust this to your desired background image */
@@ -138,6 +153,25 @@ header nav ul li a:hover {
 .portfolio h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 2rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .gallery {

@@ -52,12 +52,10 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: url("images/photo1.jpg") no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 5rem 0;
-    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("images/photo1.jpg") no-repeat center center/cover;
 }
+
 
 
 .hero h2 {

@@ -14,9 +14,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-/images
-  linkedin-icon.png
-  instagram-icon.png
 /* Social Media Links */
 .social-links {
     margin-top: 1rem;
@@ -91,7 +88,7 @@ header nav ul li a:hover {
 }
 /* Hero Section */
 .hero {
-    background: url("images/photo1.jpg") no-repeat center center/cover; /* Adjust this to your desired background image */
+    background: url("images/DowntownSunset.jpg") no-repeat center center/cover; /* Adjust this to your desired background image */
     color: #fff;
     text-align: center; /* Center text horizontally */
     padding: 5rem 0;

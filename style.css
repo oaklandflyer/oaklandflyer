@@ -1,11 +1,10 @@
 /* General Styles */
-/* General Styles */
 body {
-    font-family: "Source Code Pro ExtraLight", Arial, Helvetica, sans-serif;
+    font-family: "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #a39f9f, #635c5c, #333232);
-    color: #f4f4f4;
+    background-color: #f4f4f4;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -14,94 +13,41 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-/* Social Media Links */
-.social-links {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.social-links a {
-    margin: 0 10px;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.social-links img {
-    width: 30px; /* Adjust the size of the icons */
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: scale(1.2); /* Zoom effect on hover */
-}
-/* Logo Styles */
-.logo {
-    width: 150px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Center the logo in the container */
-    margin: 0 auto; /* Optional: Center the logo horizontally */
-}
-header .logo {
-    float: left; /* Align the logo to the left */
-    margin-right: 20px; /* Add spacing between the logo and navigation */
-}
-@media (max-width: 768px) {
-    .logo {
-        width: 100px; /* Smaller logo for mobile devices */
-    }
-}
 
 /* Header */
 header {
-    background: #222;
+    background: #333;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0;
-}
-
-header nav ul {
+header ul {
     list-style: none;
     padding: 0;
 }
 
-header nav ul li {
+header ul li {
     display: inline;
     margin: 0 15px;
 }
 
-header nav ul li a {
+header ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-header nav ul li a:hover {
+header ul li a:hover {
     text-decoration: underline;
 }
+
 /* Hero Section */
 .hero {
-    background: url("images/DowntownSunset.jpg") no-repeat center center/cover; /* Adjust this to your desired background image */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/photo1.jpg") no-repeat center center/cover;
     color: #fff;
-    text-align: center; /* Center text horizontally */
-    padding: 5rem 0;
-    display: flex; /* Enable Flexbox for vertical alignment */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-    min-height: 100vh; /* Ensure the hero section takes full viewport height */
-    position: relative;
-}
-
-.hero-content {
-    max-width: 600px; /* Set a maximum width for the text block */
-    margin: auto;
+    text-align: center;
+    padding: 10rem 0;
 }
 
 .hero h2 {
@@ -115,133 +61,39 @@ header nav ul li a:hover {
 }
 
 .hero .btn {
-    background: rgba(255, 255, 255, 0.9);
+    background: #fff;
     color: #333;
     padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
-.hero .btn:hover {
-    background: rgba(255, 255, 255, 1);
-}
-
-
-/* About Section */
-.about {
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Portfolio Section */
-.portfolio {
-    background: #2c2c2c;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-/* Gallery Section */
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    padding: 2rem;
+    margin: 2rem 0;
 }
 
-.gallery-item img {
+.gallery img {
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-/* Lightbox Styling */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
-
-.lightbox:target {
-    display: flex;
-}
-
-/* Contact Section */
-.contact {
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background: #333;
-    color: #fff;
-}
-
-.contact button {
-    background: #3a6073;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.contact button:hover {
-    background: #5b93a3;
 }
 
 /* Footer */
 footer {
-    background: #222;
+    background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer .social-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
 }

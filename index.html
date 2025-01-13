@@ -6,11 +6,11 @@
     <meta name="description" content="Showcasing stunning photography by OaklandFlyer.">
     <title>Coutinho Services</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Add this in the <head> section -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-
+    <!-- Fancybox Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -22,8 +22,8 @@
             </nav>
         </div>
     </header>
-    
 
+    <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <h2>Capturing Moments, Telling Stories</h2>
@@ -32,43 +32,36 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About OaklandFlyer</h2>
             <p>Hello! I'm Andrew Coutinho, the creative mind behind OaklandFlyer. Specializing in drone and landscape photography, I strive to capture the beauty of the world from unique perspectives. Let's collaborate to create unforgettable visuals!</p>
         </div>
     </section>
-            
+
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
             <div class="gallery">
-                <div class="gallery-item"><img src="images/DowntownClouds.jpg" alt="Drone Photography"></div>
-                <div class="gallery-item"><img src="images/TowerBridge.jpg" alt="Landscape Photography"></div>
-                <div class="gallery-item"><img src="images/Downtown.jpg" alt="Urban Aerial"></div>
-                <div class="gallery-item"><img src="images/DowntownSunset.jpg" alt="Nature Captures"></div>
+                <a href="images/DowntownClouds.jpg" data-fancybox="gallery" data-caption="Arial shot of Downtown from above the clouds in 2022">
+                    <img src="images/DowntownCloudsReduced.jpg" alt="Drone Photography">
+                </a>
+                <a href="images/TowerBridge.jpg" data-fancybox="gallery" data-caption="Arial shot in London of Tower Bridge">
+                    <img src="images/TowerBridgeReduced.jpg" alt="Landscape Photography">
+                </a>
+                <a href="images/Downtown.jpg" data-fancybox="gallery" data-caption="Show of Downtown from Oakland">
+                    <img src="images/DowntownReduced.jpg" alt="Urban Aerial">
+                </a>
+                <a href="images/DowntownSunset.jpg" data-fancybox="gallery" data-caption="Sunset over the city">
+                    <img src="images/DowntownSunsetReduced.jpg" alt="Nature Captures">
+                </a>
             </div>
         </div>
     </section>
-    <section id="gallery" class="gallery">
-        <h2>Photo Gallery</h2>
-        <div class="gallery-item">
-            <a href="images/DowntownClouds.jpg" data-fancybox="gallery" data-caption="Arial shot of Downtown from above the clouds in 2022"></a>
-                <img src="images/DowntownCloudsReduced.jpg" alt="Photo 1">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/TowerBridge.jpg" data-fancybox="gallery" data-caption="Arial shot in London of Tower Bridge"
-                <img src="images/TowerBridgeReduced.jpg" alt="Photo 2">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="images/Downtown.jpg" data-fancybox="gallery" data-caption="Show of Downtown from Oakland"
-                <img src="images/DowntownReduced.jpg" alt="Photo 3">
-            </a>
-        </div>
-    </section>
-    
+
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contact OaklandFlyer</h2>
@@ -82,6 +75,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 OaklandFlyer Photography. All rights reserved.</p>
@@ -95,6 +89,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Fancybox Script -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>

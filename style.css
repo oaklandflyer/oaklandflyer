@@ -1,9 +1,9 @@
 /* General Styles */
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Code Pro', monospace, "Arial", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #444343;
     color: #333;
     line-height: 1.6;
 }

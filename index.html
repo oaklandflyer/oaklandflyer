@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Showcasing stunning photography by OaklandFlyer.">
-    <title>Coutinho Services</title>
+    <title>OaklandFlyer Photography</title>
     <link rel="stylesheet" href="style.css">
     <!-- Fancybox Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
-
-
 <body>
     <!-- Header -->
     <header>
@@ -21,20 +20,19 @@
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#Gallery">Gallery</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <h2>Capturing Moments, Telling Stories</h2>
             <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
-            <a href="#portfolio" class="btn">View Portfolio</a>
+            <a href="#gallery" class="btn">View Gallery</a>
         </div>
     </section>
 
@@ -45,6 +43,8 @@
             <p>Hello! I'm Andrew Coutinho, the creative mind behind OaklandFlyer. Specializing in drone and landscape photography, I strive to capture the beauty of the world from unique perspectives. Let's collaborate to create unforgettable visuals!</p>
         </div>
     </section>
+
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Photo Gallery</h2>
         <iframe 
@@ -54,27 +54,6 @@
             frameborder="0" 
             scrolling="no">
         </iframe>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <a href="images/DowntownClouds.jpg" data-fancybox="gallery" data-caption="Arial shot of Downtown from above the clouds in 2022">
-                    <img src="images/DowntownCloudsReduced.jpg" alt="Drone Photography">
-                </a>
-                <a href="images/TowerBridge.jpg" data-fancybox="gallery" data-caption="Arial shot in London of Tower Bridge">
-                    <img src="images/TowerBridgeReduced.jpg" alt="Landscape Photography">
-                </a>
-                <a href="images/Downtown.jpg" data-fancybox="gallery" data-caption="Show of Downtown from Oakland">
-                    <img src="images/DowntownReduced.jpg" alt="Urban Aerial">
-                </a>
-                <a href="images/DJI_0511-HDR.jpg" data-fancybox="gallery" data-caption="Sunset over the city">
-                    <img src="images/DJI_0511-HDR.jpg" alt="Nature Captures">
-                </a>
-            </div>
-        </div>
     </section>
 
     <!-- Contact Section -->
@@ -86,11 +65,11 @@
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <input type="hidden" name="_redirect" value="https://www.oaklandflyer.com/thank-you.html">
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>
-    <input type="hidden" name="_redirect" value="https://www.oaklandflyer.com/thank-you.html">
 
     <!-- Footer -->
     <footer>
@@ -98,10 +77,10 @@
             <p>&copy; 2025 OaklandFlyer Photography. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/andrew-coutinho" target="_blank" rel="noopener">
-                    <img src="images/linkedin-icon.png" alt="LinkedIn">
+                    <img src="images/linkedin-icon.png" alt="LinkedIn Profile">
                 </a>
                 <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener">
-                    <img src="images/instagram-icon.png" alt="Instagram">
+                    <img src="images/instagram-icon.png" alt="Instagram Profile">
                 </a>
             </div>
         </div>
@@ -111,4 +90,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>
-

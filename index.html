@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        const galleryContainer = document.querySelector(".gallery-container");
+    
+        // List of images to display in the gallery
+        const images = [
+            "images/downtown.jpg",
+            "images/gallery/photo2.jpg",
+            "images/gallery/photo3.jpg",
+            "images/gallery/photo4.jpg",
+        ];
+    
+        // Dynamically add images to the gallery
+        images.forEach((image) => {
+            const imgElement = document.createElement("img");
+            imgElement.src = image;
+            imgElement.alt = "Gallery Photo";
+            galleryContainer.appendChild(imgElement);
+        });
+    </script>
+    
 </head>
 <body>
     <!-- Header -->
@@ -47,13 +67,30 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Photo Gallery</h2>
-        <iframe 
-            src="https://drive.google.com/embeddedfolderview?id=1h9_QhMm3qZcrY6pnXEhuLHxLI-k4i976#grid" 
-            style="width:100%; height:600px; border:0;" 
-            frameborder="0" 
-            scrolling="no">
-        </iframe>
+        <div class="gallery-container">
+            <!-- Images will be dynamically loaded here -->
+        </div>
     </section>
+    <script>
+        const galleryContainer = document.querySelector(".gallery-container");
+    
+        // List of images to display in the gallery
+        const images = [
+            "images/gallery/photo1.jpg",
+            "images/gallery/photo2.jpg",
+            "images/gallery/photo3.jpg",
+            "images/gallery/d.jpg",
+        ];
+    
+        // Dynamically add images to the gallery
+        images.forEach((image) => {
+            const imgElement = document.createElement("img");
+            imgElement.src = image;
+            imgElement.alt = "Gallery Photo";
+            galleryContainer.appendChild(imgElement);
+        });
+    </script>
+    
     
 
     <!-- Contact Section -->

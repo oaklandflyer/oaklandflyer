@@ -116,21 +116,39 @@ header ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 1rem;
+    padding: 0 1rem;
 }
 
-.gallery-container img {
-    width: 100%;
-    height: auto;
+.gallery-container a {
+    position: relative;
+    display: block;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-container img:hover {
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container a:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.gallery-container a:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Fancybox Styling */
+[data-fancybox] {
+    border: none;
+    outline: none;
+}
 
 /* Footer */
 footer {

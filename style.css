@@ -134,6 +134,12 @@ header ul li a:hover {
     display: block;
     border: 2px solid rgba(255, 255, 255, 0.8); /* Add border for watermarked images */
     transition: transform 0.3s ease, border-color 0.3s ease;
+    opacity: 0; /* Start with hidden images */
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+}
+
+.gallery-container img[loading="lazy"] {
+    opacity: 1; /* Fade in once loaded */
 }
 
 .gallery-container a:hover {
@@ -150,6 +156,11 @@ header ul li a:hover {
 [data-fancybox] {
     border: none;
     outline: none;
+}
+
+[data-fancybox] img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Footer */

@@ -73,6 +73,14 @@ header ul li a:hover {
     position: relative;
     min-height: 100vh;
 }
+.hero-content {
+    text-align: center; /* Centers text horizontally */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
+    min-height: 100vh; /* Ensures the hero section takes full screen height */
+}
 
 .hero h2 {
     font-size: 3.5rem;

@@ -55,41 +55,35 @@
     <script>
         const galleryContainer = document.querySelector(".gallery-container");
 
-        // Define folder structure and images
-        const galleryData = {
-            "Dorm": ["Dorm.jpg"],
-            "Food": ["Cinnamon Rolls -1.jpg", "Cinnamon Rolls -2.jpg", "Cinnamon Rolls -3.jpg"],
-            "Home": ["Amaryllis.jpg", "Anthurium.jpg", "Home1.jpg", "Home2.jpg", "Piano-1.jpg", "Piano-2.jpg", "Piano-3.jpg", "Piano.jpg"],
-            "Legos": ["Legos.jpg"],
-            "Musso Dogs": ["MussoDogs-1.jpg", "MussoDogs-2.jpg", "MussoDogs-3.jpg", "MussoDogs-4.jpg", "MussoDogs-5.jpg", "MussoDogs-6.jpg", "MussoDogs-7.jpg", "MussoDogs-8.jpg", "MussoDogs-9.jpg"],
-            "Oakland": ["Cathy.jpg", "Cathy1.jpg", "Cathy2.jpg", "Chapel.jpg", "Dippy.jpg", "GEO.jpg", "LongExposure .jpg", "OaklandDrone-1.jpg", "OaklandDrone-2.jpg", "OaklandDrone-3.jpg", "OaklandDrone-4.jpg", "PantherbyCathy.jpg", "PittBadge.jpg", "PittScript.jpg", "Rob.jpg", "Soldiers-2.jpg", "Soldiers-3.jpg", "Soldiers-4.jpg", "Soldiers.jpg"],
-            "Pittsburgh": ["Bridge.jpg", "Downtown1.jpg", "Downtown2.jpg", "Downtown3.jpg", "Downtown4.jpg", "Downtown5.jpg", "HeinzField.jpg", "PNC.jpg", "PNC2.jpg"],
-            "Trams": ["Trams1.jpg", "Trams2.jpg", "Trams6.jpg"]
-        };
+        // Define paths to your watermarked images
+        const images = [
+            "images/gallery/WatermarkedImages/Dorm.jpg",
+            "images/gallery/WatermarkedImages/Cinnamon Rolls -1.jpg",
+            "images/gallery/WatermarkedImages/Amaryllis.jpg",
+            "images/gallery/WatermarkedImages/Anthurium.jpg",
+            "images/gallery/WatermarkedImages/Piano.jpg",
+            "images/gallery/WatermarkedImages/Cathy.jpg",
+            "images/gallery/WatermarkedImages/Downtown1.jpg"
+        ];
 
-        // Base path for your images
-        const basePath = "images/gallery/";
+        // Dynamically load watermarked images into the gallery
+        images.forEach((image) => {
+            // Create a link for Fancybox
+            const linkElement = document.createElement("a");
+            linkElement.href = image;
+            linkElement.setAttribute("data-fancybox", "gallery");
+            linkElement.setAttribute("data-caption", "Watermarked Photo");
 
-        // Loop through the gallery data and create image elements
-        for (const [folder, images] of Object.entries(galleryData)) {
-            images.forEach(image => {
-                // Create a link for Fancybox
-                const linkElement = document.createElement("a");
-                linkElement.href = `${basePath}${folder}/${image}`;
-                linkElement.setAttribute("data-fancybox", "gallery");
-                linkElement.setAttribute("data-caption", `${folder} - ${image}`);
+            // Create an img element
+            const imgElement = document.createElement("img");
+            imgElement.src = image;
+            imgElement.alt = "Gallery Photo";
+            imgElement.loading = "lazy";
 
-                // Create an img element
-                const imgElement = document.createElement("img");
-                imgElement.src = `${basePath}${folder}/${image}`;
-                imgElement.alt = `${folder} - ${image}`;
-                imgElement.loading = "lazy";
-
-                // Append img to link and link to gallery container
-                linkElement.appendChild(imgElement);
-                galleryContainer.appendChild(linkElement);
-            });
-        }
+            // Append img to link and link to gallery container
+            linkElement.appendChild(imgElement);
+            galleryContainer.appendChild(linkElement);
+        });
     </script>
 
     <!-- Contact Section -->
@@ -124,42 +118,6 @@
 
     <!-- Fancybox Script -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-        <!-- Gallery Section -->
-        <section id="gallery" class="gallery">
-            <h2>Photo Gallery</h2>
-            <div class="gallery-container">
-                <!-- Images will be dynamically loaded here -->
-            </div>
-        </section>
-    
-        <!-- Dynamic Gallery Script -->
-        <script>
-            const galleryContainer = document.querySelector(".gallery-container");
-    
-            // Add paths to all your images
-            const images = [
-                "images/gallery/Dorm/Dorm.jpg",
-                "images/gallery/Food/Cinnamon Rolls -1.jpg",
-                "images/gallery/Home/Amaryllis.jpg",
-                "images/gallery/Home/Anthurium.jpg",
-                "images/gallery/Home/Piano.jpg",
-                "images/gallery/Oakland/Cathy.jpg",
-                "images/gallery/Pittsburgh/Downtown1.jpg"
-            ];
-    
-            // Dynamically load images into the gallery
-            images.forEach((image) => {
-                const imgElement = document.createElement("img");
-                imgElement.src = image;
-                imgElement.alt = "Gallery Photo";
-                imgElement.loading = "lazy"; // Add lazy loading for performance
-                imgElement.classList.add("gallery-photo");
-                galleryContainer.appendChild(imgElement);
-            });
-        </script>
-        
-    </body>
-    
 </body>
 </html>
 

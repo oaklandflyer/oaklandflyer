@@ -36,14 +36,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About OaklandFlyer</h2>
-            <p>Hello! I'm Andrew Coutinho, the creative mind behind OaklandFlyer. Specializing in drone and landscape photography, I strive to capture the beauty of the world from unique perspectives. Let's collaborate to create unforgettable visuals!</p>
-        </div>
-    </section>
-
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Photo Gallery</h2>
@@ -51,40 +43,6 @@
             <!-- Images will be dynamically loaded here -->
         </div>
     </section>
-
-    <script>
-        const galleryContainer = document.querySelector(".gallery-container");
-
-        // Define paths to your watermarked images
-        const images = [
-            "images/gallery/WatermarkedImages/Dorm.jpg",
-            "images/gallery/WatermarkedImages/Cinnamon Rolls -1.jpg",
-            "images/gallery/WatermarkedImages/Amaryllis.jpg",
-            "images/gallery/WatermarkedImages/Anthurium.jpg",
-            "images/gallery/WatermarkedImages/Piano.jpg",
-            "images/gallery/WatermarkedImages/Cathy.jpg",
-            "images/gallery/WatermarkedImages/Downtown1.jpg"
-        ];
-
-        // Dynamically load watermarked images into the gallery
-        images.forEach((image) => {
-            // Create a link for Fancybox
-            const linkElement = document.createElement("a");
-            linkElement.href = image;
-            linkElement.setAttribute("data-fancybox", "gallery");
-            linkElement.setAttribute("data-caption", "Watermarked Photo");
-
-            // Create an img element
-            const imgElement = document.createElement("img");
-            imgElement.src = image;
-            imgElement.alt = "Gallery Photo";
-            imgElement.loading = "lazy";
-
-            // Append img to link and link to gallery container
-            linkElement.appendChild(imgElement);
-            galleryContainer.appendChild(linkElement);
-        });
-    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -118,6 +76,7 @@
 
     <!-- Fancybox Script -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <!-- Gallery Script -->
+    <script src="gallery.js"></script>
 </body>
 </html>
-

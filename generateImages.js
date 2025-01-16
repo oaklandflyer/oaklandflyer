@@ -21,3 +21,22 @@ const saveImagePaths = (outputFile) => {
 // Specify output JSON file
 const outputFile = path.join(__dirname, 'imagePaths.json');
 saveImagePaths(outputFile);
+fetch('imagePaths.json')
+    .then(response => response.json())
+    .then(images => {
+        const galleryContainer = document.querySelector(".gallery-container");
+        images.forEach(image => {
+            const linkElement = document.createElement("a");
+            linkElement.href = image;
+            linkElement.setAttribute("data-fancybox", "gallery");
+            linkElement.setAttribute("data-caption", image.split('/').pop());
+
+            const imgElement = document.createElement("img");
+            imgElement.src = image;
+            imgElement.alt = "Gallery Photo";
+            imgElement.loading = "lazy";
+
+            linkElement.appendChild(imgElement);
+            galleryContainer.appendChild(linkElement);
+        });
+    });

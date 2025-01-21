@@ -8,6 +8,7 @@
     <title>OaklandFlyer Photography</title>
     <link rel="stylesheet" href="style.css">
     <script src="gallery.js"></script>
+    <script src="scroll.js"></script>
     <!-- Fancybox Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
     <!-- Google tag (gtag.js) -->
@@ -21,15 +22,27 @@
     </script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
-    <section id="about-preview">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Learn more about OaklandFlyer and the passion behind capturing breathtaking moments.</p>
-            <a href="about.html" class="btn">Read More</a>
-        </div>
-    </section>
-    
 </head>
+<script>
+    const animatedElements = document.querySelectorAll('.animate');
+
+    function handleScroll() {
+        animatedElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+</script>
+
 <body>
     <!-- Header -->
     <header>
@@ -37,7 +50,7 @@
             <h1 class="brand">OaklandFlyer</h1>
             <nav>
                 <ul>
-                    <li><a href="#about.html">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#shop">Shop</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -59,12 +72,12 @@
     
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Photo Gallery</h2>
+    <section id="gallery">
+        <h2 class="animate">Photo Gallery</h2>
         <div class="gallery-container">
-            <!-- Images will be dynamically loaded here -->
+            <!-- Gallery content -->
         </div>
-    </section>
+    </section>    
     <section id="shop">
         <div class="container">
             <h2>Shop Exclusive Prints</h2>

@@ -13,6 +13,18 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+/* Initial State for Animations */
+.animate {
+    opacity: 0;
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+/* Active State When in View */
+.animate.active {
+    opacity: 1;
+    transform: translateY(0); /* Fly up into position */
+}
 
 /* Header */
 header {
@@ -113,6 +125,7 @@ header ul li a:hover {
     transform: translateY(-2px);
 }
 /* About Section */
+/* About Section */
 #about {
     background-color: #fff;
     padding: 3rem 1rem;
@@ -125,12 +138,28 @@ header ul li a:hover {
     margin-bottom: 1rem;
 }
 
-#about p {
+.about-content {
+    display: flex;
+    flex-direction: column; /* For smaller screens */
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.about-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Circular photo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-content p {
     font-size: 1.2rem;
     max-width: 800px;
-    margin: 0 auto;
     line-height: 1.8;
+    margin: 0;
 }
+
 /* Gallery Section */
 .gallery {
     padding: 2rem 0;

@@ -13,18 +13,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-/* Initial State for Animations */
-.animate {
-    opacity: 0;
-    transform: translateY(50px); /* Start slightly below */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
-
-/* Active State When in View */
-.animate.active {
-    opacity: 1;
-    transform: translateY(0); /* Fly up into position */
-}
 
 /* Header */
 header {
@@ -39,6 +27,7 @@ header {
 }
 
 header .brand {
+    font-family: 'Source Code Pro', monospace; /* Ensure font is explicitly applied */
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
@@ -71,7 +60,6 @@ header ul li a {
 header ul li a:hover {
     color: #f39c12; /* Bright orange for hover effect */
 }
-
 /* Hero Section */
 .hero {
     background: url("images/DowntownSunset.jpg") no-repeat center center/cover;

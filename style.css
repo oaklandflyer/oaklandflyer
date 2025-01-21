@@ -112,7 +112,25 @@ header ul li a:hover {
     background: #e67e22; /* Slightly darker orange on hover */
     transform: translateY(-2px);
 }
+/* About Section */
+#about {
+    background-color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
 
+#about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
 /* Gallery Section */
 .gallery {
     padding: 2rem 0;

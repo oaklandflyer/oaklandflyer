@@ -27,7 +27,7 @@ header {
 }
 
 header .brand {
-    font-family: 'Source Code Pro', monospace; /* Ensure font is explicitly applied */
+    font-family: 'Source Code Pro', monospace !important;
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
@@ -115,10 +115,12 @@ header ul li a:hover {
 /* About Section */
 /* About Section */
 #about {
-    background-color: #fff;
+    background: url("images/DowntownClouds.jpg") no-repeat center center/cover;
     padding: 3rem 1rem;
     text-align: center;
+    color: #fff; /* Adjust text color for readability */
 }
+
 
 #about h2 {
     font-size: 2.5rem;

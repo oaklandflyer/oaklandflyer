@@ -25,6 +25,26 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
+header .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+}
+
+header .header-logo .logo {
+    width: 50px; /* Adjust width to fit the design */
+    height: auto;
+}
+
+header .brand {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 header .brand {
     font-family: 'Source Code Pro', monospace !important;

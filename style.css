@@ -57,16 +57,41 @@ header .brand {
     display: inline-block;
 }
 
+/* Header Styling */
+header {
+    background: #444; /* Dark gray for contrast */
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between logo and navigation */
+}
+
+.logo-container .logo {
+    width: 150px; /* Adjust this value for logo size */
+    height: auto;
+}
+
 header ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0;
-    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between navigation items */
 }
 
 header ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 header ul li a {
@@ -80,6 +105,7 @@ header ul li a {
 header ul li a:hover {
     color: #f39c12; /* Bright orange for hover effect */
 }
+
 /* Hero Section */
 .hero {
     background: url("images/DowntownSunset.jpg") no-repeat center center/cover;
@@ -135,7 +161,7 @@ header ul li a:hover {
 /* About Section */
 /* About Section */
 #about {
-    background: url("images/DowntownClouds.jpg") no-repeat center center/cover;
+    background: url("images/DowntownCloudsReduced.jpg") no-repeat center center/cover;
     padding: 3rem 1rem;
     text-align: center;
     color: #fff; /* Adjust text color for readability */

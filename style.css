@@ -28,11 +28,12 @@ header {
 }
 
 header .logo-container {
-    flex: 0 0 auto; /* Prevent the logo from resizing disproportionately */
+    flex: 0 0 auto; /* Prevent resizing */
+    margin-right: 20px; /* Add spacing between the logo and navigation */
 }
 
 header .logo-container .logo {
-    width: 150px; /* Adjust the size for balance */
+    width: 180px; /* Slightly larger size for emphasis */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -63,23 +64,28 @@ header nav ul li a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack logo and navigation vertically */
+        flex-direction: column;
         align-items: center;
     }
 
-    header nav ul {
-        flex-direction: column; /* Stack links vertically */
-        gap: 10px;
+    header .logo-container {
+        margin-bottom: 1rem;
     }
 
-    header .logo-container {
-        margin-bottom: 1rem; /* Add space below logo */
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
+
 /* Hero Section */
 .hero {
-    background: url("images/DowntownSunset.jpg") no-repeat center center/cover;
+    background: linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("images/DowntownSunset.jpg") no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 10rem 1rem;
@@ -90,6 +96,7 @@ header nav ul li a:hover {
     position: relative;
     min-height: 100vh;
 }
+
 
 .hero h2 {
     font-size: 3.5rem;
@@ -118,9 +125,10 @@ header nav ul li a:hover {
 }
 
 .hero .btn:hover {
-    background: #e67e22; /* Slightly darker orange on hover */
-    transform: translateY(-2px);
+    background: #c87c0a; /* Slightly darker orange */
+    transform: scale(1.05); /* Slightly enlarges the button */
 }
+
 
 /* About Section */
 #about {
@@ -130,23 +138,22 @@ header nav ul li a:hover {
     text-align: center;
 }
 
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-#about p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-}
 .about-content {
     display: flex;
     flex-direction: column; /* Stack image and text */
     align-items: center;
-    gap: 1.5rem; /* Add spacing between image and text */
-    text-align: center;
+    gap: 2rem; /* Add more spacing between image and text */
+    max-width: 800px;
+    margin: auto;
+}
+
+#about h2 {
+    font-size: 2.8rem; /* Slightly larger headline */
+}
+
+#about p {
+    font-size: 1.3rem;
+    line-height: 1.8;
 }
 
 .about-content img {
@@ -161,6 +168,16 @@ header nav ul li a:hover {
 
 .about-content img:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
+}
+@media (max-width: 768px) {
+    #about p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .about-content img {
+        width: 150px; /* Smaller profile picture for mobile */
+    }
 }
 
 /* Gallery Section */
@@ -179,7 +196,7 @@ header nav ul li a:hover {
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 30px;
     margin-top: 1rem;
     padding: 0 1rem;
 }
@@ -199,13 +216,11 @@ header nav ul li a:hover {
 
 /* Footer */
 footer {
-    background: #222;
-    color: #fff;
+    padding: 2rem 0;
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    color: #ddd; /* Lighter text for contrast */
 }
+
 
 footer p {
     font-size: 0.9rem;
@@ -222,6 +237,7 @@ footer .social-links img {
 }
 
 footer .social-links img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    filter: grayscale(0); /* Remove grayscale on hover */
+    transform: scale(1.2);
+    filter: brightness(1.2); /* Make the icons slightly brighter */
 }
+

@@ -13,55 +13,67 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation */
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation links */
+        gap: 10px; /* Reduce spacing for smaller screens */
+    }
+
+    header .logo-container {
+        margin-bottom: 1rem;
+    }
+}
 
 /* Header */
 header {
     background: #444; /* Dark gray for contrast */
     color: #fff;
-    padding: 2rem 0;
-    text-align: center;
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
 header .logo-container {
     display: flex;
-    flex-direction: column; /* Stack logo above navigation */
-    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
 header .logo-container .logo {
-    width: 400px; /* Increased logo size */
+    width: 150px; /* Adjust logo size for balance */
     height: auto; /* Maintain aspect ratio */
 }
 
-
-header ul {
+header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
     gap: 20px; /* Space between navigation items */
 }
 
-header ul li {
+header nav ul li {
     display: inline;
 }
 
-header ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.2rem; /* Slightly larger font for links */
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
-header ul li a:hover {
+header nav ul li a:hover {
     color: #f39c12; /* Bright orange for hover effect */
 }
 

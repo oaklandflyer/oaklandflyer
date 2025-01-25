@@ -24,13 +24,15 @@ header {
     display: flex;
     justify-content: space-between; /* Align logo and navigation */
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
-header .logo-container {
-    flex: 0 0 auto; /* Prevent resizing */
-    margin-right: 20px; /* Add spacing between the logo and navigation */
+
+header .logo-container .logo {
+    width: 120px; /* Smaller size for balance */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80px; /* Limit the maximum height */
 }
+
 
 header .logo-container .logo {
     width: 180px; /* Slightly larger size for emphasis */

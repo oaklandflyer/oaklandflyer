@@ -35,9 +35,10 @@ header .logo-container {
 }
 
 header .logo-container .logo {
-    width: 250px; /* Adjust size of the logo */
-    height: auto;
+    width: 400px; /* Increased logo size */
+    height: auto; /* Maintain aspect ratio */
 }
+
 
 header ul {
     list-style: none;

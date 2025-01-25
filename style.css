@@ -27,16 +27,18 @@ header {
 }
 
 
-header .logo-container .logo {
-    width: 120px; /* Smaller size for balance */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 80px; /* Limit the maximum height */
+header .logo-container {
+    flex: 0 0 auto; /* Prevent resizing */
 }
 
-
-header .logo-container .logo {
-    width: 180px; /* Slightly larger size for emphasis */
-    height: auto; /* Maintain aspect ratio */
+header .brand {
+    font-family: 'Source Code Pro', monospace; /* Ensure brand font is applied */
+    font-size: 1.8rem; /* Adjust size */
+    font-weight: bold; /* Make it stand out */
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    text-transform: uppercase; /* Make it all uppercase for branding */
+    letter-spacing: 2px; /* Slight spacing between letters */
 }
 
 header nav ul {

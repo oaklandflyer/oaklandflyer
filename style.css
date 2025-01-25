@@ -13,22 +13,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack logo and navigation */
-        align-items: center;
-    }
-
-    header nav ul {
-        flex-direction: column; /* Stack navigation links */
-        gap: 10px; /* Reduce spacing for smaller screens */
-    }
-
-    header .logo-container {
-        margin-bottom: 1rem;
-    }
-}
-
 /* Header */
 header {
     background: #444; /* Dark gray for contrast */
@@ -37,19 +21,18 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex; /* Use Flexbox for alignment */
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-between; /* Align logo and navigation */
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
 header .logo-container {
-    display: flex;
-    align-items: center;
+    flex: 0 0 auto; /* Prevent the logo from resizing disproportionately */
 }
 
 header .logo-container .logo {
-    width: 150px; /* Adjust logo size for balance */
+    width: 150px; /* Adjust the size for balance */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -75,6 +58,23 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #f39c12; /* Bright orange for hover effect */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation vertically */
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+    }
+
+    header .logo-container {
+        margin-bottom: 1rem; /* Add space below logo */
+    }
 }
 
 /* Hero Section */
@@ -124,7 +124,7 @@ header nav ul li a:hover {
 
 /* About Section */
 #about {
-    background: url("images/AboutMeBackground.jpg") no-repeat center center/cover;
+    background: url("images/DowntownCloudsReduced.jpg") no-repeat center center/cover;
     color: #fff;
     padding: 4rem 2rem;
     text-align: center;
@@ -140,6 +140,27 @@ header nav ul li a:hover {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
+}
+.about-content {
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center;
+    gap: 1.5rem; /* Add spacing between image and text */
+    text-align: center;
+}
+
+.about-content img {
+    width: 200px; /* Adjust size */
+    height: 200px; /* Keep it square */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure proper cropping */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    border: 3px solid #f39c12; /* Add a bright orange border for focus */
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.about-content img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Gallery Section */

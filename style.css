@@ -18,49 +18,6 @@ body {
 header {
     background: #444; /* Dark gray for contrast */
     color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
-}
-header .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between logo and text */
-}
-
-header .header-logo .logo {
-    width: 50px; /* Adjust width to fit the design */
-    height: auto;
-}
-
-header .brand {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-header .brand {
-    font-family: 'Source Code Pro', monospace !important;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
-}
-
-/* Header Styling */
-header {
-    background: #444; /* Dark gray for contrast */
-    color: #fff;
     padding: 2rem 0;
     text-align: center;
     position: sticky;
@@ -69,15 +26,16 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
-.logo-container {
+header .logo-container {
     display: flex;
+    flex-direction: column; /* Stack logo above navigation */
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem; /* Space between logo and navigation */
+    margin-bottom: 1rem;
 }
 
-.logo-container .logo {
-    width: 150px; /* Adjust this value for logo size */
+header .logo-container .logo {
+    width: 250px; /* Adjust size of the logo */
     height: auto;
 }
 
@@ -98,7 +56,7 @@ header ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* Slightly larger font for links */
     transition: color 0.3s ease;
 }
 
@@ -118,14 +76,6 @@ header ul li a:hover {
     align-items: center;
     position: relative;
     min-height: 100vh;
-}
-.hero-content {
-    text-align: center; /* Centers text horizontally */
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Aligns items vertically */
-    justify-content: center; /* Centers items vertically */
-    align-items: center; /* Centers items horizontally */
-    min-height: 100vh; /* Ensures the hero section takes full screen height */
 }
 
 .hero h2 {
@@ -158,48 +108,38 @@ header ul li a:hover {
     background: #e67e22; /* Slightly darker orange on hover */
     transform: translateY(-2px);
 }
-/* About Section */
+
 /* About Section */
 #about {
-    background: url("images/DowntownCloudsReduced.jpg") no-repeat center center/cover;
-    padding: 3rem 1rem;
+    background: url("images/AboutMeBackground.jpg") no-repeat center center/cover;
+    color: #fff;
+    padding: 4rem 2rem;
     text-align: center;
-    color: #fff; /* Adjust text color for readability */
 }
-
 
 #about h2 {
     font-size: 2.5rem;
-    color: #333;
     margin-bottom: 1rem;
 }
 
-.about-content {
-    display: flex;
-    flex-direction: column; /* For smaller screens */
-    align-items: center;
-    gap: 1.5rem;
-    text-align: left;
-}
-
-.about-content img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Circular photo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.about-content p {
+#about p {
     font-size: 1.2rem;
     max-width: 800px;
+    margin: 0 auto;
     line-height: 1.8;
-    margin: 0;
 }
 
 /* Gallery Section */
 .gallery {
-    padding: 2rem 0;
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
     text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .gallery-container {
@@ -210,64 +150,17 @@ header ul li a:hover {
     padding: 0 1rem;
 }
 
-.gallery-container a {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .gallery-container img {
     width: 100%;
     height: auto;
-    display: block;
-    border: 2px solid rgba(255, 255, 255, 0.8); /* Add border for watermarked images */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    opacity: 0; /* Start with hidden images */
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-container img[loading="lazy"] {
-    opacity: 1; /* Fade in once loaded */
-}
-
-.gallery-container a:hover {
+.gallery-container img:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.gallery-container a:hover img {
-    transform: scale(1.1); /* Slight zoom on hover */
-    border-color: #f39c12; /* Highlight border on hover */
-}
-
-/* Fancybox Styling */
-[data-fancybox] {
-    border: none;
-    outline: none;
-}
-
-[data-fancybox] img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-.btn {
-    display: inline-block;
-    background-color: #f39c12; /* Orange color */
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #e67e22; /* Slightly darker orange */
-    transform: translateY(-2px); /* Lift button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -278,6 +171,12 @@ footer {
     padding: 1.5rem 0;
     margin-top: 2rem;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.8;
 }
 
 footer .social-links img {
@@ -291,10 +190,4 @@ footer .social-links img {
 footer .social-links img:hover {
     transform: scale(1.1); /* Slight zoom on hover */
     filter: grayscale(0); /* Remove grayscale on hover */
-}
-
-footer p {
-    font-size: 0.9rem;
-    margin-top: 1rem;
-    opacity: 0.8;
 }

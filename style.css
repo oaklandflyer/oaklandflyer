@@ -104,11 +104,16 @@ header nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10rem 1rem;
     position: relative;
     min-height: 100vh;
 }
 
-
+.hero-content {
+    text-align: center;
+    max-width: 800px; /* Limit width for better readability */
+    margin: auto;
+}
 .hero h2 {
     font-size: 3.5rem;
     font-weight: 700;

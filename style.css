@@ -55,7 +55,9 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center;
     gap: 20px; /* Space between navigation items */
+    flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -77,10 +79,13 @@ header nav ul li a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     header {
+        padding: 1rem;
         flex-direction: column;
         align-items: center;
     }
-
+    header .brand {
+        font-size: 1.5rem;
+    }
     header .logo-container {
         margin-bottom: 1rem;
     }

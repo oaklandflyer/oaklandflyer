@@ -55,36 +55,46 @@ body {
     position: relative;
     min-height: 100vh;
 }
+/* Navigation Container */
 .hero-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 0;
     width: 100%;
+    padding: 0 40px;
     z-index: 10;
 }
 
+/* Logo Styling */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
 .logo {
-    height: 50px;  /* Adjust size as needed */
+    height: 50px;  /* Adjust size if needed */
     width: auto;
     transition: transform 0.3s ease-in-out;
 }
 
 .logo:hover {
-    transform: scale(1.1);  /* Slight zoom effect on hover */
+    transform: scale(1.1);  /* Subtle zoom effect on hover */
+}
+
+/* Navigation Styling */
+.hero-nav nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centers the menu */
 }
 
 .hero-nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     padding: 0;
     margin: 0;
 }
@@ -106,6 +116,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
+
 
 
 .hero-content {

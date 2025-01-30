@@ -127,71 +127,49 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <!-- Gallery Script -->
     <script src="gallery.js"></script>
-    <!-- Hamburger Menu-->
     <script>
-        function toggleMenu() {
-            var navList = document.getElementById('navbar').querySelector('.nav-list');
-            navList.classList.toggle('active');
-        }
-    </script>
-    <script>
-        let lastScrollY = window.scrollY;
-        const navbar = document.querySelector(".hero-nav");
+        document.addEventListener("DOMContentLoaded", function () {
+            let lastScrollY = window.scrollY;
+            const navbar = document.querySelector(".hero-nav");
+            const navList = document.querySelector('.nav-list');
+            const menuIcon = document.getElementById('menu-icon');
     
-        function handleScroll() {
-            if (window.scrollY > lastScrollY) {
-                // Scrolling down: Hide navbar
-                navbar.classList.add("hidden-nav");
-            } else {
-                // Scrolling up: Show navbar
-                navbar.classList.remove("hidden-nav");
+            // Toggle menu open/close
+            function toggleMenu() {
+                navList.classList.toggle('active');
+    
+                // Change the hamburger menu to "X"
+                if (navList.classList.contains('active')) {
+                    menuIcon.innerHTML = "✖"; // Change to "X"
+                } else {
+                    menuIcon.innerHTML = "☰"; // Change back to hamburger
+                }
             }
-            lastScrollY = window.scrollY;
-        }
     
-        // Listen for scrolling
-        window.addEventListener("scroll", handleScroll);
-    
-        function toggleMenu() {
-            var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
-    
-            // Ensure navbar remains visible when menu is toggled
-            navbar.classList.remove("hidden-nav");
-        }
-    </script>
-    <script>
-        function toggleMenu() {
-            var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
-        }
-    </script>
-    <script>
-        function toggleMenu() {
-            var navList = document.querySelector('.nav-list');
-            var menuIcon = document.getElementById('menu-icon');
-    
-            // Toggle menu visibility
-            navList.classList.toggle('active');
-    
-            // Change the hamburger menu to "X"
-            if (navList.classList.contains('active')) {
-                menuIcon.innerHTML = "✖"; // Change to "X"
-            } else {
-                menuIcon.innerHTML = "☰"; // Change back to hamburger
+            // Hide navbar on scroll down, show on scroll up
+            function handleScroll() {
+                if (window.scrollY > lastScrollY) {
+                    navbar.classList.add("hidden-nav");
+                } else {
+                    navbar.classList.remove("hidden-nav");
+                }
+                lastScrollY = window.scrollY;
             }
-        }
     
-        // Close menu when clicking outside
-        document.addEventListener("click", function(event) {
-            var navList = document.querySelector('.nav-list');
-            var menuIcon = document.getElementById('menu-icon');
-    
-            if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
-                navList.classList.remove("active");
-                menuIcon.innerHTML = "☰"; // Reset to hamburger icon
+            // Close menu when clicking outside of it
+            function closeMenuOnClickOutside(event) {
+                if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
+                    navList.classList.remove("active");
+                    menuIcon.innerHTML = "☰"; // Reset to hamburger icon
+                }
             }
+    
+            // Add event listeners
+            menuIcon.addEventListener("click", toggleMenu);
+            window.addEventListener("scroll", handleScroll);
+            document.addEventListener("click", closeMenuOnClickOutside);
         });
     </script>
+    
 </body>
 </html>

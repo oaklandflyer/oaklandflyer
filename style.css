@@ -61,20 +61,21 @@ body, html {
     min-height: 100vh;
 }
 /* Navigation Container */
+/* Base Navigation Styles */
 .hero-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Makes logo go left, menu go right */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px 20px;
-    background: rgba(53, 51, 51, 0.658);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
 
-/* Logo Styling */
+/* Logo Styles */
 .logo-container img {
     height: 50px;
     width: auto;
@@ -88,7 +89,7 @@ body, html {
 .logo:hover {
     transform: scale(1.1);  /* Subtle zoom effect on hover */
 }
-/* Menu Toggle Button (Hamburger Icon) */
+/* Menu Toggle Button (Hamburger) */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -97,6 +98,7 @@ body, html {
     color: white;
     cursor: pointer;
     z-index: 1100;
+    margin-left: auto; /* Moves the button to the right */
 }
 
 /* Navigation Menu */
@@ -162,14 +164,54 @@ body, html {
         display: flex;
     }
 }
+/* Base Navigation Styles */
+.hero-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Makes logo go left, menu go right */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+/* Logo Styles */
+.logo-container img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+    margin-left: auto; /* Moves the button to the right */
+}
+
+/* Navigation Menu */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Show menu button */
-    }
-
-    .hero-nav {
-        justify-content: space-between;
+        display: block; /* Show hamburger menu on mobile */
+        position: absolute;
+        right: 20px; /* Moves the button to the right */
+        top: 15px;
     }
 
     .nav-list {
@@ -195,6 +237,7 @@ body, html {
         margin: 10px 0;
     }
 }
+
 /* Navigation Styling */
 .hero-nav nav {
     flex-grow: 1;

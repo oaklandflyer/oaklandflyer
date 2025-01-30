@@ -7,50 +7,46 @@
     <meta name="description" content="About OaklandFlyer, the creative mind behind stunning drone and landscape photography.">
     <title>About Me - OaklandFlyer Photography</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleMenu() {
-            var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
-        }
-    </script>
-
-
+    <script defer src="menuToggle.js"></script>
 </head>
-<div class="hero-nav">
-    <a href="index.html" class="logo-container">
-        <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-    </a>
-    <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
-        ☰
-    </button>
-    <nav id="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
-        </ul>
-    </nav>
-</div>
 
 <body>
+    <!-- Navigation -->
+    <div class="hero-nav">
+        <a href="index.html" class="logo-container">
+            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+        </a>
+        <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">
+            ☰
+        </button>
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <img src="images/AboutMe.jpg" alt="Andrew Coutinho - Photographer" class="profile-photo">
-            <p>Hello! My name is Andrew Coutinho, and I’m the creative mind behind OaklandFlyer. I specialize in capturing breathtaking moments through drone and landscape photography, combining my passion for technology and storytelling to present the world from unique perspectives. Every image I create reflects my love for nature, architecture, and the artistry found in everyday scenes.
+                <p>Hello! My name is Andrew Coutinho, and I’m the creative mind behind OaklandFlyer. I specialize in capturing breathtaking moments through drone and landscape photography, combining my passion for technology and storytelling to present the world from unique perspectives. Every image I create reflects my love for nature, architecture, and the artistry found in everyday scenes.</p>
+                
+                <p>I’m currently pursuing a double major in Economics and Africana Studies at the University of Pittsburgh. Alongside my academic pursuits, I’ve honed my leadership skills as the founder and president of the University’s Bodybuilding Club, where I’ve built a thriving community around health, discipline, and personal growth.</p>
 
-                I’m currently pursuing a double major in Economics and Africana Studies at the University of Pittsburgh. Alongside my academic pursuits, I’ve honed my leadership skills as the founder and president of the University’s Bodybuilding Club, where I’ve built a thriving community around health, discipline, and personal growth.
-                
-                Photography is more than just a hobby for me—it’s a way to connect with others and share the beauty I see in the world. Whether it’s the golden hues of a Pittsburgh sunset or the intricate details of cityscapes captured from above, my work is driven by a deep curiosity and appreciation for the visual world.
-                
-                Beyond the lens, I’m passionate about music and drone technology, and I enjoy merging creativity with innovation in all aspects of my life. My goal is to inspire others through my work and to collaborate with individuals and brands that share my vision for creating meaningful and impactful visual stories.
-                
-                Thank you for visiting my website!</p>
+                <p>Photography is more than just a hobby for me—it’s a way to connect with others and share the beauty I see in the world. Whether it’s the golden hues of a Pittsburgh sunset or the intricate details of cityscapes captured from above, my work is driven by a deep curiosity and appreciation for the visual world.</p>
+
+                <p>Beyond the lens, I’m passionate about music and drone technology, and I enjoy merging creativity with innovation in all aspects of my life. My goal is to inspire others through my work and to collaborate with individuals and brands that share my vision for creating meaningful and impactful visual stories.</p>
+
+                <p>Thank you for visiting my website!</p>
+            </div>
         </div>
     </section>
 
@@ -60,50 +56,47 @@
             <p>&copy; 2025 OaklandFlyer Photography. All rights reserved.</p>
         </div>
     </footer>
-    <script src="headerScroll.js"></script>
-    <script>
+
+    <!-- JavaScript: Mobile Menu & Scroll Hide -->
+    <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             let lastScrollY = window.scrollY;
             const navbar = document.querySelector(".hero-nav");
             const navList = document.querySelector('.nav-list');
             const menuIcon = document.getElementById('menu-icon');
-    
+
             // Toggle menu open/close
             function toggleMenu() {
                 navList.classList.toggle('active');
-    
+
                 // Change the hamburger menu to "X"
-                if (navList.classList.contains('active')) {
-                    menuIcon.innerHTML = "✖"; // Change to "X"
-                } else {
-                    menuIcon.innerHTML = "☰"; // Change back to hamburger
-                }
+                menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
             }
-    
+
             // Hide navbar on scroll down, show on scroll up
             function handleScroll() {
-                if (window.scrollY > lastScrollY) {
+                if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
                     navbar.classList.add("hidden-nav");
                 } else {
                     navbar.classList.remove("hidden-nav");
                 }
                 lastScrollY = window.scrollY;
             }
-    
+
             // Close menu when clicking outside of it
             function closeMenuOnClickOutside(event) {
                 if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
                     navList.classList.remove("active");
-                    menuIcon.innerHTML = "☰"; // Reset to hamburger icon
+                    menuIcon.innerHTML = "☰";
                 }
             }
-    
+
             // Add event listeners
             menuIcon.addEventListener("click", toggleMenu);
             window.addEventListener("scroll", handleScroll);
             document.addEventListener("click", closeMenuOnClickOutside);
         });
     </script>
-    
+
 </body>
 </html>

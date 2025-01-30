@@ -7,48 +7,25 @@
     <meta name="description" content="Showcasing stunning photography by OaklandFlyer.">
     <title>OaklandFlyer Photography</title>
     <link rel="stylesheet" href="style.css">
-    <script src="gallery.js"></script>
-    <script src="scroll.js"></script>
-    <script src="menuToggle.js"></script>
-    <!-- Fancybox Styles Testing Changes via Samsung -->
+    <script defer src="gallery.js"></script>
+    <script defer src="scroll.js"></script>
+    <script defer src="menuToggle.js"></script>
+    
+    <!-- Fancybox Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-91C7LN6Y87"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-91C7LN6Y87');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-91C7LN6Y87');
     </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<script>
-    const animatedElements = document.querySelectorAll('.animate');
-
-    function handleScroll() {
-        animatedElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (elementTop < windowHeight - 100) {
-                element.classList.add('active');
-            } else {
-                element.classList.remove('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-</script>
-<script>
-    function toggleMenu() {
-        var navList = document.querySelector('.nav-list');
-        navList.classList.toggle('active');
-    }
-</script>
 
 <body>
     <!-- Hero Section -->
@@ -57,7 +34,7 @@
             <a href="index.html" class="logo-container">
                 <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
             </a>
-            <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
+            <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">
                 ☰
             </button>
             <nav id="navbar">
@@ -81,10 +58,9 @@
     <!-- Gallery Section -->
     <section id="gallery">
         <h2 class="animate">Photo Gallery</h2>
-        <div class="gallery-container">
-            <!-- Gallery content -->
-        </div>
+        <div class="gallery-container"></div>
     </section>    
+
     <section id="shop">
         <div class="container">
             <h2>Shop Exclusive Prints</h2>
@@ -92,6 +68,7 @@
             <a href="https://oaklandflyer.darkroom.com" class="btn" target="_blank">Buy Prints</a>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -107,7 +84,6 @@
         </div>
     </section>
 
-    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -124,52 +100,48 @@
     </footer>
 
     <!-- Fancybox Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    <!-- Gallery Script -->
-    <script src="gallery.js"></script>
-    <script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    
+    <!-- JavaScript: Mobile Menu & Scroll Hide -->
+    <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             let lastScrollY = window.scrollY;
             const navbar = document.querySelector(".hero-nav");
             const navList = document.querySelector('.nav-list');
             const menuIcon = document.getElementById('menu-icon');
-    
+
             // Toggle menu open/close
             function toggleMenu() {
                 navList.classList.toggle('active');
-    
+
                 // Change the hamburger menu to "X"
-                if (navList.classList.contains('active')) {
-                    menuIcon.innerHTML = "✖"; // Change to "X"
-                } else {
-                    menuIcon.innerHTML = "☰"; // Change back to hamburger
-                }
+                menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
             }
-    
+
             // Hide navbar on scroll down, show on scroll up
             function handleScroll() {
-                if (window.scrollY > lastScrollY) {
+                if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
                     navbar.classList.add("hidden-nav");
                 } else {
                     navbar.classList.remove("hidden-nav");
                 }
                 lastScrollY = window.scrollY;
             }
-    
+
             // Close menu when clicking outside of it
             function closeMenuOnClickOutside(event) {
                 if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
                     navList.classList.remove("active");
-                    menuIcon.innerHTML = "☰"; // Reset to hamburger icon
+                    menuIcon.innerHTML = "☰";
                 }
             }
-    
+
             // Add event listeners
             menuIcon.addEventListener("click", toggleMenu);
             window.addEventListener("scroll", handleScroll);
             document.addEventListener("click", closeMenuOnClickOutside);
         });
     </script>
-    
+
 </body>
 </html>

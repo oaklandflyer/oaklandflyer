@@ -62,6 +62,38 @@
     </footer>
     <script src="headerScroll.js"></script>
     <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector(".hero-nav");
+    
+        function handleScroll() {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down: Hide navbar
+                navbar.classList.add("hidden-nav");
+            } else {
+                // Scrolling up: Show navbar
+                navbar.classList.remove("hidden-nav");
+            }
+            lastScrollY = window.scrollY;
+        }
+    
+        // Listen for scrolling
+        window.addEventListener("scroll", handleScroll);
+    
+        function toggleMenu() {
+            var navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+    
+            // Ensure navbar remains visible when menu is toggled
+            navbar.classList.remove("hidden-nav");
+        }
+    </script>
+    <script>
+        function toggleMenu() {
+            var navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
+    <script>
         function toggleMenu() {
             var navList = document.querySelector('.nav-list');
             var menuIcon = document.getElementById('menu-icon');
@@ -88,6 +120,5 @@
             }
         });
     </script>
-    
 </body>
 </html>

@@ -62,36 +62,31 @@
     </footer>
     <script src="headerScroll.js"></script>
     <script>
-        let lastScrollY = window.scrollY;
-        const navbar = document.querySelector(".hero-nav");
+        function toggleMenu() {
+            var navList = document.querySelector('.nav-list');
+            var menuIcon = document.getElementById('menu-icon');
     
-        function handleScroll() {
-            if (window.scrollY > lastScrollY) {
-                // Scrolling down: Hide navbar
-                navbar.classList.add("hidden-nav");
+            // Toggle menu visibility
+            navList.classList.toggle('active');
+    
+            // Change the hamburger menu to "X"
+            if (navList.classList.contains('active')) {
+                menuIcon.innerHTML = "✖"; // Change to "X"
             } else {
-                // Scrolling up: Show navbar
-                navbar.classList.remove("hidden-nav");
+                menuIcon.innerHTML = "☰"; // Change back to hamburger
             }
-            lastScrollY = window.scrollY;
         }
     
-        // Listen for scrolling
-        window.addEventListener("scroll", handleScroll);
-    
-        function toggleMenu() {
+        // Close menu when clicking outside
+        document.addEventListener("click", function(event) {
             var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
+            var menuIcon = document.getElementById('menu-icon');
     
-            // Ensure navbar remains visible when menu is toggled
-            navbar.classList.remove("hidden-nav");
-        }
-    </script>
-    <script>
-        function toggleMenu() {
-            var navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
-        }
+            if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
+                navList.classList.remove("active");
+                menuIcon.innerHTML = "☰"; // Reset to hamburger icon
+            }
+        });
     </script>
     
 </body>

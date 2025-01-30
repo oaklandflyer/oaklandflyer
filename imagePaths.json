@@ -58,3 +58,10 @@
   "images/gallery/WatermarkedImages/StPauls.jpg",
   "images/gallery/WatermarkedImages/WebsterHall.jpg"
 ]
+[
+  {"src": "images/drone1.jpg", "category": "drone"},
+  {"src": "images/drone2.jpg", "category": "drone"},
+  {"src": "images/landscape1.jpg", "category": "landscape"},
+  {"src": "images/sports1.jpg", "category": "sports"},
+  {"src": "images/portrait1.jpg", "category": "portraits"}
+]

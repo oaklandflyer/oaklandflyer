@@ -178,9 +178,10 @@ body, html {
 }
 
 /* About Section */
+/* About Section */
 #about {
-    background: url("images/DowntownCloudsReduced.jpg") no-repeat center center/cover;
-    color: #fff;
+    background-color: #f9f9f9;
+    color: #333;
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -189,42 +190,45 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 800px;
     margin: auto;
 }
 
 #about h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-#about p {
-    font-size: 1.3rem;
+.about-content p {
+    font-size: 1.1rem;
     line-height: 1.8;
+    text-align: left;
 }
 
-.about-content img {
+.profile-photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 3px solid #f39c12;
     transition: transform 0.3s ease;
 }
 
-.about-content img:hover {
-    transform: scale(1.1);
+.profile-photo:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    #about p {
-        font-size: 1.1rem;
+    .about-content p {
+        font-size: 1rem;
         padding: 0 1rem;
     }
 
-    .about-content img {
+    .profile-photo {
         width: 150px;
+        height: 150px;
     }
 }
 

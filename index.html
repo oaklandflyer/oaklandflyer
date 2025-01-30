@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="gallery.js"></script>
     <script src="scroll.js"></script>
+    <script src="menuToggle.js"></script>
     <!-- Fancybox Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
     <!-- Google tag (gtag.js) -->
@@ -62,6 +63,9 @@
                     <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
+                ☰
+            </button>
         </div>
         <div class="hero-content">
             <h2>Capturing Moments, Telling Stories</h2>
@@ -118,5 +122,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <!-- Gallery Script -->
     <script src="gallery.js"></script>
+    <!-- Hamburger Menu-->
+    <script>
+        function toggleMenu() {
+            var navList = document.getElementById('navbar').querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
+    
 </body>
 </html>

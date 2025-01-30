@@ -7,7 +7,12 @@ body {
     color: #535151;
     line-height: 1.6;
 }
-
+body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 .container {
     width: 90%;
     max-width: 1200px;
@@ -60,20 +65,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 0 40px;
-    z-index: 10;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
 /* Logo Styling */
-.logo-container {
-    display: flex;
-    align-items: center;
+.logo-container img {
+    height: 50px;
+    width: auto;
 }
-
 .logo {
     height: 50px;  /* Adjust size if needed */
     width: auto;
@@ -83,7 +88,108 @@ body {
 .logo:hover {
     transform: scale(1.1);  /* Subtle zoom effect on hover */
 }
+/* Menu Toggle Button (Hamburger Icon) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+}
 
+/* Navigation Menu */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-list li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Menu toggle button - hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .nav-list li {
+        text-align: right;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show menu button */
+    }
+
+    .hero-nav {
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 250px;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding: 20px 0;
+        border-radius: 5px;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+}
 /* Navigation Styling */
 .hero-nav nav {
     flex-grow: 1;

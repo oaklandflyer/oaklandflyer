@@ -10,13 +10,14 @@
     
 </head>
 <div class="hero-nav">
-    <div class="logo-container">
-        <a href="home.html">
-            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-        </a>
-    </div>
-    <nav>
-        <ul>
+    <a href="index.html" class="logo-container">
+        <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+    </a>
+    <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
+        ☰
+    </button>
+    <nav id="navbar">
+        <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -25,9 +26,6 @@
             <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
         </ul>
     </nav>
-    <button class="menu-toggle" aria-label="Open Menu" onclick="toggleMenu()">
-        ☰
-    </button>
 </div>
 
 <body>

@@ -13,27 +13,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-/* Header */
-header {
-    background: #44444498; /* Dark gray for contrast */
-    color: #fff;
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Align logo and navigation */
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-/* Header Hidden State */
-header.hidden {
-    transform: translateY(-100%); /* Slide header out of view */
-    opacity: 0; /* Make it invisible */
-}
 
 
 header .logo-container {
@@ -115,6 +94,39 @@ header nav ul li a:hover {
     padding: 10rem 1rem;
     position: relative;
     min-height: 100vh;
+}
+.hero-nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.hero-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-nav ul li {
+    display: inline;
+}
+
+.hero-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.hero-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
 
 .hero-content {

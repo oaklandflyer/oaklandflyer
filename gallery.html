@@ -62,6 +62,47 @@
     
     <!-- JavaScript for Filtering -->
     <script defer src="gallery.js"></script>
+    <script defer src="menuToggle.js"></script>
 
+    <!-- JavaScript: Mobile Menu & Scroll Hide -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            let lastScrollY = window.scrollY;
+            const navbar = document.querySelector(".hero-nav");
+            const navList = document.querySelector('.nav-list');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Toggle menu open/close
+            function toggleMenu() {
+                navList.classList.toggle('active');
+
+                // Change the hamburger menu to "X"
+                menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
+            }
+
+            // Hide navbar on scroll down, show on scroll up
+            function handleScroll() {
+                if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
+                    navbar.classList.add("hidden-nav");
+                } else {
+                    navbar.classList.remove("hidden-nav");
+                }
+                lastScrollY = window.scrollY;
+            }
+
+            // Close menu when clicking outside of it
+            function closeMenuOnClickOutside(event) {
+                if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
+                    navList.classList.remove("active");
+                    menuIcon.innerHTML = "☰";
+                }
+            }
+
+            // Add event listeners
+            menuIcon.addEventListener("click", toggleMenu);
+            window.addEventListener("scroll", handleScroll);
+            document.addEventListener("click", closeMenuOnClickOutside);
+        });
+    </script>
 </body>
 </html>

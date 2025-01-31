@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleMenu() {
         navList.classList.toggle("active");
-        menuIcon.classList.toggle("active");
 
         // Change hamburger icon when menu is active
         menuIcon.innerHTML = navList.classList.contains("active") ? "✖" : "☰";

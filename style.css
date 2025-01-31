@@ -42,7 +42,7 @@ body, html {
 .hero-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center navigation */
     position: fixed;
     top: 0;
     left: 0;
@@ -51,6 +51,7 @@ body, html {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
 }
+
 
 /* Logo Styles */
 .logo-container img {
@@ -81,7 +82,10 @@ body, html {
     gap: 20px;
     padding: 0;
     margin: 0;
+    justify-content: center; /* Ensures nav items are centered */
+    width: 100%;
 }
+
 
 .nav-list li a {
     color: white;

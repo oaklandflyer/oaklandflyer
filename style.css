@@ -20,6 +20,13 @@ body, html {
     margin: auto;
 }
 
+/* Prevent Horizontal Scrolling */
+body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 
 /* Main Hero Section */
 .hero {

@@ -2,14 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const galleryContainer = document.querySelector(".gallery-container");
 
-    // Fetch images dynamically from JSON file
     document.addEventListener("DOMContentLoaded", function () {
         const galleryContainer = document.querySelector(".gallery-container");
     
-        // Fetch images dynamically from JSON file
-        fetch('imagePaths.json') 
+        fetch("imagePaths.json")
             .then(response => response.json())
             .then(images => {
+                if (!galleryContainer) {
+                    console.error("Gallery container not found!");
+                    return;
+                }
+    
                 galleryContainer.innerHTML = ""; // Clear gallery before loading images
                 images.forEach(image => {
                     const linkElement = document.createElement("a");
@@ -23,11 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     imgElement.alt = "Gallery Photo";
                     imgElement.loading = "lazy";
     
+                    // Log errors if an image fails to load
+                    imgElement.onerror = function () {
+                        console.error("Image not found:", imgElement.src);
+                    };
+    
                     linkElement.appendChild(imgElement);
                     galleryContainer.appendChild(linkElement);
                 });
+    
+                // Initialize Fancybox (Required)
+                Fancybox.bind("[data-fancybox]", {});
             })
-            .catch(error => console.error("Error loading image paths:", error));
+            .catch(error => console.error("Error loading images:", error));
     });
     
     // Filter images when clicking category buttons

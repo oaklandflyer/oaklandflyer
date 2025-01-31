@@ -221,7 +221,7 @@ body, html {
     justify-content: center; /* Centers menu items */
     gap: 30px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .nav-list li {
@@ -267,16 +267,16 @@ body, html {
         cursor: pointer;
         z-index: 1100;
         transition: transform 0.3s ease-in-out;
-        position: absolute;
+        position: fixed;
         right: 20px; /* Moves menu button to the right */
-        top: 10px;
+        top: 20px;
     }
 
     .nav-list {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px;
+        width: 100px;
         height: 100vh;
         background: linear-gradient(to bottom, white, #ddd); /* Smooth white-to-gray gradient */
         display: flex;
@@ -356,7 +356,6 @@ body, html {
     transform: scale(1.05);
 }
 
-/* About Section */
 /* About Section */
 #about {
     background-color: #f9f9f9;

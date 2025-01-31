@@ -193,7 +193,7 @@ body, html {
 .hero-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures center alignment */
+    justify-content: center; /* Ensures center alignment */
     position: fixed;
     top: 0;
     left: 0;

@@ -3,7 +3,7 @@ body {
     font-family: 'Source Code Pro', "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #4b4747da; /* Light gray for a clean, modern look */
+    background-color: #d8d8d8; /* Light gray for a clean, modern look */
     color: #535151;
     line-height: 1.6;
 }
@@ -256,7 +256,6 @@ body, html {
     transition: transform 0.4s ease-in-out;
 }
 
-/* Mobile Navigation */
 /* Mobile Navigation */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -582,7 +581,7 @@ form button:hover {
 footer {
     padding: 2rem 0;
     text-align: center;
-    color: #ddd;
+    color: #cecece;
 }
 
 footer p {

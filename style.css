@@ -252,6 +252,11 @@ body, html {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .hero-nav {
+        display: flex;
+        justify-content: space-between;
+        alight-items: center;
+    }
     .menu-toggle {
         display: block;
         font-size: 2rem;
@@ -269,7 +274,8 @@ body, html {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        right: -100%;
+        width: 250px;
         height: 100vh;
         background: rgba(0, 0, 0, 0.95);
         display: flex;
@@ -285,6 +291,7 @@ body, html {
 
     /* Show Menu When Active */
     .nav-list.active {
+        right: 0;
         transform: translateY(0);
         opacity: 1;
         pointer-events: all;

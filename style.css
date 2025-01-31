@@ -283,6 +283,7 @@ body, html {
         transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
         opacity: 0;
         pointer-events: none;
+        z-index: 999;
     }
 
     /* Show Menu When Active */
@@ -306,7 +307,11 @@ body, html {
         display: block;
         padding: 20px;
     }
-
+    .menu-toggle.fixed {
+        position: fixed;
+        right: 20px;
+        top: 15px;
+    }
     .menu-toggle.active {
         transform: rotate(90deg);
     }

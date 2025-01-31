@@ -37,7 +37,82 @@ body, html {
     position: relative;
     min-height: 100vh;
 }
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
 
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero .btn {
+    background: #f39c12;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #c87c0a;
+}
+
+/* About Preview Section */
+#about-preview {
+    background: #1a1a1a;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#about-preview .container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#about-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#about-preview p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#about-preview .btn {
+    background: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#about-preview .btn:hover {
+    background: #ddd;
+}
 /* Navigation Container */
 .hero-nav {
     display: flex;

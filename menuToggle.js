@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const navList = document.querySelector(".nav-list");
 
-    // Toggle menu open/close
     function toggleMenu() {
         navList.classList.toggle("active");
+        menuIcon.classList.toggle("active");
 
-        // Change the hamburger menu to "X"
+        // Change hamburger icon when menu is active
         menuIcon.innerHTML = navList.classList.contains("active") ? "✖" : "☰";
     }
 

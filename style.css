@@ -193,7 +193,7 @@ body, html {
 .hero-nav {
     display: flex;
     align-items: center;
-    justify-content: center; /* Ensures center alignment */
+    justify-content: space-between; /* Ensures center alignment */
     position: fixed;
     top: 0;
     left: 0;
@@ -207,6 +207,7 @@ body, html {
 .logo-container {
     position: absolute;
     left: 20px; /* Keeps logo on the left */
+    top: 10px;
 }
 
 .logo-container img {
@@ -252,12 +253,6 @@ body, html {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
-    .hero-nav {
-        display: flex;
-        justify-content: space-between;
-        alight-items: center;
-        padding: 15px 20px;
-    }
     .menu-toggle {
         display: block;
         font-size: 2rem;
@@ -269,14 +264,14 @@ body, html {
         transition: transform 0.3s ease-in-out;
         position: fixed;
         right: 20px; /* Moves menu button to the right */
-        top: 20px;
+        top: 15px;
     }
 
     .nav-list {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100px;
+        width: 100vw;
         height: 100vh;
         background: linear-gradient(to bottom, white, #ddd); /* Smooth white-to-gray gradient */
         display: flex;
@@ -285,7 +280,7 @@ body, html {
         justify-content: center;
         gap: 30px;
         transform: translateY(-100%);
-        transition: transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
         opacity: 0;
         pointer-events: none;
     }

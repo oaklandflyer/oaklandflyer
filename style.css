@@ -493,6 +493,8 @@ p {
 
 #gallery {
   padding: 4rem 2rem;
+  padding-top: 80px;
+  padding-bottom: 10px;
   text-align: center;
   background-color: var(--color-dark);
 }
@@ -505,25 +507,30 @@ p {
 
 /* Filter Buttons */
 .gallery-filters {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  display: flex;              /* Lay out items in a row */
+  justify-content: center;    /* Center them horizontally */
+  align-items: center;        /* Center them vertically */
+  gap: 10px;                  /* Add some spacing between buttons */
+  padding: 10px;              /* Adjust padding as needed */
+  white-space: nowrap;        /* Prevent wrapping if there’s not enough space */
+  overflow-x: auto;           /* Allow horizontal scroll if needed on very small screens */
 }
+
 
 .filter-btn {
-  background: #333;
-  color: var(--color-white);
-  padding: 10px 20px;
+  flex: 0 0 auto;   /* Prevent the button from shrinking */
+  padding: 10px 15px;
+  font-size: 1rem;
   border: none;
+  background-color: #eee; /* Example styling */
   cursor: pointer;
-  transition: background var(--transition-fast);
+  white-space: nowrap;    /* Ensure button text does not wrap */
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-  background: var(--color-primary);
+.filter-btn.active {
+  background-color: #ccc; /* Different style for active button */
 }
+
 
 /* Gallery Grid */
 .gallery-container {

@@ -79,10 +79,6 @@ p {
 /* 3) NAVIGATION                                     */
 /* ------------------------------------------------ */
 
-/* ------------------------------------------------ */
-/* 3) NAVIGATION                                     */
-/* ------------------------------------------------ */
-
 .hero-nav {
   display: flex;
   align-items: center;
@@ -108,11 +104,11 @@ p {
   width: auto;
 }
 
-/* Navigation Menu (Default for mobile) */
+/* Default Navigation Menu (desktop fallback) */
 .nav-list {
-  display: none;
-  position: fixed; /* overlay the content */
-  top: 60px; /* adjust according to your header height */
+  display: none; /* hidden by default; shown via media query or toggle */
+  position: fixed; 
+  top: 60px;
   left: 0;
   width: 100%;
   background: #fff;
@@ -142,15 +138,14 @@ p {
   transition: transform var(--transition-default);
 }
 
-/* Mobile Navigation */
-.menu-toggle {
-  display: none; /* Shown only on mobile */
-}
-
+/* ------------------------------------------------ */
+/* MOBILE NAVIGATION (max-width: 768px)              */
+/* ------------------------------------------------ */
 @media (max-width: 768px) {
+  /* Show the menu toggle (hamburger) */
   .menu-toggle {
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     background: none;
     border: none;
     color: var(--color-white);
@@ -159,73 +154,69 @@ p {
     right: 20px;
     top: 15px;
     z-index: 1100;
-    transition: transform var(--transition-fast);
+    transition: transform 0.3s ease;
   }
-
   .menu-toggle.active {
     transform: rotate(90deg);
   }
 
+  /* Mobile nav-list as full screen overlay */
   .nav-list {
+    display: flex; /* Use flex so items can be arranged; visibility is controlled by transform/opacity */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, var(--color-white), #ddd);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.98);
     gap: 30px;
     transform: translateY(-100%);
-    transition: transform var(--transition-default), opacity 0.3s ease-in-out;
     opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
     pointer-events: none;
-    z-index: 999;
+    z-index: 1050;
   }
-
   .nav-list.active {
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
   }
-
   .nav-list li a {
-    color: #000;
-    font-size: 2rem;
+    color: #333;
+    font-size: 1.8rem;
     font-weight: bold;
-    padding: 20px;
+    padding: 15px 20px;
   }
 }
 
 /* ------------------------------------------------ */
-/* DESKTOP OVERRIDE (for viewports wider than 768px) */
+/* DESKTOP OVERRIDE (min-width: 769px)               */
 /* ------------------------------------------------ */
 @media (min-width: 769px) {
-  /* Ensure the navigation menu is always visible */
   .nav-list {
-    display: flex !important;       /* Force display */
-    position: static;               /* Remove fixed positioning */
-    flex-direction: row;            /* Horizontal layout */
-    justify-content: flex-end;      /* Align nav items to the right if desired */
-    background: transparent;        /* Remove background override */
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: transparent;
     padding: 0;
     gap: 20px;
     width: auto;
     height: auto;
   }
-  
   .nav-list li a {
     font-size: 1.1rem;
     padding: 10px 15px;
-    color: var(--color-white);       /* Use your intended desktop color */
+    color: var(--color-white);
   }
-  
-  /* Hide the mobile menu toggle on desktop */
   .menu-toggle {
     display: none;
   }
 }
+
 
 
 /* ------------------------------------------------ */

@@ -79,11 +79,40 @@ p {
 /* 3) NAVIGATION                                     */
 /* ------------------------------------------------ */
 
-/* Existing Desktop Defaults (before mobile overrides) */
+/* ------------------------------------------------ */
+/* 3) NAVIGATION                                     */
+/* ------------------------------------------------ */
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Logo Container */
+.logo-container {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Menu (Default for mobile) */
 .nav-list {
-  display: none; /* Default is hidden – change for desktop */
-  position: fixed; /* This is for mobile overlay; override for desktop */
-  top: 60px;
+  display: none;
+  position: fixed; /* overlay the content */
+  top: 60px; /* adjust according to your header height */
   left: 0;
   width: 100%;
   background: #fff;
@@ -93,8 +122,31 @@ p {
 .nav-list.active {
   display: flex;
 }
+.nav-list li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: background var(--transition-fast);
+  border-radius: 5px;
+}
 
-/* Mobile Navigation remains under the media query */
+.nav-list li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide Navigation on Scroll */
+.hidden-nav {
+  transform: translateY(-100%);
+  transition: transform var(--transition-default);
+}
+
+/* Mobile Navigation */
+.menu-toggle {
+  display: none; /* Shown only on mobile */
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -109,9 +161,11 @@ p {
     z-index: 1100;
     transition: transform var(--transition-fast);
   }
+
   .menu-toggle.active {
     transform: rotate(90deg);
   }
+
   .nav-list {
     position: fixed;
     top: 0;
@@ -129,11 +183,13 @@ p {
     pointer-events: none;
     z-index: 999;
   }
+
   .nav-list.active {
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
   }
+
   .nav-list li a {
     color: #000;
     font-size: 2rem;
@@ -142,24 +198,30 @@ p {
   }
 }
 
-/* Desktop Media Query: Override mobile defaults for navigation */
+/* ------------------------------------------------ */
+/* DESKTOP OVERRIDE (for viewports wider than 768px) */
+/* ------------------------------------------------ */
 @media (min-width: 769px) {
+  /* Ensure the navigation menu is always visible */
   .nav-list {
-    display: flex !important;      /* Always display on desktop */
-    position: static;              /* Remove fixed positioning */
-    flex-direction: row;           /* Lay out nav items horizontally */
-    background: transparent;       /* Remove background if desired */
+    display: flex !important;       /* Force display */
+    position: static;               /* Remove fixed positioning */
+    flex-direction: row;            /* Horizontal layout */
+    justify-content: flex-end;      /* Align nav items to the right if desired */
+    background: transparent;        /* Remove background override */
     padding: 0;
     gap: 20px;
     width: auto;
     height: auto;
   }
+  
   .nav-list li a {
-    font-size: 1.1rem;             /* Reset to desktop font size */
+    font-size: 1.1rem;
     padding: 10px 15px;
-    color: var(--color-white);      /* Use your theme’s text color */
+    color: var(--color-white);       /* Use your intended desktop color */
   }
-  /* Hide mobile-only elements */
+  
+  /* Hide the mobile menu toggle on desktop */
   .menu-toggle {
     display: none;
   }

@@ -1,108 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/OFLogo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the photography portfolio of OaklandFlyer.">
-    <title>Gallery - OaklandFlyer</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="menuToggle.js"></script>
-    <script defer src="gallery.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the photography portfolio of OaklandFlyer.">
+  <title>Gallery - OaklandFlyer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+  <!-- Include scripts only once -->
+  <script defer src="menuToggle.js"></script>
+  <script defer src="gallery.js"></script>
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <div class="hero-nav">
-        <a href="index.html" class="logo-container">
-            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-        </a>
-        <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-        <nav id="navbar">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
-            </ul>
-        </nav>
-    </div>
+  <!-- Navigation -->
+  <div class="hero-nav">
+      <a href="index.html" class="logo-container">
+          <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+      </a>
+      <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
+      <nav id="navbar">
+          <ul class="nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="videos.html">Videos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="https://oaklandflyer.darkroom.com" target="_blank">Buy Prints</a></li>
+          </ul>
+      </nav>
+  </div>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2 class="section-title">Photography Portfolio</h2>
+  <!-- Gallery Section -->
+  <section id="gallery">
+      <h2 class="section-title">Photography Portfolio</h2>
 
-        <!-- Filter Buttons -->
-        <div class="gallery-filters">
-            <button class="filter-btn" data-category="all">All</button>
-            <button class="filter-btn" data-category="drone">Drone</button>
-            <button class="filter-btn" data-category="landscape">Landscape</button>
-            <button class="filter-btn" data-category="sports">Sports</button>
-            <button class="filter-btn" data-category="portraits">Portraits</button>
-        </div>
+      <!-- Filter Buttons -->
+      <div class="gallery-filters">
+          <button class="filter-btn" data-category="all">All</button>
+          <button class="filter-btn" data-category="drone">Drone</button>
+          <button class="filter-btn" data-category="landscape">Landscape</button>
+          <button class="filter-btn" data-category="sports">Sports</button>
+          <button class="filter-btn" data-category="portraits">Portraits</button>
+      </div>
 
-        <!-- Gallery Grid -->
-        <div class="gallery-container">
-        </div>
-    </section>
+      <!-- Gallery Grid -->
+      <div class="gallery-container">
+          <!-- Images will be dynamically inserted here -->
+      </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 OaklandFlyer Photography. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+      <div class="container">
+          <p>&copy; 2025 OaklandFlyer Photography. All rights reserved.</p>
+      </div>
+  </footer>
 
-    <!-- Fancybox for Lightbox Effect -->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    
-    <!-- JavaScript for Filtering -->
-    <script defer src="gallery.js"></script>
-    <script defer src="menuToggle.js"></script>
+  <!-- Fancybox for Lightbox Effect -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
-    <!-- JavaScript: Mobile Menu & Scroll Hide -->
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            let lastScrollY = window.scrollY;
-            const navbar = document.querySelector(".hero-nav");
-            const navList = document.querySelector('.nav-list');
-            const menuIcon = document.getElementById('menu-icon');
+  <!-- Inline JavaScript (if not in gallery.js) for the gallery -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleryContainer = document.querySelector(".gallery-container");
+      const filterButtons = document.querySelectorAll(".filter-btn");
 
-            // Toggle menu open/close
-            function toggleMenu() {
-                navList.classList.toggle('active');
+      if (!galleryContainer) {
+        console.error("Gallery container not found!");
+        return;
+      }
 
-                // Change the hamburger menu to "X"
-                menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
-            }
+      fetch("imagePaths.json")
+        .then(response => response.json())
+        .then(images => {
+          galleryContainer.innerHTML = ""; // Clear gallery before loading
 
-            // Hide navbar on scroll down, show on scroll up
-            function handleScroll() {
-                if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
-                    navbar.classList.add("hidden-nav");
+          images.forEach(image => {
+            const linkElement = document.createElement("a");
+            linkElement.href = image.src;
+            linkElement.setAttribute("data-fancybox", "gallery");
+            linkElement.setAttribute("data-category", image.category);
+            linkElement.setAttribute("data-caption", image.src.split('/').pop());
+
+            const imgElement = document.createElement("img");
+            imgElement.src = image.src;
+            imgElement.alt = "Gallery Photo";
+            imgElement.loading = "lazy";
+
+            // Log errors if an image fails to load
+            imgElement.onerror = function () {
+              console.error("Image not found:", imgElement.src);
+            };
+
+            linkElement.appendChild(imgElement);
+            galleryContainer.appendChild(linkElement);
+          });
+
+          // Initialize Fancybox
+          Fancybox.bind("[data-fancybox]", {});
+
+          // Enable Filtering
+          filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+              const category = button.dataset.category;
+
+              // Remove active class from buttons
+              filterButtons.forEach(btn => btn.classList.remove("active"));
+              button.classList.add("active");
+
+              // Show/hide images based on category
+              document.querySelectorAll(".gallery-container a").forEach(item => {
+                if (category === "all" || item.getAttribute("data-category") === category) {
+                  item.style.display = "block";
                 } else {
-                    navbar.classList.remove("hidden-nav");
+                  item.style.display = "none";
                 }
-                lastScrollY = window.scrollY;
-            }
+              });
+            });
+          });
+        })
+        .catch(error => console.error("Error loading images:", error));
+    });
+  </script>
 
-            // Close menu when clicking outside of it
-            function closeMenuOnClickOutside(event) {
-                if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
-                    navList.classList.remove("active");
-                    menuIcon.innerHTML = "☰";
-                }
-            }
-
-            // Add event listeners
-            menuIcon.addEventListener("click", toggleMenu);
-            window.addEventListener("scroll", handleScroll);
-            document.addEventListener("click", closeMenuOnClickOutside);
-        });
-    </script>
 </body>
 </html>

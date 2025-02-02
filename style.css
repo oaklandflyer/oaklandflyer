@@ -50,7 +50,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 /* Header styling */
 h1, h2, h3, h4, h5, h6 {
@@ -68,12 +68,6 @@ p {
   margin: 0 0 1em;
 }
 
-/* Example: Navigation bar styling */
-nav {
-  background-color: #fff;
-  padding: 1em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
 /* Optional: Add a class for extra elegance if needed */
 .elegant-text {

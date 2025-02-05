@@ -142,13 +142,12 @@ p {
 /* MOBILE NAVIGATION (max-width: 768px)              */
 /* ------------------------------------------------ */
 @media (max-width: 768px) {
-  /* Show the menu toggle (hamburger) */
   .menu-toggle {
     display: block;
     font-size: 2.5rem;
     background: none;
     border: none;
-    color: var(--color-white);
+    color: var(--color-dark); /* Changed from var(--color-white) to var(--color-dark) */
     cursor: pointer;
     position: fixed;
     right: 20px;
@@ -626,17 +625,30 @@ p {
 /* ------------------------------------------------ */
 
 #contact {
+  position: relative; /* Needed for the overlay positioning */
   padding: 4rem 2rem;
   text-align: center;
   background: url("images/contact-background.jpg") no-repeat center center/cover;
   color: var(--color-light);
+  overflow: hidden;
 }
 
-#contact .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-light);
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 0;
 }
+
+#contact * {
+  position: relative;
+  z-index: 1;
+}
+
 
 form {
   max-width: 600px;

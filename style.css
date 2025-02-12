@@ -530,7 +530,6 @@ p {
 /* ------------------------------------------------ */
 /* 8) GALLERY SECTION                               */
 /* ------------------------------------------------ */
-
 #gallery {
   padding: 4rem 2rem;
   padding-top: 80px;
@@ -545,39 +544,45 @@ p {
   color: var(--color-light);
 }
 
-/* Filter Buttons */
+/* Gallery Filter Buttons */
 .gallery-filters {
-  display: flex;              /* Lay out items in a row */
-  justify-content: center;    /* Center them horizontally */
-  align-items: center;        /* Center them vertically */
-  gap: 10px;                  /* Add some spacing between buttons */
-  padding: 10px;              /* Adjust padding as needed */
-  white-space: nowrap;        /* Prevent wrapping if there’s not enough space */
-  overflow-x: auto;           /* Allow horizontal scroll if needed on very small screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
-
 .filter-btn {
-  flex: 0 0 auto;   /* Prevent the button from shrinking */
+  flex: 0 0 auto;
   padding: 10px 15px;
   font-size: 1rem;
   border: none;
-  background-color: #eee; /* Example styling */
+  background-color: #eee;
   cursor: pointer;
-  white-space: nowrap;    /* Ensure button text does not wrap */
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+  background-color: #ddd;
+  transform: scale(1.05);
 }
 
 .filter-btn.active {
-  background-color: #ccc; /* Different style for active button */
+  background-color: #ccc;
+  transform: scale(1.05);
 }
 
-
-/* Gallery Grid */
+/* Gallery Grid Layout */
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
-  grid-gap: 10px;
   padding: 10px;
   justify-content: center;
 }
@@ -585,20 +590,24 @@ p {
 .gallery-container a {
   display: block;
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .gallery-container img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 8px;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .gallery-container img:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Mobile Adjustments */
+/* Mobile Gallery Adjustments */
 @media (max-width: 768px) {
   .gallery-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

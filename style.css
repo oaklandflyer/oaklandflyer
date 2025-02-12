@@ -76,13 +76,23 @@ p {
   font-size: 1.1em;
 }
 /* ------------------------------------------------ */
-/* 3) NAVIGATION                                     */
+/* Root Variables                                   */
 /* ------------------------------------------------ */
+:root {
+  --color-white: #ffffff;
+  --color-dark: #333333;
+  --color-primary: #0073e6;
+  --transition-fast: 0.3s ease;
+  --transition-default: 0.4s ease;
+}
 
+/* ------------------------------------------------ */
+/* 3) NAVIGATION                                    */
+/* ------------------------------------------------ */
 .hero-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Use space-between to spread out items */
   position: fixed;
   top: 0;
   left: 0;
@@ -94,11 +104,8 @@ p {
 
 /* Logo Container */
 .logo-container {
-  position: absolute;
-  left: 20px;
-  top: 10px;
+  position: relative; /* Changed to relative to prevent overlapping issues */
 }
-
 .logo-container img {
   height: 50px;
   width: auto;
@@ -106,13 +113,13 @@ p {
 
 /* Default Navigation Menu (desktop fallback) */
 .nav-list {
-  display: none; /* hidden by default; shown via media query or toggle */
-  position: fixed; 
+  display: none; /* Hidden by default; activated via media query or toggle */
+  flex-direction: column;
+  position: fixed;
   top: 60px;
   left: 0;
   width: 100%;
-  background: #fff;
-  flex-direction: column;
+  background: var(--color-white);
   padding: 1rem;
 }
 .nav-list.active {
@@ -128,8 +135,14 @@ p {
   border-radius: 5px;
 }
 
-.nav-list li a:hover {
+/* Hover & Focus States for Accessibility */
+.nav-list li a:hover,
+.nav-list li a:focus {
   background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+.nav-list li a:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
 /* Hide Navigation on Scroll */
@@ -139,7 +152,7 @@ p {
 }
 
 /* ------------------------------------------------ */
-/* MOBILE NAVIGATION (max-width: 768px)              */
+/* MOBILE NAVIGATION (max-width: 768px)             */
 /* ------------------------------------------------ */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -147,7 +160,7 @@ p {
     font-size: 2.5rem;
     background: none;
     border: none;
-    color: var(--color-dark); /* Changed from var(--color-white) to var(--color-dark) */
+    color: var(--color-dark);
     cursor: pointer;
     position: fixed;
     right: 20px;
@@ -159,9 +172,9 @@ p {
     transform: rotate(90deg);
   }
 
-  /* Mobile nav-list as full screen overlay */
+  /* Mobile nav-list as a full screen overlay */
   .nav-list {
-    display: flex; /* Use flex so items can be arranged; visibility is controlled by transform/opacity */
+    display: flex; /* Ensures flex is applied for layout */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -171,7 +184,7 @@ p {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
-    gap: 30px;
+    gap: 30px; /* Increased gap for less crowded items */
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -185,14 +198,14 @@ p {
   }
   .nav-list li a {
     color: #333;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Larger text for better legibility on mobile */
     font-weight: bold;
     padding: 15px 20px;
   }
 }
 
 /* ------------------------------------------------ */
-/* DESKTOP OVERRIDE (min-width: 769px)               */
+/* DESKTOP OVERRIDE (min-width: 769px)              */
 /* ------------------------------------------------ */
 @media (min-width: 769px) {
   .nav-list {
@@ -215,6 +228,7 @@ p {
     display: none;
   }
 }
+
 
 
 

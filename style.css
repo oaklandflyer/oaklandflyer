@@ -174,9 +174,9 @@ p {
     transform: rotate(90deg);
   }
 
-  /* Mobile nav-list as a full-screen overlay */
+  /* Mobile nav-list as a full screen overlay */
   .nav-list {
-    display: flex; /* Flex layout for centering items */
+    display: flex; /* Ensures flex is applied for layout */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -186,7 +186,7 @@ p {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
-    gap: 30px;
+    gap: 30px; /* Increased gap for less crowded items */
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -200,12 +200,11 @@ p {
   }
   .nav-list li a {
     color: #333;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Larger text for better legibility on mobile */
     font-weight: bold;
     padding: 15px 20px;
   }
 }
-
 /* ------------------------------------------------ */
 /* DESKTOP OVERRIDE (min-width: 769px)              */
 /* ------------------------------------------------ */

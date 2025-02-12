@@ -92,7 +92,7 @@ p {
 .hero-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Use space-between to spread out items */
+  justify-content: space-between; /* Base layout uses space-between */
   position: fixed;
   top: 0;
   left: 0;
@@ -104,16 +104,18 @@ p {
 
 /* Logo Container */
 .logo-container {
-  position: relative; /* Changed to relative to prevent overlapping issues */
+  position: absolute;
+  left: 20px;
+  top: 10px;
 }
 .logo-container img {
   height: 50px;
   width: auto;
 }
 
-/* Default Navigation Menu (desktop fallback) */
+/* Navigation Menu (default hidden; shown via JS or media query) */
 .nav-list {
-  display: none; /* Hidden by default; activated via media query or toggle */
+  display: none; /* Hidden by default */
   flex-direction: column;
   position: fixed;
   top: 60px;
@@ -172,9 +174,9 @@ p {
     transform: rotate(90deg);
   }
 
-  /* Mobile nav-list as a full screen overlay */
+  /* Mobile nav-list as a full-screen overlay */
   .nav-list {
-    display: flex; /* Ensures flex is applied for layout */
+    display: flex; /* Flex layout for centering items */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -184,7 +186,7 @@ p {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
-    gap: 30px; /* Increased gap for less crowded items */
+    gap: 30px;
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -198,7 +200,7 @@ p {
   }
   .nav-list li a {
     color: #333;
-    font-size: 1.8rem; /* Larger text for better legibility on mobile */
+    font-size: 1.8rem;
     font-weight: bold;
     padding: 15px 20px;
   }
@@ -208,11 +210,15 @@ p {
 /* DESKTOP OVERRIDE (min-width: 769px)              */
 /* ------------------------------------------------ */
 @media (min-width: 769px) {
+  /* Center the navigation items on desktop */
+  .hero-nav {
+    justify-content: center;
+  }
   .nav-list {
     display: flex !important;
     position: static;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     background: transparent;
     padding: 0;
     gap: 20px;
@@ -228,7 +234,6 @@ p {
     display: none;
   }
 }
-
 
 /* ------------------------------------------------ */
 /* 4) HERO SECTIONS                                  */

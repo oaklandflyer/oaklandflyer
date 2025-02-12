@@ -1,131 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="images/OFLogo.png" type="image/png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the photography portfolio of OaklandFlyer.">
-  <title>Gallery - OaklandFlyer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - OaklandFlyer Photography</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
-  <!-- Include scripts only once -->
   <script defer src="menuToggle.js"></script>
-  <script defer src="gallery.js"></script>
+  <style>
+    /* ------------------------------------------------ */
+    /* Gallery Section Redesign                       */
+    /* ------------------------------------------------ */
+    #gallery {
+      padding: 4rem 2rem;
+      padding-top: 80px; /* Ensure content isn’t hidden behind fixed header */
+      background-color: #f0f0f0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+    .gallery-description {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #555;
+    }
+    /* Filter Buttons */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 10px 20px;
+      background-color: #0073e6;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background-color: #005bb5;
+    }
+    /* Gallery Grid */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navigation -->
+  <!-- Navigation (Use your existing header markup) -->
   <div class="hero-nav">
-      <a href="index.html" class="logo-container">
-          <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-      </a>
-      <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-      <nav id="navbar">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
+    <a href="index.html" class="logo-container">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+    </a>
+    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-      </nav>
+    </nav>
   </div>
 
   <!-- Gallery Section -->
   <section id="gallery">
-      <h2 class="section-title">Photography Portfolio</h2>
-
+    <div class="container">
+      <h2 class="section-title">Our Work Gallery</h2>
+      <p class="gallery-description">
+        Browse through examples of our services. Use the filters to view specific types of work, including Graduation Portraits, Drone Aerials, and Street Photography.
+      </p>
       <!-- Filter Buttons -->
       <div class="gallery-filters">
-          <button class="filter-btn" data-category="all">All</button>
-          <button class="filter-btn" data-category="drone">Drone</button>
-          <button class="filter-btn" data-category="landscape">Landscape</button>
-          <button class="filter-btn" data-category="sports">Sports</button>
-          <button class="filter-btn" data-category="portraits">Portraits</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="graduation">Graduation Portraits</button>
+        <button class="filter-btn" data-filter="drone">Drone Aerial</button>
+        <button class="filter-btn" data-filter="street">Street Photography</button>
       </div>
-
       <!-- Gallery Grid -->
       <div class="gallery-container">
-          <!-- Images will be dynamically inserted here -->
+        <!-- Example: Graduation Portrait -->
+        <div class="gallery-item" data-category="graduation">
+          <img src="images/gallery/graduation1.jpg" alt="Graduation Portrait Example">
+          <div class="gallery-overlay">Graduation Portrait</div>
+        </div>
+        <div class="gallery-item" data-category="graduation">
+          <img src="images/gallery/graduation2.jpg" alt="Graduation Portrait Example">
+          <div class="gallery-overlay">Graduation Portrait</div>
+        </div>
+        <!-- Example: Drone Aerial -->
+        <div class="gallery-item" data-category="drone">
+          <img src="images/gallery/drone1.jpg" alt="Drone Aerial Example">
+          <div class="gallery-overlay">Drone Aerial</div>
+        </div>
+        <div class="gallery-item" data-category="drone">
+          <img src="images/gallery/drone2.jpg" alt="Drone Aerial Example">
+          <div class="gallery-overlay">Drone Aerial</div>
+        </div>
+        <!-- Example: Street Photography -->
+        <div class="gallery-item" data-category="street">
+          <img src="images/gallery/street1.jpg" alt="Street Photography Example">
+          <div class="gallery-overlay">Street Photography</div>
+        </div>
+        <div class="gallery-item" data-category="street">
+          <img src="images/gallery/street2.jpg" alt="Street Photography Example">
+          <div class="gallery-overlay">Street Photography</div>
+        </div>
+        <!-- Add additional gallery items as needed -->
       </div>
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Use your existing footer markup) -->
   <footer>
-      <div class="container">
-          <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-      </div>
+    <div class="container">
+      <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
+    </div>
   </footer>
 
-  <!-- Fancybox for Lightbox Effect -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
-  <!-- Inline JavaScript (if not in gallery.js) for the gallery -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const galleryContainer = document.querySelector(".gallery-container");
-      const filterButtons = document.querySelectorAll(".filter-btn");
+    // JavaScript for Gallery Filtering
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
 
-      if (!galleryContainer) {
-        console.error("Gallery container not found!");
-        return;
-      }
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all filter buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to the clicked button
+          button.classList.add('active');
 
-      fetch("imagePaths.json")
-        .then(response => response.json())
-        .then(images => {
-          galleryContainer.innerHTML = ""; // Clear gallery before loading
-
-          images.forEach(image => {
-            const linkElement = document.createElement("a");
-            linkElement.href = image.src;
-            linkElement.setAttribute("data-fancybox", "gallery");
-            linkElement.setAttribute("data-category", image.category);
-            linkElement.setAttribute("data-caption", image.src.split('/').pop());
-
-            const imgElement = document.createElement("img");
-            imgElement.src = image.src;
-            imgElement.alt = "Gallery Photo";
-            imgElement.loading = "lazy";
-
-            // Log errors if an image fails to load
-            imgElement.onerror = function () {
-              console.error("Image not found:", imgElement.src);
-            };
-
-            linkElement.appendChild(imgElement);
-            galleryContainer.appendChild(linkElement);
+          const filterValue = button.getAttribute('data-filter');
+          galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
           });
-
-          // Initialize Fancybox
-          Fancybox.bind("[data-fancybox]", {});
-
-          // Enable Filtering
-          filterButtons.forEach(button => {
-            button.addEventListener("click", () => {
-              const category = button.dataset.category;
-
-              // Remove active class from buttons
-              filterButtons.forEach(btn => btn.classList.remove("active"));
-              button.classList.add("active");
-
-              // Show/hide images based on category
-              document.querySelectorAll(".gallery-container a").forEach(item => {
-                if (category === "all" || item.getAttribute("data-category") === category) {
-                  item.style.display = "block";
-                } else {
-                  item.style.display = "none";
-                }
-              });
-            });
-          });
-        })
-        .catch(error => console.error("Error loading images:", error));
+        });
+      });
     });
   </script>
-
 </body>
 </html>

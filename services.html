@@ -25,6 +25,15 @@
       background-color: var(--color-primary, #0073e6);
       color: #fff;
     }
+    /* Link for Viewing Work */
+    .view-work-link {
+      color: var(--color-primary, #0073e6);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .view-work-link:hover {
+      text-decoration: underline;
+    }
     /* Responsive table styling for mobile */
     @media (max-width: 768px) {
       .services-table, .services-table thead, .services-table tbody, .services-table th, .services-table td, .services-table tr {
@@ -83,7 +92,7 @@
     <section id="services">
       <div class="container">
         <h2>Our Services</h2>
-        <p>We specialize in capturing unique moments with our tailored photography and videography services. Our offerings include graduation portraits, drone aerial services for roofing inspections and property showcases, as well as authentic street photography.</p>
+        <p>We specialize in capturing unique moments with our tailored photography and videography services. Our offerings include graduation portraits, drone aerial services (for roofing inspections, property showcases, and more), as well as authentic street photography.</p>
         
         <!-- Services & Pricing Table -->
         <table class="services-table">
@@ -95,6 +104,7 @@
             </tr>
           </thead>
           <tbody>
+            <!-- Graduation Portrait Sessions -->
             <tr>
               <td rowspan="2" data-label="Service">Graduation Portrait Sessions</td>
               <td data-label="Package">Basic Session (1–2 hours; edited digital images)</td>
@@ -105,7 +115,11 @@
               <td data-label="Price Range">$400 – $600</td>
             </tr>
             <tr>
-              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Roofing Inspections & Property Surveys)</small></td>
+              <td colspan="3" style="text-align: right;"><a href="gallery.html?filter=graduation" class="view-work-link">View Our Work &raquo;</a></td>
+            </tr>
+            <!-- Drone Aerial Photography (Roofing Inspections & Property Surveys) -->
+            <tr>
+              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Roofing Inspections &amp; Property Surveys)</small></td>
               <td data-label="Package">Basic Roofing Inspection Package</td>
               <td data-label="Price Range">$250 – $350</td>
             </tr>
@@ -114,8 +128,12 @@
               <td data-label="Price Range">$400 – $600</td>
             </tr>
             <tr>
-              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Real Estate & Commercial Showcases)</small></td>
-              <td data-label="Package">Standard Package (aerial photos & video)</td>
+              <td colspan="3" style="text-align: right;"><a href="gallery.html?filter=drone" class="view-work-link">View Our Work &raquo;</a></td>
+            </tr>
+            <!-- Drone Aerial Photography (Real Estate & Commercial Showcases) -->
+            <tr>
+              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Real Estate &amp; Commercial Showcases)</small></td>
+              <td data-label="Package">Standard Package (aerial photos &amp; video)</td>
               <td data-label="Price Range">$300 – $500</td>
             </tr>
             <tr>
@@ -123,7 +141,11 @@
               <td data-label="Price Range">$600 – $800+</td>
             </tr>
             <tr>
-              <td rowspan="2" data-label="Service">Street & Urban Lifestyle Photography</td>
+              <td colspan="3" style="text-align: right;"><a href="gallery.html?filter=drone" class="view-work-link">View Our Work &raquo;</a></td>
+            </tr>
+            <!-- Street & Urban Lifestyle Photography -->
+            <tr>
+              <td rowspan="2" data-label="Service">Street &amp; Urban Lifestyle Photography</td>
               <td data-label="Package">Half-Day Session (2–3 hours)</td>
               <td data-label="Price Range">$200 – $300</td>
             </tr>
@@ -131,6 +153,10 @@
               <td data-label="Package">Full-Day Session (5–6 hours)</td>
               <td data-label="Price Range">$350 – $500</td>
             </tr>
+            <tr>
+              <td colspan="3" style="text-align: right;"><a href="gallery.html?filter=street" class="view-work-link">View Our Work &raquo;</a></td>
+            </tr>
+            <!-- Optional Add-Ons -->
             <tr>
               <td colspan="3"><strong>Optional Add-Ons:</strong> On-Location Travel Fees, Extra Edits/Retouching ($25–$50 per image), Rush Delivery (20–30% additional fee)</td>
             </tr>
@@ -140,7 +166,7 @@
     </section>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (Same footer as other pages) -->
   <footer>
     <div class="container">
       <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
@@ -148,20 +174,18 @@
   </footer>
 
   <script defer src="menuToggle.js"></script>
-  <script defer>
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
       let lastScrollY = window.scrollY;
       const navbar = document.querySelector(".hero-nav");
       const navList = document.querySelector('.nav-list');
       const menuIcon = document.getElementById('menu-icon');
 
-      // Toggle menu open/close
       function toggleMenu() {
         navList.classList.toggle('active');
         menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
       }
 
-      // Hide navbar on scroll down, show on scroll up
       function handleScroll() {
         if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
           navbar.classList.add("hidden-nav");
@@ -171,7 +195,6 @@
         lastScrollY = window.scrollY;
       }
 
-      // Close menu when clicking outside of it
       function closeMenuOnClickOutside(event) {
         if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
           navList.classList.remove("active");

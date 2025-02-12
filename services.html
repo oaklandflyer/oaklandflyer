@@ -1,164 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/OFLogo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the services offered by OaklandFlyer Photography to help you capture your most memorable moments.">
-    <title>Services - OaklandFlyer Photography</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="menuToggle.js"></script>
-    <style>
-        /* Additional styles for the services page */
-        .services-section {
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .services-overview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .service-card {
-            border: 1px solid #ddd;
-            background-color: #fafafa;
-            padding: 15px;
-            text-align: center;
-            border-radius: 4px;
-        }
-        .service-card h3 {
-            margin: 10px 0;
-            color: #222;
-        }
-        /* Booking form styles */
-        .booking-form {
-            max-width: 400px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-        }
-        .booking-form label {
-            margin-top: 10px;
-        }
-        .booking-form input,
-        .booking-form select,
-        .booking-form button {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .booking-form button {
-            background-color: #0073e6;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        .booking-form button:hover {
-            background-color: #005bb5;
-        }
-        /* FAQ styles */
-        details {
-            margin-bottom: 10px;
-        }
-        details summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
-        /* Testimonial styles */
-        blockquote {
-            border-left: 4px solid #0073e6;
-            padding-left: 10px;
-            margin: 20px;
-            font-style: italic;
-        }
-    </style>
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the specialized photography and videography services offered by OaklandFlyer Photography.">
+  <title>Services - OaklandFlyer Photography</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="menuToggle.js"></script>
+  <style>
+    /* Services Section Table Styles */
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .services-table th,
+    .services-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    .services-table th {
+      background-color: var(--color-primary, #0073e6);
+      color: #fff;
+    }
+    /* Responsive table styling for mobile */
+    @media (max-width: 768px) {
+      .services-table, .services-table thead, .services-table tbody, .services-table th, .services-table td, .services-table tr {
+        display: block;
+      }
+      .services-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      .services-table tr {
+        margin: 0 0 1rem 0;
+      }
+      .services-table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+      }
+      .services-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+      }
+    }
+    /* Additional spacing so fixed nav doesn't cover content */
+    .main-content {
+      padding-top: 80px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation (Same header as other sites) -->
-    <div class="hero-nav">
-        <a href="index.html" class="logo-container">
-            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-        </a>
-        <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-        <nav id="navbar">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
-            </ul>
-        </nav>
+  <!-- Navigation (Same header as other pages) -->
+  <div class="hero-nav">
+    <a href="index.html" class="logo-container">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+    </a>
+    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>We specialize in capturing unique moments with our tailored photography and videography services. Our offerings include graduation portraits, drone aerial services for roofing inspections and property showcases, as well as authentic street photography.</p>
+        
+        <!-- Services & Pricing Table -->
+        <table class="services-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Package/Description</th>
+              <th>Price Range</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" data-label="Service">Graduation Portrait Sessions</td>
+              <td data-label="Package">Basic Session (1–2 hours; edited digital images)</td>
+              <td data-label="Price Range">$250 – $350</td>
+            </tr>
+            <tr>
+              <td data-label="Package">Premium Session (additional images & retouching)</td>
+              <td data-label="Price Range">$400 – $600</td>
+            </tr>
+            <tr>
+              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Roofing Inspections & Property Surveys)</small></td>
+              <td data-label="Package">Basic Roofing Inspection Package</td>
+              <td data-label="Price Range">$250 – $350</td>
+            </tr>
+            <tr>
+              <td data-label="Package">Comprehensive Property Survey (video & measurement overlays)</td>
+              <td data-label="Price Range">$400 – $600</td>
+            </tr>
+            <tr>
+              <td rowspan="2" data-label="Service">Drone Aerial Photography<br><small>(Real Estate & Commercial Showcases)</small></td>
+              <td data-label="Package">Standard Package (aerial photos & video)</td>
+              <td data-label="Price Range">$300 – $500</td>
+            </tr>
+            <tr>
+              <td data-label="Package">Extended Package (larger properties/commercial use)</td>
+              <td data-label="Price Range">$600 – $800+</td>
+            </tr>
+            <tr>
+              <td rowspan="2" data-label="Service">Street & Urban Lifestyle Photography</td>
+              <td data-label="Package">Half-Day Session (2–3 hours)</td>
+              <td data-label="Price Range">$200 – $300</td>
+            </tr>
+            <tr>
+              <td data-label="Package">Full-Day Session (5–6 hours)</td>
+              <td data-label="Price Range">$350 – $500</td>
+            </tr>
+            <tr>
+              <td colspan="3"><strong>Optional Add-Ons:</strong> On-Location Travel Fees, Extra Edits/Retouching ($25–$50 per image), Rush Delivery (20–30% additional fee)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
     </div>
+  </footer>
 
-    <!-- Services Overview Section -->
-    <section class="services-section" id="services-overview">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p>Discover the range of services we offer to help you capture and create memorable moments.</p>
-            <div class="services-overview">
-                <div class="service-card">
-                    <h3>Photography Sessions</h3>
-                    <p>Personalized sessions designed to capture your unique style.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Photo Editing</h3>
-                    <p>Expert editing to enhance your images to perfection.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Event Coverage</h3>
-                    <p>Comprehensive coverage that tells the story of your event.</p>
-                </div>
-                <!-- Add more service cards as needed -->
-            </div>
-        </div>
-    </section>
+  <script defer src="menuToggle.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      let lastScrollY = window.scrollY;
+      const navbar = document.querySelector(".hero-nav");
+      const navList = document.querySelector('.nav-list');
+      const menuIcon = document.getElementById('menu-icon');
 
-    <!-- Detailed Service Descriptions Section -->
-    <section class="services-section" id="service-details">
-        <div class="container">
-            <h2>Service Details</h2>
-            <article class="service-detail">
-                <h3>Photography Sessions</h3>
-                <p><strong>Features &amp; Benefits:</strong> Enjoy a fully customized photography session where your vision is our priority.</p>
-                <p><strong>Process:</strong> From consultation to final editing, we ensure a smooth and personalized experience.</p>
-                <p><strong>Examples:</strong> Visit our portfolio for a glimpse of our work.</p>
-            </article>
-            <article class="service-detail">
-                <h3>Photo Editing</h3>
-                <p><strong>Features &amp; Benefits:</strong> Our photo editing service refines every detail of your images, making them publication-ready.</p>
-                <p><strong>Process:</strong> Submit your photos and let our experts handle color correction, retouching, and more.</p>
-                <p><strong>Examples:</strong> Check out before-and-after examples in our gallery.</p>
-            </article>
-            <article class="service-detail">
-                <h3>Event Coverage</h3>
-                <p><strong>Features &amp; Benefits:</strong> Capture every important moment of your event with our dedicated coverage services.</p>
-                <p><strong>Process:</strong> We plan, shoot, and deliver high-quality images that tell your story.</p>
-                <p><strong>Examples:</strong> Browse our event galleries to see our comprehensive work.</p>
-            </article>
-        </div>
-    </section>
+      // Toggle menu open/close
+      function toggleMenu() {
+        navList.classList.toggle('active');
+        menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
+      }
 
-    <!-- Booking Section -->
-    <section class="services-section" id="booking">
-        <div class="container">
-            <h2>Book Our Services</h2>
-            <p>Ready to work with us? Follow these simple steps to book your service:</p>
-            <ol>
-                <li>Fill out the booking form with your details.</li>
-                <li>We will contact you to discuss your requirements.</li>
-                <li>Confirm your appointment and let’s get started!</li>
-            </ol>
-            <form class="booking-form" id="booking-form" action="/submit-booking" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</l
+      // Hide navbar on scroll down, show on scroll up
+      function handleScroll() {
+        if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
+          navbar.classList.add("hidden-nav");
+        } else {
+          navbar.classList.remove("hidden-nav");
+        }
+        lastScrollY = window.scrollY;
+      }
+
+      // Close menu when clicking outside of it
+      function closeMenuOnClickOutside(event) {
+        if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
+          navList.classList.remove("active");
+          menuIcon.innerHTML = "☰";
+        }
+      }
+
+      menuIcon.addEventListener("click", toggleMenu);
+      window.addEventListener("scroll", handleScroll);
+      document.addEventListener("click", closeMenuOnClickOutside);
+    });
+  </script>
+</body>
+</html>

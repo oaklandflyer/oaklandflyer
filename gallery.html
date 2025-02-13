@@ -8,7 +8,7 @@
   <script defer src="menuToggle.js"></script>
   <style>
     /* Gallery Section */
-    #gallery {
+    #gallery, #watermarked-gallery {
       padding: 4rem 2rem;
       padding-top: 80px;
       background-color: #f0f0f0;
@@ -132,7 +132,7 @@
     </nav>
   </div>
 
-  <!-- Gallery Section -->
+  <!-- Main Gallery Section -->
   <section id="gallery">
     <div class="container">
       <h2 class="section-title">Our Work Gallery</h2>
@@ -148,7 +148,7 @@
         <button class="filter-btn" data-filter="landscapes">Landscapes</button>
         <button class="filter-btn" data-filter="animals">Animals</button>
       </div>
-      <!-- Gallery Grid -->
+      <!-- Static Gallery Grid -->
       <div class="gallery-container">
         <!-- Example: Portraits -->
         <div class="gallery-item" data-category="Portraits">
@@ -198,66 +198,102 @@
       </div>
     </div>
   </section>
-  <!-- Gallery Grid -->
-<div class="gallery-container" id="galleryContainer">
-  <!-- Watermarked Images will be inserted here dynamically -->
-</div>
 
-<script>
-  // List of Watermarked Images
-  const watermarkedImages = [
-    {"src": "images/gallery/WatermarkedImages/40thStBridge.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Amaryllis.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Anthurium.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralfromHighway.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralofLearning-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralofLearning-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralofLearning-3.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralTopDown-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathedralTopDown-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyandDrone.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyandFlag.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyandHeinzChapel.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyandPanther.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyandSpiral.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyCMU.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyFog.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyfromFalk-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyfromFalk-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyfromFalk-3.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/CathyHaloTrial.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Chapel.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Dippy-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Downtown279.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownFortPitt.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Downtownfrom279-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Downtownfrom279-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownHighway.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSide-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSide-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSide-3.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSide-4.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSide-5.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSideDrone.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/DowntownSidePainting.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/FifthAve.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/FifthAveSnowy.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/Florist-Kalanchoe.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/ForbesfromBridge.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/GEO-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/GlobeMaster.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/HeinzChapel.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/HeinzField-1.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/HeinzField-2.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/HeinzField-3.jpg", "category": "all"},
-    {"src": "images/gallery/WatermarkedImages/HeinzField-4.jpg", "category": "all"}
-  ];
+  <!-- Watermarked Images Section -->
+  <section id="watermarked-gallery">
+    <div class="container">
+      <h2 class="section-title">Watermarked Images</h2>
+      <!-- This container will be populated dynamically -->
+      <div class="gallery-container" id="galleryContainer">
+        <!-- Watermarked Images will be inserted here dynamically -->
+      </div>
+    </div>
+  </section>
 
-  // Load images on page load
-  document.addEventListener("DOMContentLoaded", loadGalleryImages);
-</script>
+  <!-- Dynamic Watermarked Images Script -->
+  <script>
+    // List of Watermarked Images
+    const watermarkedImages = [
+      {"src": "images/gallery/WatermarkedImages/40thStBridge.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Amaryllis.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Anthurium.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralfromHighway.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-3.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralTopDown-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathedralTopDown-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyandDrone.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyandFlag.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyandHeinzChapel.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyandPanther.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyandSpiral.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyCMU.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyFog.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-3.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/CathyHaloTrial.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Chapel.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Dippy-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Downtown279.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownFortPitt.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Downtownfrom279-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Downtownfrom279-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownHighway.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSide-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSide-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSide-3.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSide-4.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSide-5.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSideDrone.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/DowntownSidePainting.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/FifthAve.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/FifthAveSnowy.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/Florist-Kalanchoe.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/ForbesfromBridge.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/GEO-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/GlobeMaster.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/HeinzChapel.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/HeinzField-1.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/HeinzField-2.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/HeinzField-3.jpg", "category": "all"},
+      {"src": "images/gallery/WatermarkedImages/HeinzField-4.jpg", "category": "all"}
+    ];
+
+    // Function to load images dynamically into the galleryContainer
+    function loadGalleryImages() {
+      const galleryContainer = document.getElementById("galleryContainer");
+      watermarkedImages.forEach(image => {
+        const galleryItem = document.createElement("div");
+        galleryItem.classList.add("gallery-item");
+        galleryItem.setAttribute("data-category", image.category);
+  
+        const img = document.createElement("img");
+        img.src = image.src;
+        img.alt = "Watermarked Image";
+  
+        const overlay = document.createElement("div");
+        overlay.classList.add("gallery-overlay");
+        overlay.innerText = "Watermarked";
+  
+        galleryItem.appendChild(img);
+        galleryItem.appendChild(overlay);
+        galleryContainer.appendChild(galleryItem);
+  
+        // Add click event for lightbox functionality
+        img.addEventListener('click', function() {
+          document.getElementById('lightbox-img').src = this.src;
+          document.getElementById('lightbox').style.display = 'flex';
+        });
+      });
+    }
+  
+    // Load the watermarked images once the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", loadGalleryImages);
+  </script>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -265,46 +301,46 @@
     <img id="lightbox-img" src="" alt="Expanded View">
   </div>
 
-  <!-- Scripts -->
+  <!-- Additional Scripts -->
   <script>
-    // Lightbox functionality
+    // Lightbox functionality for static gallery items
     document.querySelectorAll('.gallery-item img').forEach(img => {
       img.addEventListener('click', function() {
         document.getElementById('lightbox-img').src = this.src;
         document.getElementById('lightbox').style.display = 'flex';
       });
     });
-
+    
     document.querySelector('.lightbox-close').addEventListener('click', function() {
       document.getElementById('lightbox').style.display = 'none';
     });
-
+    
     // Optionally close lightbox when clicking outside the image
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target.id === 'lightbox') {
         this.style.display = 'none';
       }
     });
-
+    
     // Disable right-click on images
     document.addEventListener("contextmenu", function(event) {
       if (event.target.tagName === "IMG") {
         event.preventDefault();
       }
     });
-
+    
     // Gallery Filtering
     document.addEventListener('DOMContentLoaded', function() {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const galleryItems = document.querySelectorAll('.gallery-item');
-
+    
       filterButtons.forEach(button => {
         button.addEventListener('click', () => {
           // Remove active class from all filter buttons
           filterButtons.forEach(btn => btn.classList.remove('active'));
           // Add active class to the clicked button
           button.classList.add('active');
-
+    
           const filterValue = button.getAttribute('data-filter');
           galleryItems.forEach(item => {
             if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {

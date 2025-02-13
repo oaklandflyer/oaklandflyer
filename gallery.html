@@ -7,12 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="menuToggle.js"></script>
   <style>
-    /* ------------------------------------------------ */
-    /* Gallery Section Redesign                       */
-    /* ------------------------------------------------ */
+    /* Gallery Section */
     #gallery {
       padding: 4rem 2rem;
-      padding-top: 80px; /* Ensure content isn’t hidden behind fixed header */
+      padding-top: 80px;
       background-color: #f0f0f0;
     }
     .section-title {
@@ -21,11 +19,26 @@
       text-align: center;
       color: #333;
     }
-    .gallery-description {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      color: #555;
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
     /* Filter Buttons */
     .gallery-filters {
@@ -84,6 +97,37 @@
     .gallery-item:hover .gallery-overlay {
       opacity: 1;
     }
+        /* Lightbox Styles */
+        .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Disable Right-Click on Images */
+    img {
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -130,7 +174,7 @@
           <img src="images/gallery/portraits/Fadi-01.jpg" alt="Portrait Example">
           <div class="gallery-overlay">Portrait</div>
         </div>
-        <div class="gallery-item" data-category="graduation">
+        <div class="gallery-item" data-category="Portraits">
           <img src="images/gallery/portraits/Fadi-03.jpg" alt="Portrait Example">
           <div class="gallery-overlay">Portrait</div>
         </div>
@@ -173,7 +217,32 @@
       </div>
     </div>
   </section>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded View">
+  </div>
 
+  <script>
+    // Lightbox functionality
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', function() {
+        document.getElementById('lightbox-img').src = this.src;
+        document.getElementById('lightbox').style.display = 'flex';
+      });
+    });
+
+    document.querySelector('.lightbox-close').addEventListener('click', function() {
+      document.getElementById('lightbox').style.display = 'none';
+    });
+
+    // Disable right-click on images
+    document.addEventListener("contextmenu", function(event) {
+      if (event.target.tagName === "IMG") {
+        event.preventDefault();
+      }
+    });
+  </script>
   <!-- Footer (Use your existing footer markup) -->
   <footer>
     <div class="container">

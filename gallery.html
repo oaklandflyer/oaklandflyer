@@ -7,119 +7,77 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="menuToggle.js"></script>
   <style>
-    /* Base Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    /* Navigation */
-    .hero-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #333;
-      padding: 0.5rem 1rem;
-    }
-    .logo {
-      height: 50px;
-    }
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-list a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .nav-list a:hover {
-      text-decoration: underline;
-    }
-    /* Gallery Section */
+    /* ------------------------------ */
+    /* Basic Gallery & Lightbox Styles */
+    /* ------------------------------ */
     #gallery {
       padding: 4rem 2rem;
       padding-top: 80px;
-      background-color: #f0f0f0;
+      padding-bottom: 10px;
+      text-align: center;
+      background-color: var(--color-dark);
     }
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      text-align: center;
-      color: #333;
+      color: var(--color-light);
     }
     .gallery-description {
-      text-align: center;
+      color: var(--color-light);
       max-width: 600px;
       margin: 0 auto 2rem;
-      color: #555;
     }
-    /* Filter Buttons */
     .gallery-filters {
       display: flex;
       justify-content: center;
-      margin-bottom: 2rem;
+      align-items: center;
       gap: 10px;
-      flex-wrap: wrap;
+      padding: 10px;
+      white-space: nowrap;
+      overflow-x: auto;
     }
     .filter-btn {
-      padding: 10px 20px;
-      background-color: #0073e6;
-      color: #fff;
+      flex: 0 0 auto;
+      padding: 10px 15px;
+      font-size: 1rem;
       border: none;
-      border-radius: 4px;
+      background-color: #eee;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      white-space: nowrap;
+      border-radius: 4px;
+      transition: background var(--transition-fast), transform var(--transition-fast);
     }
-    .filter-btn.active,
-    .filter-btn:hover {
-      background-color: #005bb5;
+    .filter-btn:hover,
+    .filter-btn:focus {
+      background-color: #ddd;
+      transform: scale(1.05);
     }
-    /* Gallery Grid */
+    .filter-btn.active {
+      background-color: #ccc;
+      transform: scale(1.05);
+    }
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      justify-items: center;
+      padding: 10px;
+      justify-content: center;
     }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .gallery-item img {
+    .gallery-container img {
       width: 100%;
       height: auto;
-      display: block;
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     }
-    .gallery-item:hover img {
+    .gallery-container img:hover {
       transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    /* Optional overlay for hover effect (no text) */
-    .gallery-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 10px;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    @media (max-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
     }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    /* Lightbox Styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -127,7 +85,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0,0,0,0.8);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -145,22 +103,16 @@
       color: white;
       cursor: pointer;
     }
-    /* Footer */
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation: Matches provided CSS layout -->
   <div class="hero-nav">
-    <a href="index.html" class="logo-container">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-    </a>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
+      </a>
+    </div>
     <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
     <nav id="navbar">
       <ul class="nav-list">
@@ -180,10 +132,7 @@
   <section id="gallery">
     <div class="container">
       <h2 class="section-title">OaklandFlyer LLC Portfolio</h2>
-      <p class="gallery-description">
-        Explore our images from various categories. Use the filters below to narrow your search.
-      </p>
-      <!-- Filter Buttons -->
+      <p class="gallery-description">Explore our images from various categories. Use the filters below to narrow your search.</p>
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="Animals">Animals</button>
@@ -196,7 +145,6 @@
         <button class="filter-btn" data-filter="People">People</button>
         <button class="filter-btn" data-filter="Pittsburgh">Pittsburgh</button>
       </div>
-      <!-- Gallery Container -->
       <div class="gallery-container" id="galleryContainer"></div>
     </div>
   </section>
@@ -204,13 +152,12 @@
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Expanded View" />
+    <img id="lightbox-img" src="" alt="Expanded View">
   </div>
 
   <!-- Scripts -->
   <script>
-    // Define watermarked images array with case‑sensitive paths and categories
-
+    // Watermarked images with case-sensitive paths & matching category names
     const watermarkedImages = [
       // Animals
       { src: "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg", category: "Animals" },
@@ -320,11 +267,11 @@
       { src: "images/gallery/WatermarkedImages/Oakland/ThroughtheBuildings.jpg", category: "Oakland" },
       { src: "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg", category: "Oakland" },
       { src: "images/gallery/WatermarkedImages/Oakland/WPU.jpg", category: "Oakland" },
-
+  
       // Other
       { src: "images/gallery/WatermarkedImages/Other/Piano-2.jpg", category: "Other" },
       { src: "images/gallery/WatermarkedImages/Other/Piano.jpg", category: "Other" },
-
+  
       // People
       { src: "images/gallery/WatermarkedImages/People/Bear-03.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Bear-09.jpg", category: "People" },
@@ -332,7 +279,7 @@
       { src: "images/gallery/WatermarkedImages/People/Bear-18.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Bear-20.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Rob.jpg", category: "People" },
-
+  
       // Pittsburgh
       { src: "images/gallery/WatermarkedImages/Pittsburgh/40thStBridge.jpg", category: "Pittsburgh" },
       { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtown279.jpg", category: "Pittsburgh" },
@@ -362,38 +309,38 @@
       { src: "images/gallery/WatermarkedImages/Pittsburgh/StPauls-2.jpg", category: "Pittsburgh" },
       { src: "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg", category: "Pittsburgh" }
     ];
-
-    // Function to load images into the gallery container
+  
+    // Load images into the gallery container
     function loadGalleryImages() {
       const galleryContainer = document.getElementById("galleryContainer");
       watermarkedImages.forEach(image => {
         const galleryItem = document.createElement("div");
         galleryItem.classList.add("gallery-item");
         galleryItem.setAttribute("data-category", image.category);
-
+  
         const img = document.createElement("img");
         img.src = image.src;
-        img.alt = ""; // No alt text if you prefer
-
-        // Create overlay for hover effect (without any text)
+        img.alt = "";
+  
+        // Create an overlay for hover effect without text
         const overlay = document.createElement("div");
         overlay.classList.add("gallery-overlay");
-        overlay.innerText = ""; // No text on hover
-
+        overlay.innerText = "";
+  
         galleryItem.appendChild(img);
         galleryItem.appendChild(overlay);
         galleryContainer.appendChild(galleryItem);
-
-        // Lightbox event
+  
+        // Lightbox functionality
         img.addEventListener("click", function () {
           document.getElementById("lightbox-img").src = this.src;
           document.getElementById("lightbox").style.display = "flex";
         });
       });
     }
-
+  
     document.addEventListener("DOMContentLoaded", loadGalleryImages);
-
+  
     // Lightbox Controls
     const lightbox = document.getElementById("lightbox");
     document.querySelector(".lightbox-close").addEventListener("click", () => {
@@ -404,25 +351,23 @@
         lightbox.style.display = "none";
       }
     });
-
+  
     // Disable right-click on images
     document.addEventListener("contextmenu", (event) => {
       if (event.target.tagName === "IMG") {
         event.preventDefault();
       }
     });
-
+  
     // Filtering Logic
     document.addEventListener("DOMContentLoaded", () => {
       const filterButtons = document.querySelectorAll(".filter-btn");
       const galleryItems = document.getElementById("galleryContainer").children;
       filterButtons.forEach(button => {
         button.addEventListener("click", () => {
-          // Remove active class from all buttons
           Array.from(filterButtons).forEach(btn => btn.classList.remove("active"));
-          // Add active class to clicked button
           button.classList.add("active");
-
+  
           const filterValue = button.getAttribute("data-filter");
           for (let item of galleryItems) {
             const itemCategory = item.getAttribute("data-category");
@@ -432,7 +377,7 @@
       });
     });
   </script>
-
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>

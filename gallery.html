@@ -159,18 +159,21 @@
   <!-- Navigation -->
   <div class="hero-nav">
     <a href="index.html" class="logo-container">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo" />
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
     </a>
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="videos.html">Videos</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
-    </ul>
+    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
+    <nav id="navbar">
+      <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
+            </ul>
+    </nav>
   </div>
 
   <!-- Gallery Section -->
@@ -184,14 +187,14 @@
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="Animals">Animals</button>
-        <button class="filter-btn" data-filter="chicago">Chicago</button>
-        <button class="filter-btn" data-filter="flowers">Flowers</button>
+        <button class="filter-btn" data-filter="Chicago">Chicago</button>
+        <button class="filter-btn" data-filter="Flowers">Flowers</button>
         <button class="filter-btn" data-filter="lego">LEGO</button>
-        <button class="filter-btn" data-filter="london">London</button>
-        <button class="filter-btn" data-filter="oakland">Oakland</button>
-        <button class="filter-btn" data-filter="other">Other</button>
-        <button class="filter-btn" data-filter="people">People</button>
-        <button class="filter-btn" data-filter="pittsburgh">Pittsburgh</button>
+        <button class="filter-btn" data-filter="London">London</button>
+        <button class="filter-btn" data-filter="Oakland">Oakland</button>
+        <button class="filter-btn" data-filter="Other">Other</button>
+        <button class="filter-btn" data-filter="People">People</button>
+        <button class="filter-btn" data-filter="Pittsburgh">Pittsburgh</button>
       </div>
       <!-- Gallery Container -->
       <div class="gallery-container" id="galleryContainer"></div>
@@ -210,17 +213,17 @@
 
     const watermarkedImages = [
       // Animals
-      { src: "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Hudson-3.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Hudson.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Korra-2.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Korra-3.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Korra.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Nala-2.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Nala-3.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Nala.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Swan-06.jpg", category: "animals" },
-      { src: "images/gallery/WatermarkedImages/animals/Swan-2.jpg", category: "animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Hudson-3.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Hudson.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Korra-2.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Korra-3.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Korra.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Nala-2.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Nala-3.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Nala.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Swan-06.jpg", category: "Animals" },
+      { src: "images/gallery/WatermarkedImages/Animals/Swan-2.jpg", category: "Animals" },
 
       // Chicago (no images provided yet)
       // { src: "images/gallery/WatermarkedImages/chicago/filename.jpg", category: "chicago" },

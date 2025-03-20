@@ -8,7 +8,7 @@
   <script defer src="menuToggle.js"></script>
   <style>
     /* Gallery Section */
-    #gallery, #watermarked-gallery {
+    #gallery {
       padding: 4rem 2rem;
       padding-top: 80px;
       background-color: #f0f0f0;
@@ -123,9 +123,9 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="videos.html">Videos</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
       </ul>
@@ -135,165 +135,69 @@
   <!-- Main Gallery Section -->
   <section id="gallery">
     <div class="container">
-      <h2 class="section-title">Our Work Gallery</h2>
+      <h2 class="section-title">Gallery by Location and Subject</h2>
       <p class="gallery-description">
-        Browse through examples of our services. Use the filters to view specific types of work, including Portraits, Drone Aerials, Street Photography, and more.
+        Browse our photography organized by location and subject. Use the filters below to view images from London, Pittsburgh, Oakland, People, or Animals.
       </p>
       <!-- Filter Buttons -->
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Portraits">Portraits</button>
-        <button class="filter-btn" data-filter="drone">Drone Aerial</button>
-        <button class="filter-btn" data-filter="street">Street Photography</button>
-        <button class="filter-btn" data-filter="landscapes">Landscapes</button>
-        <button class="filter-btn" data-filter="animals">Animals</button>
+        <button class="filter-btn" data-filter="London">London</button>
+        <button class="filter-btn" data-filter="Pittsburgh">Pittsburgh</button>
+        <button class="filter-btn" data-filter="Oakland">Oakland</button>
+        <button class="filter-btn" data-filter="People">People</button>
+        <button class="filter-btn" data-filter="Animals">Animals</button>
       </div>
-      <!-- Static Gallery Grid -->
+      <!-- Gallery Grid -->
       <div class="gallery-container">
-        <!-- Example: Portraits -->
-        <div class="gallery-item" data-category="Portraits">
-          <img src="images/gallery/portraits/Fadi-01.jpg" alt="Portrait Example">
-          <div class="gallery-overlay">Portrait</div>
+        <!-- London Images -->
+        <div class="gallery-item" data-category="London">
+          <img src="images/gallery/london/london1.jpg" alt="London Image 1">
+          <div class="gallery-overlay">London</div>
         </div>
-        <div class="gallery-item" data-category="Portraits">
-          <img src="images/gallery/portraits/Fadi-03.jpg" alt="Portrait Example">
-          <div class="gallery-overlay">Portrait</div>
+        <div class="gallery-item" data-category="London">
+          <img src="images/gallery/london/london2.jpg" alt="London Image 2">
+          <div class="gallery-overlay">London</div>
         </div>
-        <!-- Example: Drone Aerial -->
-        <div class="gallery-item" data-category="drone">
-          <img src="images/gallery/drone/ThePoint.jpg" alt="Drone Aerial Example">
-          <div class="gallery-overlay">Drone Aerial</div>
+        <!-- Pittsburgh Images -->
+        <div class="gallery-item" data-category="Pittsburgh">
+          <img src="images/gallery/pittsburgh/pittsburgh1.jpg" alt="Pittsburgh Image 1">
+          <div class="gallery-overlay">Pittsburgh</div>
         </div>
-        <div class="gallery-item" data-category="drone">
-          <img src="images/gallery/drone/DowntownSideDrone.jpg" alt="Drone Aerial Example">
-          <div class="gallery-overlay">Drone Aerial</div>
+        <div class="gallery-item" data-category="Pittsburgh">
+          <img src="images/gallery/pittsburgh/pittsburgh2.jpg" alt="Pittsburgh Image 2">
+          <div class="gallery-overlay">Pittsburgh</div>
         </div>
-        <!-- Example: Street Photography -->
-        <div class="gallery-item" data-category="street">
-          <img src="images/gallery/street/PittBadge.jpg" alt="Street Photography Example">
-          <div class="gallery-overlay">Street Photography</div>
+        <!-- Oakland Images -->
+        <div class="gallery-item" data-category="Oakland">
+          <img src="images/gallery/oakland/oakland1.jpg" alt="Oakland Image 1">
+          <div class="gallery-overlay">Oakland</div>
         </div>
-        <div class="gallery-item" data-category="street">
-          <img src="images/gallery/street/CathyandFlag.jpg" alt="Street Photography Example">
-          <div class="gallery-overlay">Street Photography</div>
+        <div class="gallery-item" data-category="Oakland">
+          <img src="images/gallery/oakland/oakland2.jpg" alt="Oakland Image 2">
+          <div class="gallery-overlay">Oakland</div>
         </div>
-        <!-- Example: Landscapes -->
-        <div class="gallery-item" data-category="landscapes">
-          <img src="images/gallery/landscapes/landscape1.jpg" alt="Landscape Example">
-          <div class="gallery-overlay">Landscape</div>
+        <!-- People Images -->
+        <div class="gallery-item" data-category="People">
+          <img src="images/gallery/people/people1.jpg" alt="People Image 1">
+          <div class="gallery-overlay">People</div>
         </div>
-        <div class="gallery-item" data-category="landscapes">
-          <img src="images/gallery/landscapes/landscape2.jpg" alt="Landscape Example">
-          <div class="gallery-overlay">Landscape</div>
+        <div class="gallery-item" data-category="People">
+          <img src="images/gallery/people/people2.jpg" alt="People Image 2">
+          <div class="gallery-overlay">People</div>
         </div>
-        <!-- Example: Animals -->
-        <div class="gallery-item" data-category="animals">
-          <img src="images/gallery/animals/MussoDogs-1.jpg" alt="Animal Example">
-          <div class="gallery-overlay">Husky</div>
+        <!-- Animals Images -->
+        <div class="gallery-item" data-category="Animals">
+          <img src="images/gallery/animals/animals1.jpg" alt="Animal Image 1">
+          <div class="gallery-overlay">Animals</div>
         </div>
-        <div class="gallery-item" data-category="animals">
-          <img src="images/gallery/animals/MussoDogs-2.jpg" alt="Animal Example">
-          <div class="gallery-overlay">Husky</div>
+        <div class="gallery-item" data-category="Animals">
+          <img src="images/gallery/animals/animals2.jpg" alt="Animal Image 2">
+          <div class="gallery-overlay">Animals</div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Watermarked Images Section -->
-  <section id="watermarked-gallery">
-    <div class="container">
-      <h2 class="section-title">Other Images</h2>
-      <!-- This container will be populated dynamically -->
-      <div class="gallery-container" id="galleryContainer">
-        <!-- Watermarked Images will be inserted here dynamically -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Dynamic Watermarked Images Script -->
-  <script>
-    // List of Watermarked Images
-    const watermarkedImages = [
-      {"src": "images/gallery/WatermarkedImages/40thStBridge.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Amaryllis.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Anthurium.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralfromHighway.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralofLearning-3.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralTopDown-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathedralTopDown-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyandDrone.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyandFlag.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyandHeinzChapel.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyandPanther.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyandSpiral.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyCMU.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyFog.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyfromFalk-3.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/CathyHaloTrial.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Chapel.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Dippy-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Downtown279.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownFortPitt.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Downtownfrom279-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Downtownfrom279-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownHighway.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSide-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSide-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSide-3.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSide-4.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSide-5.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSideDrone.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/DowntownSidePainting.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/FifthAve.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/FifthAveSnowy.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/Florist-Kalanchoe.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/ForbesfromBridge.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/GEO-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/GlobeMaster.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/HeinzChapel.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/HeinzField-1.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/HeinzField-2.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/HeinzField-3.jpg", "category": "all"},
-      {"src": "images/gallery/WatermarkedImages/HeinzField-4.jpg", "category": "all"}
-    ];
-
-    // Function to load images dynamically into the galleryContainer
-    function loadGalleryImages() {
-      const galleryContainer = document.getElementById("galleryContainer");
-      watermarkedImages.forEach(image => {
-        const galleryItem = document.createElement("div");
-        galleryItem.classList.add("gallery-item");
-        galleryItem.setAttribute("data-category", image.category);
-  
-        const img = document.createElement("img");
-        img.src = image.src;
-        img.alt = "Watermarked Image";
-  
-        const overlay = document.createElement("div");
-        overlay.classList.add("gallery-overlay");
-        overlay.innerText = "Watermarked";
-  
-        galleryItem.appendChild(img);
-        galleryItem.appendChild(overlay);
-        galleryContainer.appendChild(galleryItem);
-  
-        // Add click event for lightbox functionality
-        img.addEventListener('click', function() {
-          document.getElementById('lightbox-img').src = this.src;
-          document.getElementById('lightbox').style.display = 'flex';
-        });
-      });
-    }
-  
-    // Load the watermarked images once the DOM is fully loaded
-    document.addEventListener("DOMContentLoaded", loadGalleryImages);
-  </script>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -301,9 +205,9 @@
     <img id="lightbox-img" src="" alt="Expanded View">
   </div>
 
-  <!-- Additional Scripts -->
+  <!-- Scripts -->
   <script>
-    // Lightbox functionality for static gallery items
+    // Lightbox functionality for gallery items
     document.querySelectorAll('.gallery-item img').forEach(img => {
       img.addEventListener('click', function() {
         document.getElementById('lightbox-img').src = this.src;
@@ -315,7 +219,7 @@
       document.getElementById('lightbox').style.display = 'none';
     });
     
-    // Optionally close lightbox when clicking outside the image
+    // Close lightbox when clicking outside the image
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target.id === 'lightbox') {
         this.style.display = 'none';

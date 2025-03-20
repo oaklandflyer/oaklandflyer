@@ -104,13 +104,13 @@
     .gallery-item:hover img {
       transform: scale(1.05);
     }
+    /* Optional overlay for hover effect (no text) */
     .gallery-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
+      background: rgba(0, 0, 0, 0.2);
       padding: 10px;
       text-align: center;
       opacity: 0;
@@ -164,15 +164,15 @@
     <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
     <nav id="navbar">
       <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
-            </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
+      </ul>
     </nav>
   </div>
 
@@ -189,7 +189,7 @@
         <button class="filter-btn" data-filter="Animals">Animals</button>
         <button class="filter-btn" data-filter="Chicago">Chicago</button>
         <button class="filter-btn" data-filter="Flowers">Flowers</button>
-        <button class="filter-btn" data-filter="lego">LEGO</button>
+        <button class="filter-btn" data-filter="LEGO">LEGO</button>
         <button class="filter-btn" data-filter="London">London</button>
         <button class="filter-btn" data-filter="Oakland">Oakland</button>
         <button class="filter-btn" data-filter="Other">Other</button>
@@ -209,7 +209,7 @@
 
   <!-- Scripts -->
   <script>
-    // Define watermarked images array with your provided filenames
+    // Define watermarked images array with case‑sensitive paths and categories
 
     const watermarkedImages = [
       // Animals
@@ -226,142 +226,141 @@
       { src: "images/gallery/WatermarkedImages/Animals/Swan-2.jpg", category: "Animals" },
 
       // Chicago (no images provided yet)
-      // { src: "images/gallery/WatermarkedImages/chicago/filename.jpg", category: "chicago" },
 
       // Flowers
-      { src: "images/gallery/WatermarkedImages/flowers/Florist-Kalanchoe.jpg", category: "flowers" },
-      { src: "images/gallery/WatermarkedImages/flowers/Anthurium.jpg", category: "flowers" },
-      { src: "images/gallery/WatermarkedImages/flowers/Amaryllis.jpg", category: "flowers" },
+      { src: "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg", category: "Flowers" },
+      { src: "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg", category: "Flowers" },
+      { src: "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg", category: "Flowers" },
 
       // LEGO
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-5.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg", category: "lego" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-7.jpg", category: "lego" },
+      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-5.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg", category: "LEGO" },
+      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-7.jpg", category: "LEGO" },
 
       // London
-      { src: "images/gallery/WatermarkedImages/london/AlbertMemorial.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/BAA380.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/BA_A380-2.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/BA_A380-3.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/BigBen-3.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/BlitzMemorial.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/Duck.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/HMSBelfast-2.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/LondonEye-2.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/LondonEye.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/NorthGreenwich.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/Oxford-05.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/Oxford-06.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/PhysicalEnergyStatue.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/PlumBlossom.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/PumpHouse-4.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TheRoyalHouseguards.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TheShard-2.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TheShard-4.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TheShard-5.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TowerBridgeBlitz.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/TowerBridgeBus.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/VirginAtlantic-2.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/Westminster.jpg", category: "london" },
-      { src: "images/gallery/WatermarkedImages/london/WestminsterBridge-2.jpg", category: "london" },
+      { src: "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/BAA380.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/BA_A380-2.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/BA_A380-3.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/BigBen-3.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/BlitzMemorial.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/Duck.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/HMSBelfast-2.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/LondonEye-2.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/LondonEye.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/NorthGreenwich.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/Oxford-05.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/Oxford-06.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/PhysicalEnergyStatue.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/PlumBlossom.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/PumpHouse-4.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TheRoyalHouseguards.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TheShard-2.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TheShard-4.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TheShard-5.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/TowerBridgeBus.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/VirginAtlantic-2.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/Westminster.jpg", category: "London" },
+      { src: "images/gallery/WatermarkedImages/London/WestminsterBridge-2.jpg", category: "London" },
 
       // Oakland
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralfromHighway.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralofLearning-1.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralofLearning-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralofLearning-3.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralTopDown-1.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathedralTopDown-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyandDrone.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyandFlag.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyandHeinzChapel.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyandPanther.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyandSpiral.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyCMU.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyFog.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyfromFalk-1.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyfromFalk-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyfromFalk-3.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/CathyHaloTrial.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/Chapel.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/Dippy-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/FifthAve.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/FifthAveSnowy.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/ForbesfromBridge.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/GEO-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/GlobeMaster.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/HeinzChapel.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/HeinzSpiral.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/OaklandDrone-1-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/OaklandDrone-2-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/OCLotShot-1-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/OCLotShot-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PantherHall.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PantherHead-1.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PantherHead-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PantherHeadExposure.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PantherStatue.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PittBadge.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PittScript.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/PittShield.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-1.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-2.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-3.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-4.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-5.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailors-6.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/SoldiersandSailorsHead.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/ThroughtheBuildings.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/WebsterHall.jpg", category: "oakland" },
-      { src: "images/gallery/WatermarkedImages/oakland/WPU.jpg", category: "oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralfromHighway.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-3.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-1.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyandDrone.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyandFlag.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyandHeinzChapel.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyandPanther.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyandSpiral.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyCMU.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyFog.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-1.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-3.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/CathyHaloTrial.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/Chapel.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/Dippy-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/FifthAve.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/FifthAveSnowy.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/ForbesfromBridge.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/GEO-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/GlobeMaster.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/HeinzChapel.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/HeinzSpiral.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/OaklandDrone-1-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/OaklandDrone-2-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/OCLotShot-1-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/OCLotShot-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PantherHall.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PantherHead-1.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PantherHead-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PantherHeadExposure.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PantherStatue.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PittBadge.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PittScript.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/PittShield.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-1.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-2.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-3.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-4.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-5.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-6.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailorsHead.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/ThroughtheBuildings.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg", category: "Oakland" },
+      { src: "images/gallery/WatermarkedImages/Oakland/WPU.jpg", category: "Oakland" },
 
       // Other
-      { src: "images/gallery/WatermarkedImages/other/Piano-2.jpg", category: "other" },
-      { src: "images/gallery/WatermarkedImages/other/Piano.jpg", category: "other" },
+      { src: "images/gallery/WatermarkedImages/Other/Piano-2.jpg", category: "Other" },
+      { src: "images/gallery/WatermarkedImages/Other/Piano.jpg", category: "Other" },
 
       // People
-      { src: "images/gallery/WatermarkedImages/people/Bear-03.jpg", category: "people" },
-      { src: "images/gallery/WatermarkedImages/people/Bear-09.jpg", category: "people" },
-      { src: "images/gallery/WatermarkedImages/people/Bear-10.jpg", category: "people" },
-      { src: "images/gallery/WatermarkedImages/people/Bear-18.jpg", category: "people" },
-      { src: "images/gallery/WatermarkedImages/people/Bear-20.jpg", category: "people" },
-      { src: "images/gallery/WatermarkedImages/people/Rob.jpg", category: "people" },
+      { src: "images/gallery/WatermarkedImages/People/Bear-03.jpg", category: "People" },
+      { src: "images/gallery/WatermarkedImages/People/Bear-09.jpg", category: "People" },
+      { src: "images/gallery/WatermarkedImages/People/Bear-10.jpg", category: "People" },
+      { src: "images/gallery/WatermarkedImages/People/Bear-18.jpg", category: "People" },
+      { src: "images/gallery/WatermarkedImages/People/Bear-20.jpg", category: "People" },
+      { src: "images/gallery/WatermarkedImages/People/Rob.jpg", category: "People" },
 
       // Pittsburgh
-      { src: "images/gallery/WatermarkedImages/pittsburgh/40thStBridge.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/Downtown279.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownFortPitt.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/Downtownfrom279-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/Downtownfrom279-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownGoldGarage-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownGoldGarage-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownHighway.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSide-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSide-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSide-3.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSide-4.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSide-5.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSideDrone.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/DowntownSidePainting.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HeinzField-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HeinzField-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HeinzField-3.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HeinzField-4.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HeinzField279.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/HighmarkBuilding.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/STBLightPainting-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/STBLightPainting-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/STBLightPainting-3.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/StPauls-1.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/StPauls-2.jpg", category: "pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/pittsburgh/ThePoint.jpg", category: "pittsburgh" }
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/40thStBridge.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtown279.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownFortPitt.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownHighway.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-3.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-4.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-5.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSideDrone.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSidePainting.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-3.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-4.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField279.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/HighmarkBuilding.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-3.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/StPauls-1.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/StPauls-2.jpg", category: "Pittsburgh" },
+      { src: "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg", category: "Pittsburgh" }
     ];
 
     // Function to load images into the gallery container
@@ -374,11 +373,12 @@
 
         const img = document.createElement("img");
         img.src = image.src;
-        img.alt = "Watermarked Image";
+        img.alt = ""; // No alt text if you prefer
 
+        // Create overlay for hover effect (without any text)
         const overlay = document.createElement("div");
         overlay.classList.add("gallery-overlay");
-        overlay.innerText = "Watermarked";
+        overlay.innerText = ""; // No text on hover
 
         galleryItem.appendChild(img);
         galleryItem.appendChild(overlay);

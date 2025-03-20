@@ -27,6 +27,7 @@
       max-width: 600px;
       margin: 0 auto 2rem;
     }
+    /* Gallery Filter Buttons */
     .gallery-filters {
       display: flex;
       justify-content: center;
@@ -56,6 +57,7 @@
       background-color: #ccc;
       transform: scale(1.05);
     }
+    /* Gallery Grid Layout */
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -73,11 +75,7 @@
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
-    @media (max-width: 768px) {
-      .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      }
-    }
+    /* Lightbox Styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -102,6 +100,21 @@
       font-size: 30px;
       color: white;
       cursor: pointer;
+    }
+    
+    /* ------------------------------ */
+    /* Mobile-Friendly Adjustments    */
+    /* ------------------------------ */
+    @media (max-width: 768px) {
+      /* Increase minimum width for gallery items for better visibility */
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      /* Make filter buttons larger and easier to tap */
+      .filter-btn {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -132,11 +145,12 @@
   <section id="gallery">
     <div class="container">
       <h2 class="section-title">OaklandFlyer LLC Portfolio</h2>
-      <p class="gallery-description">Explore our images from various categories. Use the filters below to narrow your search.</p>
+      <p class="gallery-description">
+        Explore our images from various categories. Use the filters below to narrow your search.
+      </p>
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="Animals">Animals</button>
-        <button class="filter-btn" data-filter="Chicago">Chicago</button>
         <button class="filter-btn" data-filter="Flowers">Flowers</button>
         <button class="filter-btn" data-filter="LEGO">LEGO</button>
         <button class="filter-btn" data-filter="London">London</button>
@@ -171,14 +185,14 @@
       { src: "images/gallery/WatermarkedImages/Animals/Nala.jpg", category: "Animals" },
       { src: "images/gallery/WatermarkedImages/Animals/Swan-06.jpg", category: "Animals" },
       { src: "images/gallery/WatermarkedImages/Animals/Swan-2.jpg", category: "Animals" },
-
+      
       // Chicago (no images provided yet)
-
+      
       // Flowers
       { src: "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg", category: "Flowers" },
       { src: "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg", category: "Flowers" },
       { src: "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg", category: "Flowers" },
-
+      
       // LEGO
       { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg", category: "LEGO" },
       { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg", category: "LEGO" },
@@ -190,7 +204,7 @@
       { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-5.jpg", category: "LEGO" },
       { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg", category: "LEGO" },
       { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-7.jpg", category: "LEGO" },
-
+      
       // London
       { src: "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg", category: "London" },
       { src: "images/gallery/WatermarkedImages/London/BAA380.jpg", category: "London" },
@@ -217,7 +231,7 @@
       { src: "images/gallery/WatermarkedImages/London/VirginAtlantic-2.jpg", category: "London" },
       { src: "images/gallery/WatermarkedImages/London/Westminster.jpg", category: "London" },
       { src: "images/gallery/WatermarkedImages/London/WestminsterBridge-2.jpg", category: "London" },
-
+      
       // Oakland
       { src: "images/gallery/WatermarkedImages/Oakland/CathedralfromHighway.jpg", category: "Oakland" },
       { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg", category: "Oakland" },
@@ -267,11 +281,11 @@
       { src: "images/gallery/WatermarkedImages/Oakland/ThroughtheBuildings.jpg", category: "Oakland" },
       { src: "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg", category: "Oakland" },
       { src: "images/gallery/WatermarkedImages/Oakland/WPU.jpg", category: "Oakland" },
-  
+      
       // Other
       { src: "images/gallery/WatermarkedImages/Other/Piano-2.jpg", category: "Other" },
       { src: "images/gallery/WatermarkedImages/Other/Piano.jpg", category: "Other" },
-  
+      
       // People
       { src: "images/gallery/WatermarkedImages/People/Bear-03.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Bear-09.jpg", category: "People" },
@@ -279,7 +293,7 @@
       { src: "images/gallery/WatermarkedImages/People/Bear-18.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Bear-20.jpg", category: "People" },
       { src: "images/gallery/WatermarkedImages/People/Rob.jpg", category: "People" },
-  
+      
       // Pittsburgh
       { src: "images/gallery/WatermarkedImages/Pittsburgh/40thStBridge.jpg", category: "Pittsburgh" },
       { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtown279.jpg", category: "Pittsburgh" },
@@ -310,7 +324,7 @@
       { src: "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg", category: "Pittsburgh" }
     ];
   
-    // Load images into the gallery container
+    // Function to load images into the gallery container
     function loadGalleryImages() {
       const galleryContainer = document.getElementById("galleryContainer");
       watermarkedImages.forEach(image => {
@@ -325,7 +339,6 @@
         // Create an overlay for hover effect without text
         const overlay = document.createElement("div");
         overlay.classList.add("gallery-overlay");
-        overlay.innerText = "";
   
         galleryItem.appendChild(img);
         galleryItem.appendChild(overlay);

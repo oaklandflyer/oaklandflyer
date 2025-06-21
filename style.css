@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap");
 /* ------------------------------------------------ */
 /* 1) GLOBAL RESET & CUSTOM PROPERTIES              */
 /* ------------------------------------------------ */
@@ -20,7 +21,7 @@
   --color-white: #ffffff;
 
   /* Fonts & Typography */
-  --font-family-base: 'Source Code Pro', 'Poppins', sans-serif;
+  --font-family-base: 'Montserrat', sans-serif;
   --font-size-base: 16px;
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
@@ -56,6 +57,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: 0.5px; /* Slight letter-spacing for a refined look */
+  font-family: "Playfair Display", serif;
   margin: 1.2em 0 0.5em;
 }
 .container {
@@ -75,6 +77,16 @@ p {
   letter-spacing: 0.8px; /* More letter-spacing for extra elegance */
   font-size: 1.1em;
 }
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-up.active {
+  opacity: 1;
+  transform: none;
+}
+
 /* ------------------------------------------------ */
 /* Root Variables                                   */
 /* ------------------------------------------------ */
@@ -92,14 +104,23 @@ p {
 .hero-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Base layout uses space-between */
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  transition: background var(--transition-fast);
   z-index: 1000;
+}
+.hero-nav.scrolled {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hero-nav.scrolled .nav-list li a {
+  color: var(--color-dark);
 }
 
 /* Logo Container */
@@ -146,15 +167,6 @@ p {
 .nav-list li a:focus {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
-
-/* Hide Navigation on Scroll */
-.hidden-nav {
-  transform: translateY(-100%);
-  transition: transform var(--transition-default);
-}
-
-/* ------------------------------------------------ */
-/* MOBILE NAVIGATION (max-width: 768px)             */
 /* ------------------------------------------------ */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -253,6 +265,7 @@ p {
 
 .hero-content {
   max-width: 800px;
+  animation: fadeIn 1.2s ease-out;
   margin: 0 auto;
 }
 
@@ -287,6 +300,11 @@ p {
   background: #c87c0a;
   transform: scale(1.05);
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
 
 /* Split Hero Layout */
 .hero-split {

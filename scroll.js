@@ -1,20 +1,11 @@
-// Select all elements with the "animate" class
-const animatedElements = document.querySelectorAll('.animate');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    } else {
+      entry.target.classList.remove('active');
+    }
+  });
+}, { threshold: 0.1 });
 
-function handleScroll() {
-    animatedElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        // Check if the element is within the viewport
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('active');
-        } else {
-            element.classList.remove('active'); // Optional: Reset animation when out of view
-        }
-    });
-}
-
-// Run the scroll event handler on page load and scroll
-window.addEventListener('scroll', handleScroll);
-handleScroll();
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));

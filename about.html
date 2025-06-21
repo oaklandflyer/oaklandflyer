@@ -7,7 +7,7 @@
     <meta name="description" content="Learn more about Andrew Coutinho, the photographer behind OaklandFlyer.">
     <title>About Me - OaklandFlyer Photography</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="menuToggle.js"></script>
+    <script defer src="scroll.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -19,11 +19,11 @@
         <nav id="navbar">
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Portfolio</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="videos.html">Videos</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank">Buy Prints</a></li>
             </ul>
@@ -34,7 +34,7 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
+            <div class="about-content fade-up">
                 <img src="images/AboutMe.jpg" alt="Andrew Coutinho - Photographer" class="profile-photo">
                 <p>Hello! My name is Andrew Coutinho, and I’m the creative mind behind OaklandFlyer. I specialize in capturing breathtaking moments through drone and landscape photography, combining my passion for technology and storytelling to present the world from unique perspectives. Every image I create reflects my love for nature, architecture, and the artistry found in everyday scenes.</p>
                 <p>I’m currently pursuing a double major in Economics and Africana Studies at the University of Pittsburgh. Alongside my academic pursuits, I’ve honed my leadership skills as the founder and president of the University’s Bodybuilding Club, where I’ve built a thriving community around health, discipline, and personal growth.</p>
@@ -54,46 +54,6 @@
 
     <script defer src="menuToggle.js"></script>
 
-    <!-- JavaScript: Mobile Menu & Scroll Hide -->
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            let lastScrollY = window.scrollY;
-            const navbar = document.querySelector(".hero-nav");
-            const navList = document.querySelector('.nav-list');
-            const menuIcon = document.getElementById('menu-icon');
-
-            // Toggle menu open/close
-            function toggleMenu() {
-                navList.classList.toggle('active');
-
-                // Change the hamburger menu to "X"
-                menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
-            }
-
-            // Hide navbar on scroll down, show on scroll up
-            function handleScroll() {
-                if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
-                    navbar.classList.add("hidden-nav");
-                } else {
-                    navbar.classList.remove("hidden-nav");
-                }
-                lastScrollY = window.scrollY;
-            }
-
-            // Close menu when clicking outside of it
-            function closeMenuOnClickOutside(event) {
-                if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
-                    navList.classList.remove("active");
-                    menuIcon.innerHTML = "☰";
-                }
-            }
-
-            // Add event listeners
-            menuIcon.addEventListener("click", toggleMenu);
-            window.addEventListener("scroll", handleScroll);
-            document.addEventListener("click", closeMenuOnClickOutside);
-        });
-    </script>
 
 </body>
 </html>

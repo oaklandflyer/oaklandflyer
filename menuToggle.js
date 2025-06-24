@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   button.addEventListener('click', toggleMenu);
+  button.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      toggleMenu();
+    }
+  });
 
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {

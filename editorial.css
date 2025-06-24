@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  color: #111;
+}
+
+.hero {
+  height: 100vh;
+  background: url('images/DJI_0018-HDR.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.feature-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 5rem 10%;
+  align-items: center;
+}
+
+.reverse {
+  direction: rtl;
+}
+
+.reverse .text-left {
+  direction: ltr;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #111;
+  color: #f2f2f2;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .feature-block {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .reverse {
+    direction: ltr;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in both;
+}

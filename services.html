@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore the specialized photography and videography services offered by OaklandFlyer Photography.">
   <title>Services - OaklandFlyer Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="scroll.js"></script>
   <style>
@@ -67,25 +68,24 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <!-- Navigation (Same header as other pages) -->
-  <div class="hero-nav">
-    <a href="index.html" class="logo-container">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-    <nav id="navbar">
-      <ul class="nav-list">
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
-  </div>
+  </header>
 
   <!-- Main Content -->
   <main id="main">
@@ -177,38 +177,5 @@
   </footer>
 
   <script defer src="menuToggle.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let lastScrollY = window.scrollY;
-      const navbar = document.querySelector(".hero-nav");
-      const navList = document.querySelector('.nav-list');
-      const menuIcon = document.getElementById('menu-icon');
-
-      function toggleMenu() {
-        navList.classList.toggle('active');
-        menuIcon.innerHTML = navList.classList.contains('active') ? "✖" : "☰";
-      }
-
-      function handleScroll() {
-        if (window.scrollY > lastScrollY && !navList.classList.contains("active")) {
-          navbar.classList.add("hidden-nav");
-        } else {
-          navbar.classList.remove("hidden-nav");
-        }
-        lastScrollY = window.scrollY;
-      }
-
-      function closeMenuOnClickOutside(event) {
-        if (!menuIcon.contains(event.target) && !navList.contains(event.target)) {
-          navList.classList.remove("active");
-          menuIcon.innerHTML = "☰";
-        }
-      }
-
-      menuIcon.addEventListener("click", toggleMenu);
-      window.addEventListener("scroll", handleScroll);
-      document.addEventListener("click", closeMenuOnClickOutside);
-    });
-  </script>
 </body>
 </html>

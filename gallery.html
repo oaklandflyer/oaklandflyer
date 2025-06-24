@@ -336,7 +336,9 @@
   
         const img = document.createElement("img");
         img.src = image.src;
-        img.alt = "";
+        const imageName = image.src.split("/").pop().replace(/\.[^.]+$/, "");
+        img.alt = imageName.replace(/[-_]/g, " ");
+        img.loading = "lazy";
   
         // Create an overlay for hover effect without text
         const overlay = document.createElement("div");
@@ -363,6 +365,11 @@
     });
     lightbox.addEventListener("click", (e) => {
       if (e.target.id === "lightbox") {
+        lightbox.style.display = "none";
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.style.display === "flex") {
         lightbox.style.display = "none";
       }
     });

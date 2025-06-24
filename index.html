@@ -28,6 +28,67 @@
     gtag('js', new Date());
     gtag('config', 'G-91C7LN6Y87');
   </script>
+  <style>
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    .feature-box {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .feature-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .feature-box:hover img {
+      transform: scale(1.05);
+    }
+    .feature-box h2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0;
+    }
+    .nav-list a[href*="pixieset"] {
+      background-color: #f39c12;
+      color: #fff !important;
+      padding: 0.4em 0.8em;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .nav-list a[href*="pixieset"]:hover {
+      background-color: #e67e22;
+    }
+    @media (max-width: 768px) {
+      .features-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-box {
+        width: 90%;
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -46,7 +107,8 @@
         <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
   </header>
@@ -64,18 +126,14 @@
     <!-- Features Section -->
     <section class="features">
       <div class="features-container fade-up">
-        <div class="feature-box">
-          <a href="gallery.html">
-            <img src="images/portfolio-preview.jpg" alt="Portfolio preview" />
-            <h2>Portfolio</h2>
-          </a>
-        </div>
-        <div class="feature-box">
-          <a href="about.html">
-            <img src="images/about-preview.jpg" alt="About preview" />
-            <h2>About Me</h2>
-          </a>
-        </div>
+        <a href="gallery.html" class="feature-box">
+          <img src="images/portfolio-preview.jpg" alt="Portfolio preview" />
+          <h2>Portfolio</h2>
+        </a>
+        <a href="about.html" class="feature-box">
+          <img src="images/about-preview.jpg" alt="About preview" />
+          <h2>About Me</h2>
+        </a>
       </div>
     </section>
 
@@ -113,4 +171,3 @@
   <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>
-

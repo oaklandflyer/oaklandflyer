@@ -17,15 +17,15 @@
       padding-top: 80px;
       padding-bottom: 10px;
       text-align: center;
-      background-color: var(--color-dark);
+      background-color: var(--clr-text);
     }
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: var(--color-light);
+      color: var(--clr-light);
     }
     .gallery-description {
-      color: var(--color-light);
+      color: var(--clr-light);
       max-width: 600px;
       margin: 0 auto 2rem;
     }
@@ -181,15 +181,15 @@
         Explore our images from various categories. Use the filters below to narrow your search.
       </p>
       <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Animals">Animals</button>
-        <button class="filter-btn" data-filter="Flowers">Flowers</button>
-        <button class="filter-btn" data-filter="LEGO">LEGO</button>
-        <button class="filter-btn" data-filter="London">London</button>
-        <button class="filter-btn" data-filter="Oakland">Oakland</button>
-        <button class="filter-btn" data-filter="Other">Other</button>
-        <button class="filter-btn" data-filter="People">People</button>
-        <button class="filter-btn" data-filter="Pittsburgh">Pittsburgh</button>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="Animals" aria-pressed="false">Animals</button>
+        <button class="filter-btn" data-filter="Flowers" aria-pressed="false">Flowers</button>
+        <button class="filter-btn" data-filter="LEGO" aria-pressed="false">LEGO</button>
+        <button class="filter-btn" data-filter="London" aria-pressed="false">London</button>
+        <button class="filter-btn" data-filter="Oakland" aria-pressed="false">Oakland</button>
+        <button class="filter-btn" data-filter="Other" aria-pressed="false">Other</button>
+        <button class="filter-btn" data-filter="People" aria-pressed="false">People</button>
+        <button class="filter-btn" data-filter="Pittsburgh" aria-pressed="false">Pittsburgh</button>
       </div>
       <div class="gallery-container" id="galleryContainer"></div>
     </div>
@@ -421,9 +421,13 @@
       const galleryItems = document.getElementById("galleryContainer").children;
       filterButtons.forEach(button => {
         button.addEventListener("click", () => {
-          Array.from(filterButtons).forEach(btn => btn.classList.remove("active"));
+          filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-pressed", "false");
+          });
           button.classList.add("active");
-  
+          button.setAttribute("aria-pressed", "true");
+
           const filterValue = button.getAttribute("data-filter");
           for (let item of galleryItems) {
             const itemCategory = item.getAttribute("data-category");

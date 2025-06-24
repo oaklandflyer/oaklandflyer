@@ -365,10 +365,13 @@
         img.alt = imageName.replace(/[-_]/g, " ");
         img.loading = "lazy";
   
-        // Create an overlay for hover effect without text
+        // Create an overlay for hover effect with icon
         const overlay = document.createElement("div");
         overlay.classList.add("gallery-overlay");
-  
+        const icon = document.createElement("span");
+        icon.textContent = "+";
+        overlay.appendChild(icon);
+
         galleryItem.appendChild(img);
         galleryItem.appendChild(overlay);
         galleryContainer.appendChild(galleryItem);

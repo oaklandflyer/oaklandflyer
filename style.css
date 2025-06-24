@@ -307,7 +307,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-}
+
 .services h2 {
   text-align: center;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -332,8 +332,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-  margin-bottom: 1rem;
-}
 .service-grid {
   display: grid;
   gap: 1rem;
@@ -376,12 +374,9 @@ body {
   padding: 2rem 1rem;
 }
 
-<<<<<<< HEAD
-=======
-}
 
 
->>>>>>> 9b564f948cc7c230f6c24fcf4b62b7a9ae0dea91
+
 .service-card p {
   flex-grow: 1;
   margin-bottom: 1rem;
@@ -408,7 +403,7 @@ body {
 }
 
 
-}
+
 .work-link:hover,
 .work-link:focus {
   text-decoration: underline;
@@ -505,4 +500,5 @@ body {
   transform: scale(1);
   opacity: 1;
 
+}
 }

@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OaklandFlyer – Drone & Landscape Photography</title>
-  <link rel="icon" href="images/OFLogo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="gallery.js"></script>
-  <script defer src="scroll.js"></script>
-  <script defer src="menuToggle.js"></script>
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="hex-bg" aria-hidden="true">
+    <div class="hex-layer"></div>
+    <div class="hex-layer delay1"></div>
+    <div class="hex-layer delay2"></div>
+  </div>
   <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" />
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
     <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
     <nav id="navbar" class="site-nav">
@@ -34,72 +36,29 @@
   </header>
 
   <main id="main">
-
     <section class="hero fade-up">
-
-    <section class="hero fade-up">
-
-
-    <section class="hero fade-up">
-
-    <section class="hero">
-
-
-
       <div class="hero-text">
         <h1>Capturing Moments, Telling Stories</h1>
         <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
         <a href="#gallery" class="btn">View Portfolio</a>
       </div>
-      <img src="images/AboutMe.jpg" alt="Drone flying over scenic landscape" />
+      <img src="images/AboutMe.jpg" alt="Drone flying over scenic landscape">
     </section>
 
     <section class="services" id="services">
       <h2>Our Services</h2>
       <div class="service-grid">
-
-        <article class="service-card fade-up">
-
-
-        <article class="service-card fade-up">
-
-
-        <article class="service-card fade-up">
-
         <article class="service-card">
-
-
           <h3>Graduation Portraits</h3>
           <p>Personalized sessions capturing your milestone moments.</p>
           <a href="#gallery" class="work-link">View our work</a>
         </article>
-
-        <article class="service-card fade-up">
-
-
-        <article class="service-card fade-up">
-
-        <article class="service-card fade-up">
-
         <article class="service-card">
-
           <h3>Drone Aerials</h3>
           <p>High-quality aerial imagery for inspections and real estate.</p>
           <a href="#gallery" class="work-link">View our work</a>
         </article>
-
-        <article class="service-card fade-up">
-
-
-        <article class="service-card fade-up">
-
-
-        <article class="service-card fade-up">
-
         <article class="service-card">
-
-
-
           <h3>Street Photography</h3>
           <p>Authentic urban scenes that tell compelling stories.</p>
           <a href="#gallery" class="work-link">View our work</a>
@@ -110,21 +69,11 @@
     <section class="gallery-preview" id="gallery">
       <h2>Gallery</h2>
       <div class="gallery-filters">
-        <button class="filter-btn active" data-category="all" aria-pressed="true">All</button>
-        <button class="filter-btn" data-category="drone" aria-pressed="false">Drone</button>
-        <button class="filter-btn" data-category="landscape" aria-pressed="false">Landscape</button>
+        <button class="filter-btn active" data-category="all" aria-pressed="true" aria-label="Show all photos">All</button>
+        <button class="filter-btn" data-category="drone" aria-pressed="false" aria-label="Show drone photos">Drone</button>
+        <button class="filter-btn" data-category="landscape" aria-pressed="false" aria-label="Show landscape photos">Landscape</button>
       </div>
-
       <div class="gallery-container fade-up" id="galleryContainer"></div>
-
-
-      <div class="gallery-container fade-up" id="galleryContainer"></div>
-
-
-      <div class="gallery-container fade-up" id="galleryContainer"></div>
-
-      <div class="gallery-container" id="galleryContainer"></div>
-
     </section>
   </main>
 
@@ -132,14 +81,17 @@
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="images/linkedin-icon.png" alt="LinkedIn" />
+        <img src="images/linkedin-icon.png" alt="LinkedIn">
       </a>
       <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="images/instagram-icon.png" alt="Instagram" />
+        <img src="images/instagram-icon.png" alt="Instagram">
       </a>
     </div>
   </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script defer src="gallery.js"></script>
+  <script defer src="scroll.js"></script>
+  <script defer src="menuToggle.js"></script>
 </body>
 </html>

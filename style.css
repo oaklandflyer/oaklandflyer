@@ -140,7 +140,10 @@ p {
   background: rgba(255,255,255,0.9);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
+.hero-nav {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+}
 .hero-nav.scrolled .nav-list li a {
   color: var(--color-dark);
 }
@@ -235,6 +238,10 @@ p {
     padding: 10px 20px;
   }
 }
+.nav-list li a.active {
+  border-bottom: 2px solid var(--color-primary);
+  font-weight: 600;
+}
 
 /* Ensure Buy Prints is styled consistently in mobile as well */
 .nav-list li a.buy-prints {
@@ -250,6 +257,13 @@ p {
   background-color: #d88000;
   transform: scale(1.05);
 }
+@media (min-width: 769px) {
+  .nav-list li.buy-prints { margin-left: auto; }
+}
+@media (max-width: 768px) {
+  .buy-prints { position: absolute; bottom: 30px; }
+}
+
 /* ------------------------------------------------ */
 /* DESKTOP OVERRIDE (min-width: 769px)              */
 /* ------------------------------------------------ */
@@ -398,6 +412,11 @@ p {
 
 .hero-text .btn:hover {
   background: #808080;
+}
+/* Keyboard Navigation and Focus States */
+.nav-list li a:focus {
+  outline: 3px solid var(--color-primary);
+  background: rgba(0,0,0,0.1);
 }
 
 /* Mobile Tweaks for Hero */

@@ -22,11 +22,16 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--clr-text);
   background-color: var(--clr-bg);
+
   background-image: url("images/DowntownCloudsReduced.jpg"), url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDEwIDE3Ij48cGF0aCBmaWxsPSIjY2NjIiBmaWxsLW9wYWNpdHk9IjAuNCIgZD0iTTUgMGw1IDIuNXY1TDUgMTAgMCA3LjV2LTV6TTAgOS41bDUgMi41IDUtMi41djVMMiAxNyAwIDE0LjV6Ii8+PC9zdmc+");
   background-size: cover, 10px 17px;
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: overlay;
+
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDEwIDE3Ij48cGF0aCBmaWxsPSIjY2NjIiBmaWxsLW9wYWNpdHk9IjAuNCIgZD0iTTUgMGw1IDIuNXY1TDUgMTAgMCA3LjV2LTV6TTAgOS41bDUgMi41IDUtMi41djVMMiAxNyAwIDE0LjV6Ii8+PC9zdmc+");
+  background-size: 10px 17px;
+
 }
 
 .skip-link {
@@ -66,6 +71,7 @@ body {
 .logo-link img {
   height: 40px;
   width: auto;
+
 }
 #menu-toggle {
   width: 44px;
@@ -84,6 +90,22 @@ body {
 .site-nav.open {
   max-height: 500px;
   opacity: 1;
+
+}
+#menu-toggle {
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.site-nav {
+  display: none;
+}
+.site-nav.open {
+  display: block;
+
 }
 .site-nav ul {
   list-style: none;
@@ -102,12 +124,16 @@ body {
 }
 @media (min-width: 768px) {
   #menu-toggle { display: none; }
+
   .site-nav {
     display: block;
     max-height: none;
     overflow: visible;
     opacity: 1;
   }
+
+  .site-nav { display: block; }
+
   .site-nav ul { display: flex; gap: 0.5rem; }
 }
 
@@ -175,6 +201,7 @@ body {
 .service-card h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   margin-bottom: 0.5rem;
+
 }
 .service-card p {
   flex-grow: 1;
@@ -199,6 +226,32 @@ body {
   color: var(--clr-light);
   padding: 2rem 1rem;
 }
+
+}
+.service-card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+.work-link {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+.work-link:hover,
+.work-link:focus {
+  text-decoration: underline;
+}
+
+/* Gallery */
+.gallery-preview {
+  background: var(--clr-text);
+  color: var(--clr-light);
+  padding: 2rem 1rem;
+}
+
 .gallery-preview h2 {
   text-align: center;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -253,6 +306,7 @@ body {
 .social-links img {
   width: 100%;
   height: 100%;
+
 }
 
 /* Animations */
@@ -264,4 +318,5 @@ body {
 .fade-up.active {
   opacity: 1;
   transform: translateY(0);
+
 }

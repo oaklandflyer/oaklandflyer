@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/OFLogo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Showcasing stunning photography by OaklandFlyer.">
-    <title>OaklandFlyer LLC</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="gallery.js"></script>
-    <script defer src="scroll.js"></script>
-    
-    <!-- Fancybox Styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-91C7LN6Y87"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-91C7LN6Y87');
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OaklandFlyer – Drone & Landscape Photography</title>
+  <link rel="icon" href="images/OFLogo.png" type="image/png" />
 
-    <!-- Google Fonts -->
-    <!-- Your CSS file or embedded styles -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Fancybox Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Scripts -->
+  <script defer src="gallery.js"></script>
+  <script defer src="scroll.js"></script>
+  <script defer src="menuToggle.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-91C7LN6Y87"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-91C7LN6Y87');
+  </script>
 </head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-    <body>
-        <a href="#main" class="skip-link">Skip to content</a>
+  <!-- Header Navigation -->
+  <header class="hero-nav">
+    <a href="index.html" class="logo-container">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo" />
+    </a>
+    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
+    <nav id="navbar">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Portfolio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Navigation -->
-        <header class="hero-nav">
-            <a href="index.html" class="logo-container">
-                <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
-            </a>
-            <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-            <nav id="navbar">
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="gallery.html">Portfolio</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="videos.html">Videos</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content fade-up">
+        <h1>Capturing Moments, Telling Stories</h1>
+        <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
+        <a href="gallery.html" class="btn">View Portfolio</a>
+      </div>
+    </section>
 
-        <main id="main">
-
-        <!-- Hero Section (Main Hero) -->
-        <section class="hero">
-            <div class="hero-content fade-up">
-                <h2>Capturing Moments, Telling Stories</h2>
-                <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
-            </div>
-        </section>
-            <!-- Three-Column Section -->
-            <section id="features">
-                <div class="features-container fade-up">
-                    <div class="feature-box">
-                        <h2>Portfolio</h2>
-                        <a href="gallery.html">
-                            <img src="images/portfolio-preview.jpg" alt="Portfolio">
-                        </a>
-                    </div>
-                    <div class="feature-box">
-                        <h2>About Me</h2>
-                        <a href="about.html">
-                            <img src="images/about-preview.jpg" alt="About Me">
-                        </a>
-                    </div>
-                </div>
-            </section>
-        <!-- Hero Section (Split Layout) -->
-        <section class="hero-split">
-            <div class="hero-container">
-                <div class="hero-image">
-                    <img src="images/AboutMe.jpg" alt="Andrew Coutinho">
-                </div>
-                <div class="hero-text fade-up">
-                    <h1>Hey, I'm Andrew</h1>
-                    <p>Over the past 4 years, I have been a Part 107 Drone Pilot, but this year I realized I wanted to do more. So I decided to start OaklandFlyer LLC.</p>
-                    <a href="about.html" class="btn">About Me</a>
-                </div>
-            </div>
-        </section>
-
-        </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <img src="images/linkedin-icon.png" alt="LinkedIn Profile">
-                </a>
-                <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
-                    <img src="images/instagram-icon.png" alt="Instagram Profile">
-                </a>
-            </div>
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-container fade-up">
+        <div class="feature-box">
+          <a href="gallery.html">
+            <img src="images/portfolio-preview.jpg" alt="Portfolio preview" />
+            <h2>Portfolio</h2>
+          </a>
         </div>
-    </footer>
+        <div class="feature-box">
+          <a href="about.html">
+            <img src="images/about-preview.jpg" alt="About preview" />
+            <h2>About Me</h2>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Fancybox Script -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-    
-<script defer src="menuToggle.js"></script>
+    <!-- Story Section -->
+    <section class="hero-split">
+      <div class="hero-container">
+        <div class="hero-image">
+          <img src="images/AboutMe.jpg" alt="Andrew Coutinho portrait" />
+        </div>
+        <div class="hero-text fade-up">
+          <h2>Hey, I'm Andrew</h2>
+          <p>I'm a Part 107 Drone Pilot with a passion for storytelling through landscape imagery. I started OaklandFlyer LLC to bring these visuals to life.</p>
+          <a href="about.html" class="btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="images/linkedin-icon.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="images/instagram-icon.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fancybox Script -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>
+

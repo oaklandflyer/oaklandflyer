@@ -6,20 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Browse OaklandFlyer's photo categories." />
   <title>Gallery Categories - OaklandFlyer Photography</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="scroll.js"></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <div class="hero-nav">
-    <a href="index.html" class="logo-container">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo">
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-icon" class="menu-toggle" aria-label="Open Menu">☰</button>
-    <nav id="navbar">
-      <ul class="nav-list">
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html" class="active">Portfolio</a></li>
+        <li><a href="gallery.html">Portfolio</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
@@ -27,7 +28,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </div>
+  </header>
 
   <main id="main">
     <section id="gallery-categories">

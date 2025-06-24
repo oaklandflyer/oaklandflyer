@@ -5,169 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OaklandFlyer – Drone & Landscape Photography</title>
   <link rel="icon" href="images/OFLogo.png" type="image/png" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <!-- Fancybox Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Scripts -->
   <script defer src="gallery.js"></script>
   <script defer src="scroll.js"></script>
   <script defer src="menuToggle.js"></script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-91C7LN6Y87"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-91C7LN6Y87');
-  </script>
-  <style>
-    .features-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem 1rem;
-    }
-    .feature-box {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-    .feature-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-    .feature-box:hover img {
-      transform: scale(1.05);
-    }
-    .feature-box h2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      text-align: center;
-      padding: 0.5rem;
-      margin: 0;
-    }
-    .nav-list a[href*="pixieset"] {
-      background-color: #f39c12;
-      color: #fff !important;
-      padding: 0.4em 0.8em;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .nav-list a[href*="pixieset"]:hover {
-      background-color: #e67e22;
-    }
-    @media (max-width: 768px) {
-      .features-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .feature-box {
-        width: 90%;
-        height: 200px;
-      }
-    }
-  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- Header Navigation -->
-  <header class="hero-nav">
-    <a href="index.html" class="logo-container">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" class="logo" />
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" />
     </a>
-    <button id="menu-icon" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">☰</button>
-    <nav id="navbar">
-      <ul class="nav-list">
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content fade-up">
+    <section class="hero fade-up">
+      <div class="hero-text">
         <h1>Capturing Moments, Telling Stories</h1>
         <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
-        <a href="gallery.html" class="btn">View Portfolio</a>
+        <a href="#gallery" class="btn">View Portfolio</a>
+      </div>
+      <img src="images/AboutMe.jpg" alt="Drone flying over scenic landscape" />
+    </section>
+
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <article class="service-card fade-up">
+          <h3>Graduation Portraits</h3>
+          <p>Personalized sessions capturing your milestone moments.</p>
+          <a href="#gallery" class="work-link">View our work</a>
+        </article>
+        <article class="service-card fade-up">
+          <h3>Drone Aerials</h3>
+          <p>High-quality aerial imagery for inspections and real estate.</p>
+          <a href="#gallery" class="work-link">View our work</a>
+        </article>
+        <article class="service-card fade-up">
+          <h3>Street Photography</h3>
+          <p>Authentic urban scenes that tell compelling stories.</p>
+          <a href="#gallery" class="work-link">View our work</a>
+        </article>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-      <div class="features-container fade-up">
-        <a href="gallery.html" class="feature-box">
-          <img src="images/portfolio-preview.jpg" alt="Portfolio preview" />
-          <h2>Portfolio</h2>
-        </a>
-        <a href="about.html" class="feature-box">
-          <img src="images/about-preview.jpg" alt="About preview" />
-          <h2>About Me</h2>
-        </a>
+    <section class="gallery-preview" id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-category="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-category="drone" aria-pressed="false">Drone</button>
+        <button class="filter-btn" data-category="landscape" aria-pressed="false">Landscape</button>
       </div>
-    </section>
-
-    <!-- Story Section -->
-    <section class="hero-split">
-      <div class="hero-container">
-        <div class="hero-image">
-          <img src="images/AboutMe.jpg" alt="Andrew Coutinho portrait" />
-        </div>
-        <div class="hero-text fade-up">
-          <h2>Hey, I'm Andrew</h2>
-          <p>I'm a Part 107 Drone Pilot with a passion for storytelling through landscape imagery. I started OaklandFlyer LLC to bring these visuals to life.</p>
-          <a href="about.html" class="btn">Learn More</a>
-        </div>
-      </div>
+      <div class="gallery-container fade-up" id="galleryContainer"></div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <img src="images/linkedin-icon.png" alt="LinkedIn" />
-        </a>
-        <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/instagram-icon.png" alt="Instagram" />
-        </a>
-      </div>
+  <footer class="site-footer">
+    <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="images/linkedin-icon.png" alt="LinkedIn" />
+      </a>
+      <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/instagram-icon.png" alt="Instagram" />
+      </a>
     </div>
   </footer>
 
-  <!-- Fancybox Script -->
   <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 </body>
 </html>

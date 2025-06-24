@@ -8,4 +8,6 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fade-up, .zoom-in').forEach(el => observer.observe(el));
+});

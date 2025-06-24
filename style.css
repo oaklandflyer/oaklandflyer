@@ -3,9 +3,12 @@
 
 :root {
 
-  --clr-bg: #e6f2ff;
-
-  --clr-bg: #f5f5f5;
+    linear-gradient(rgba(230,242,255,0.9), rgba(230,242,255,0.9)),
+    url('images/DowntownCloudsReduced.jpg'),
+  background-size: cover, 70px 119px, 40px 68px, 20px 34px;
+  background-position: center top, center 0, center 600px, center 1200px;
+  background-repeat: no-repeat, repeat, repeat, repeat;
+  background-blend-mode: multiply;
 
   --clr-text: #222222;
   --clr-primary: #f39c12;
@@ -251,6 +254,16 @@ body {
 }
 .service-grid {
   display: grid;
+
+.zoom-in {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.zoom-in.active {
+  transform: scale(1);
+  opacity: 1;
+}
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }

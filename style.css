@@ -372,6 +372,23 @@ img {
   border-radius: 4px;
 }
 
+/* Gallery categories page */
+.category-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 1rem;
+}
+.category-item img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.category-item h3 {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 /* Footer */
 .site-footer {
   text-align: center;

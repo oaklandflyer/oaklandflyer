@@ -391,17 +391,11 @@
         galleryItem.classList.add("gallery-item", "zoom-in");
         galleryItem.setAttribute("data-category", image.category);
   
-        const picture = document.createElement("picture");
-        const source = document.createElement("source");
-        source.type = "image/webp";
-        source.srcset = image.src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
         const img = document.createElement("img");
         img.src = image.src;
         const imageName = image.src.split("/").pop().replace(/\.[^.]+$/, "");
         img.alt = imageName.replace(/[-_]/g, " ");
         img.loading = "lazy";
-        picture.appendChild(source);
-        picture.appendChild(img);
   
         // Create an overlay for hover effect with icon
         const overlay = document.createElement("div");
@@ -410,7 +404,7 @@
         icon.textContent = "+";
         overlay.appendChild(icon);
 
-        galleryItem.appendChild(picture);
+        galleryItem.appendChild(img);
         galleryItem.appendChild(overlay);
         galleryContainer.appendChild(galleryItem);
   

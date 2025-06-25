@@ -222,60 +222,60 @@
 
   <!-- Script: build and filter masonry items -->
   <script>
-    // List of all images: src, category for filtering, and alt text
-    const watermarkedImages = [
-      // Example entry:
-      { src: 'images/gallery/WatermarkedImages/Animals/Hudson-2.jpg', category: 'Animals', alt: 'Hudson the swan' },
-      // (add all remaining image objects here)
-    ];
-
-    /**
-     * Initializes masonry grid by creating elements for each image
-     */
-    function initMasonry() {
-      const container = document.getElementById('masonry-gallery');
-      watermarkedImages.forEach(item => {
-        // Create wrapper div and set category
-        const div = document.createElement('div');
-        div.className = 'masonry-item';
-        div.dataset.category = item.category;
-
-        // Create img element
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.alt = item.alt;
-
-        div.appendChild(img);
-        container.appendChild(div);
-      });
-    }
-
-    /**
-     * Shows or hides items based on selected filter
-     * @param {string} filter - category to display or 'all'
-     */
     function applyFilter(filter) {
       document.querySelectorAll('.masonry-item').forEach(el => {
-        el.style.display = (filter === 'all' || el.dataset.category === filter) ? 'block' : 'none';
+        el.style.display =
+          filter === 'all' || el.dataset.category === filter ? 'block' : 'none';
       });
     }
 
-    // On DOM load: initialize and attach filter events
     document.addEventListener('DOMContentLoaded', () => {
-      initMasonry();
+      fetch('imagePaths.json')
+        .then((r) => r.json())
+        .then((images) => {
+          const container = document.getElementById('masonry-gallery');
+          images.forEach(({ src, category }) => {
+            const div = document.createElement('div');
+            div.className = 'masonry-item';
+            div.dataset.category = category;
 
-      // Attach click listeners to filter buttons
-      document.querySelectorAll('.filter-bar button').forEach(btn => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = src
+              .split('/')
+              .pop()
+              .replace(/[-_]/g, ' ')
+              .replace(/\.[^/.]+$/, '');
+
+            div.appendChild(img);
+            container.appendChild(div);
+          });
+
+          const params = new URLSearchParams(window.location.search);
+          const startFilter = params.get('filter') || 'all';
+
+          const active = document.querySelector(
+            `.filter-bar button[data-filter="${startFilter}"]`
+          );
+          if (active) {
+            document
+              .querySelectorAll('.filter-bar button')
+              .forEach((b) => b.classList.remove('active'));
+            active.classList.add('active');
+          }
+
+          applyFilter(startFilter);
+        });
+
+      document.querySelectorAll('.filter-bar button').forEach((btn) => {
         btn.addEventListener('click', () => {
-          // Reset active state
-          document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+          document
+            .querySelectorAll('.filter-bar button')
+            .forEach((b) => b.classList.remove('active'));
           btn.classList.add('active');
           applyFilter(btn.dataset.filter);
         });
       });
-
-      // Default to show all
-      applyFilter('all');
     });
   </script>
 

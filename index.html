@@ -2,31 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OaklandFlyer – Drone & Landscape Photography</title>
   <link rel="icon" href="images/OFLogo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+
+  <!-- Google Fonts & Fancybox -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+  >
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="hex-bg.css" />
+
+  <!-- Hexagon‐background stylesheet -->
+  <link rel="stylesheet" href="hex-bg.css">
 </head>
 <body>
+  <!-- Procedural hexagon background -->
   <div id="hex-bg"></div>
 
-  <!-- your existing page content goes here -->
-
-
-  <div class="hex-bg" aria-hidden="true">
-    <div class="hex-layer"></div>
-    <div class="hex-layer delay1"></div>
-    <div class="hex-layer delay2"></div>
-  </div>
   <a href="#main" class="skip-link">Skip to content</a>
+
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <button
+      id="menu-toggle"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >☰</button>
     <nav id="navbar" class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -36,7 +47,13 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
+        <li>
+          <a
+            href="https://oaklandflyerllc.pixieset.com/"
+            target="_blank"
+            rel="noopener"
+          >Buy Prints</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -48,7 +65,10 @@
         <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
         <a href="gallery.html" class="btn">View Portfolio</a>
       </div>
-      <img src="images/AboutMe.jpg" alt="Drone flying over scenic landscape">
+      <img
+        src="images/AboutMe.jpg"
+        alt="Drone flying over scenic landscape"
+      >
     </section>
 
     <section class="services" id="services">
@@ -76,19 +96,35 @@
   <footer class="site-footer">
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/company/oaklandflyer-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <a
+        href="https://www.linkedin.com/company/oaklandflyer-llc/"
+        target="_blank"
+        rel="noopener"
+        aria-label="LinkedIn"
+      >
         <img src="images/linkedin-icon.png" alt="LinkedIn">
       </a>
-      <a href="https://www.instagram.com/oaklandflyer/" target="_blank" rel="noopener" aria-label="Instagram">
+      <a
+        href="https://www.instagram.com/oaklandflyer/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
         <img src="images/instagram-icon.png" alt="Instagram">
       </a>
     </div>
   </footer>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <!-- JavaScript libraries & plugins (deferred) -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"
+  ></script>
   <script defer src="gallery.js"></script>
   <script defer src="scroll.js"></script>
   <script defer src="menuToggle.js"></script>
-    <script src="hex-bg.js"></script>
+
+  <!-- Hexagon‐background script (deferred) -->
+  <script defer src="hex-bg.js"></script>
 </body>
 </html>

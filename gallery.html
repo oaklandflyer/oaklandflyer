@@ -9,21 +9,62 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* ---------------------------------- */
-    /*  Header & Navigation              */
+    /*  Header & Navigation Updated      */
     /* ---------------------------------- */
     .site-header {
-      display: flex; /* horizontal layout */
-      justify-content: space-between; /* logo left, nav right */
-      align-items: center; /* vertical centering */
-      padding: 1rem;
-      background: var(--color-light);
-      position: sticky; /* stays at top on scroll */
+      background: var(--color-dark);          /* Dark theme header */
+      color: var(--color-light);              /* Light text */
+      font-family: 'Poppins', sans-serif;
+      display: flex;                          /* Logo & nav side by side */
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
       top: 0;
       z-index: 200;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    .site-nav ul { display: flex; gap: 1rem; list-style: none; }
-    .site-nav a { text-decoration: none; color: var(--color-text); font-weight: 500; }
+    .site-header .logo-link img {
+      height: 40px;                           /* Consistent logo size */
+    }
+    .site-nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+    }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--color-light);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .site-nav a:hover,
+    .site-nav a:focus {
+      color: var(--color-primary);
+    }
+    #menu-toggle {
+      display: none;                          /* Hidden on desktop */
+      background: none;
+      border: none;
+      color: var(--color-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      #menu-toggle { display: block; }
+      .site-nav ul {
+        flex-direction: column;
+        background: var(--color-dark);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        transform: translateX(100%);           /* Hidden off-canvas */
+        transition: transform 0.3s;
+      }
+      .site-nav ul.open { transform: translateX(0); }
+    }
 
     /* ---------------------------------- */
     /*  Sticky Filter Bar                */
@@ -164,13 +205,13 @@
       <h2>Featured Landscapes</h2>
       <div class="carousel">
         <figure>
-          <img src="images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg" alt="Oakland Cathedral of Learning">
+          <img src="images/gallery/WatermarkedImages/pittsburgh/ThePoint.jpg" alt="The Point">
         </figure>
         <figure>
           <img src="images/gallery/WatermarkedImages/London/BigBen-3.jpg" alt="Big Ben">
         </figure>
         <figure>
-          <img src="images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg" alt="Amaryllis">
+          <img src="images/gallery/WatermarkedImages/Nerja/Nerja Sunrise-2.jpg" alt="Nerja Sunrise">
         </figure>
       </div>
       <!-- Carousel controls -->

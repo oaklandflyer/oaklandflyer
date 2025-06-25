@@ -408,6 +408,7 @@
         overlay.classList.add("gallery-overlay");
         const icon = document.createElement("span");
         icon.textContent = "+";
+        icon.setAttribute("aria-hidden", "true");
         overlay.appendChild(icon);
 
         galleryItem.appendChild(picture);
@@ -451,6 +452,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       const filterButtons = document.querySelectorAll(".filter-btn");
       const galleryItems = document.getElementById("galleryContainer").children;
+
       filterButtons.forEach(button => {
         button.addEventListener("click", () => {
           filterButtons.forEach(btn => {
@@ -467,6 +469,15 @@
           }
         });
       });
+
+      const params = new URLSearchParams(window.location.search);
+      const initialFilter = params.get('filter');
+      if (initialFilter) {
+        const targetBtn = Array.from(filterButtons).find(btn => btn.dataset.filter === initialFilter);
+        if (targetBtn) {
+          targetBtn.click();
+        }
+      }
     });
   </script>
   

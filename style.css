@@ -8,7 +8,7 @@
   --clr-light: #ffffff;
 
   /* header */
-  --clr-header-bg: rgba(255,255,255,0.95);
+  --clr-header-bg: rgba(126, 126, 126, 0.95);
   --clr-header-shadow: rgba(0,0,0,0.1);
   --clr-hover-bg: rgba(0,0,0,0.05);
 
@@ -22,7 +22,7 @@
   --hex-rows: 8;
   --glass-opacity: 0.12;
   --glass-blur: 6px;
-  --hex-border-color: rgba(255,255,255,0.25);
+  --hex-border-color: rgba(250, 0, 0, 0.25);
 }
 
 

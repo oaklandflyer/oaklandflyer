@@ -5,6 +5,11 @@
   --clr-text: #222222;
   --clr-primary: #f39c12;
   --clr-light: #ffffff;
+  /* Hexagon background variables */
+  --hex-base-size: 120px;
+  --hex-rows: 8;
+  --glass-opacity: 0.12;
+  --glass-blur: 6px;
 }
 
 * {

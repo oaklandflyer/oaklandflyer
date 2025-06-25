@@ -1,6 +1,6 @@
 // hex-bg.js
 (() => {
-  const container = document.getElementById('hex-bg');
+  const bg = document.getElementById('hex-bg');
   const rows = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hex-rows'));
   const baseSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hex-base-size'));
   const w = window.innerWidth;
@@ -27,7 +27,7 @@
       hex.style.height = `${size}px`;
       hex.style.left   = `${x + offset}px`;
       hex.style.top    = `${y}px`;
-      container.appendChild(hex);
+      bg.appendChild(hex);
     }
   }
 
@@ -48,7 +48,7 @@
   function loop() {
     tx += (mouseX - tx) * 0.08;
     ty += ((mouseY + scrollY) - ty) * 0.08;
-    container.style.transform = `translate3d(${tx}px,${ty}px,0)`;
+    bg.style.transform = `translate3d(${tx}px,${ty}px,0)`;
     requestAnimationFrame(loop);
   }
   loop();

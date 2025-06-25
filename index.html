@@ -44,7 +44,11 @@
       aria-controls="navbar"
       aria-expanded="false"
       aria-label="Toggle navigation"
-    >☰</button>
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <nav id="navbar" class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -66,17 +70,12 @@
   </header>
 
   <main id="main">
-    <section class="hero fade-up">
+    <section class="hero fade-up parallax" style="background-image:url('images/DowntownSunset.jpg');">
       <div class="hero-text">
         <h1>Capturing Moments, Telling Stories</h1>
         <p>Explore breathtaking drone and landscape photography by OaklandFlyer.</p>
         <a href="gallery.html" class="btn">View Portfolio</a>
       </div>
-      <img
-        src="images/AboutMe.jpg"
-        alt="Drone flying over scenic landscape"
-        loading="lazy"
-      >
     </section>
 
     <section class="services" id="services">
@@ -100,6 +99,8 @@
       </div>
     </section>
   </main>
+
+  <a href="contact.html" class="book-btn">Book a Shoot</a>
 
   <footer class="site-footer">
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>

@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse OaklandFlyer\'s drone and landscape photography portfolio." />
+  <meta property="og:title" content="OaklandFlyer Portfolio" />
+  <meta property="og:description" content="Gallery of aerial and landscape images from OaklandFlyer." />
+  <meta property="og:image" content="images/social-preview.jpg" />
   <title>Gallery - OaklandFlyer Photography</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
@@ -65,7 +69,7 @@
     /* Gallery Grid Layout */
     .gallery-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 15px;
       padding: 10px;
       justify-content: center;
@@ -139,10 +143,14 @@
     /* ------------------------------ */
     /* Mobile-Friendly Adjustments    */
     /* ------------------------------ */
-    @media (max-width: 768px) {
-      /* Increase minimum width for gallery items for better visibility */
+    @media (min-width: 769px) {
       .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .gallery-container {
+        grid-template-columns: 1fr;
       }
       /* Make filter buttons larger and easier to tap */
       .filter-btn {
@@ -151,6 +159,15 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "OaklandFlyer",
+      "url": "https://www.oaklandflyer.com",
+      "image": "https://www.oaklandflyer.com/images/social-preview.jpg"
+    }
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -196,7 +213,14 @@
       <div class="gallery-container" id="galleryContainer"></div>
     </div>
   </section>
+  <section class="testimonials">
+    <blockquote>"Amazing shots!" – Sarah</blockquote>
+    <blockquote>"Professional and creative." – James</blockquote>
+    <blockquote>"Highly recommend OaklandFlyer." – Priya</blockquote>
+  </section>
   </main>
+
+  <a href="contact.html" class="book-btn">Book a Shoot</a>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -367,11 +391,17 @@
         galleryItem.classList.add("gallery-item", "zoom-in");
         galleryItem.setAttribute("data-category", image.category);
   
+        const picture = document.createElement("picture");
+        const source = document.createElement("source");
+        source.type = "image/webp";
+        source.srcset = image.src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
         const img = document.createElement("img");
         img.src = image.src;
         const imageName = image.src.split("/").pop().replace(/\.[^.]+$/, "");
         img.alt = imageName.replace(/[-_]/g, " ");
         img.loading = "lazy";
+        picture.appendChild(source);
+        picture.appendChild(img);
   
         // Create an overlay for hover effect with icon
         const overlay = document.createElement("div");
@@ -380,7 +410,7 @@
         icon.textContent = "+";
         overlay.appendChild(icon);
 
-        galleryItem.appendChild(img);
+        galleryItem.appendChild(picture);
         galleryItem.appendChild(overlay);
         galleryContainer.appendChild(galleryItem);
   

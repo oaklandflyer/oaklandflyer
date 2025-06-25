@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('navbar');
   const menuToggle = document.getElementById('menu-toggle');
-
+  
   const toggleMenu = () => {
     const isOpen = nav.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
     menuToggle.setAttribute('aria-expanded', isOpen);
   };
 

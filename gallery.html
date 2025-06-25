@@ -145,7 +145,7 @@
     /* ------------------------------ */
     @media (min-width: 769px) {
       .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
     }
     @media (max-width: 768px) {
@@ -421,9 +421,8 @@
           document.getElementById("lightbox").style.display = "flex";
         });
       });
+      console.log("Gallery items:", watermarkedImages.length);
     }
-  
-    document.addEventListener("DOMContentLoaded", loadGalleryImages);
   
     // Lightbox Controls
     const lightbox = document.getElementById("lightbox");
@@ -448,11 +447,16 @@
       }
     });
   
-    // Filtering Logic
-    document.addEventListener("DOMContentLoaded", () => {
-      const filterButtons = document.querySelectorAll(".filter-btn");
+    function applyFilter(filterValue) {
       const galleryItems = document.getElementById("galleryContainer").children;
+      for (let item of galleryItems) {
+        const itemCategory = item.getAttribute("data-category");
+        item.style.display = (filterValue === "all" || itemCategory === filterValue) ? "block" : "none";
+      }
+    }
 
+    function initFilterButtons() {
+      const filterButtons = document.querySelectorAll(".filter-btn");
       filterButtons.forEach(button => {
         button.addEventListener("click", () => {
           filterButtons.forEach(btn => {
@@ -461,12 +465,8 @@
           });
           button.classList.add("active");
           button.setAttribute("aria-pressed", "true");
-
           const filterValue = button.getAttribute("data-filter");
-          for (let item of galleryItems) {
-            const itemCategory = item.getAttribute("data-category");
-            item.style.display = (filterValue === "all" || itemCategory === filterValue) ? "block" : "none";
-          }
+          applyFilter(filterValue);
         });
       });
 
@@ -478,6 +478,12 @@
           targetBtn.click();
         }
       }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadGalleryImages();
+      initFilterButtons();
+      applyFilter("all");
     });
   </script>
   

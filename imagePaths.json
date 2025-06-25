@@ -1,101 +1,1030 @@
 [
-  {"src": "images/gallery/WatermarkedImages/40thStBridge.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Amaryllis.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Anthurium.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralfromHighway.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralofLearning-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralofLearning-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralofLearning-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralTopDown-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathedralTopDown-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyandDrone.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyandFlag.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyandHeinzChapel.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyandPanther.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyandSpiral.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyCMU.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyFog.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyfromFalk-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyfromFalk-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyfromFalk-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/CathyHaloTrial.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Chapel.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Dippy-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Downtown279.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownFortPitt.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Downtownfrom279-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Downtownfrom279-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownGoldGarage-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownHighway.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSide-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSide-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSide-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSide-4.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSide-5.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSideDrone.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/DowntownSidePainting.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/FifthAve.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/FifthAveSnowy.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Florist-Kalanchoe.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/ForbesfromBridge.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/GEO-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/GlobeMaster.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzChapel.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzField-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzField-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzField-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzField-4.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzField279.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HeinzSpiral.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/HighmarkBuilding.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-4.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-5.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-6.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-7.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-8.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/MussoDogs-9.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/OaklandDrone-1-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/OaklandDrone-2-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/OCLotShot-1-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/OCLotShot-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PantherHall.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PantherHead-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PantherHead-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PantherHeadExposure.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PantherStatue.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Piano.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PittBadge.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PittScript.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/PittShield.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/Rob.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/WPU.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SaturnVCrash-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SaturnVCrash-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SaturnVCrash-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-4.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-5.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailors-6.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/SoldiersandSailorsHead.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/STBLightPainting-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/STBLightPainting-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/STBLightPainting-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/StPauls-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/StPauls-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/ThePoint.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/ThroughtheBuildings.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-1.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-2.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-3.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-4.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-5.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-6.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/VenatorSnow-7.jpg", "category": "all"},
-  {"src": "images/gallery/WatermarkedImages/WebsterHall.jpg", "category": "all"}
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Hudson-3.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Hudson.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Korra-2.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Korra-3.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Korra.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Nala-2.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Nala-3.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Nala.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Swan-06.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Animals/Swan-2.jpg",
+    "category": "Animals"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg",
+    "category": "Flowers"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg",
+    "category": "Flowers"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg",
+    "category": "Flowers"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-5.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-7.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/BAA380.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/BA_A380-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/BA_A380-3.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/BigBen-3.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/BlitzMemorial.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/Duck.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/HMSBelfast-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/LondonEye-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/LondonEye.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/NorthGreenwich.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/Oxford-05.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/Oxford-06.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/PhysicalEnergyStatue.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/PlumBlossom.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/PumpHouse-4.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TheRoyalHouseguards.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TheShard-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TheShard-4.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TheShard-5.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBus.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/VirginAtlantic-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/Westminster.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/London/WestminsterBridge-2.jpg",
+    "category": "London"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Nerja/Nerja Sunrise-2.jpg",
+    "category": "Nerja"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralfromHighway.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-3.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyCMU.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyFog.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyHaloTrial.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyandDrone.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyandFlag.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyandHeinzChapel.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyandPanther.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyandSpiral.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-3.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/Chapel.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/Dippy-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/FifthAve.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/FifthAveSnowy.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/ForbesfromBridge.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/GEO-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/GlobeMaster.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/HeinzChapel.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/HeinzSpiral.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/OCLotShot-1-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/OCLotShot-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/OaklandDrone-1-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/OaklandDrone-2-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHall.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHead-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHead-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHeadExposure.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherStatue.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PittBadge.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PittScript.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PittShield.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-3.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-4.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-5.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-6.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailorsHead.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/ThroughtheBuildings.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/WPU.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Other/Piano-2.jpg",
+    "category": "Other"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Other/Piano.jpg",
+    "category": "Other"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-03.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-09.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-10.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-18.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-20.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Rob.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/40thStBridge.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/Downtown279.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownFortPitt.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownHighway.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-3.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-4.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-5.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSideDrone.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSidePainting.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-3.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-4.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField279.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HighmarkBuilding.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-3.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/StPauls-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/StPauls-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Balcon Globe-1.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Balcon Globe-2.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Balcon de Europa.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Beach Shades.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/BronzeLion.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Calles de Nerja-3.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/CongressHotel.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-01.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-02.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-03.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-04.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-05.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-07.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-08.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-09.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-10.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-11.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-12.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-13.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Crail-14.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-1.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-2-2.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-3-2.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-4.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-6.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-7.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-02.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-03.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-04.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-06.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-07.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-08.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-09.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-10.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Edinburgh-11.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Guitarist.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-01.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-03.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-04.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-05.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-06.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-07.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-08.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-09.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-10.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-11.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-12.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-13.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-14.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-15.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-16.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-17.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-18.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-19.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-20.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-21.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-22.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-23.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-24.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-25.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-26.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-27.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-28.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-29.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-30.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-31.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-32.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-33.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-34.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-35.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-36.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-37.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-38.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-39.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-40.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-41.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-42.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-43.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-44.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-45.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-46.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-47.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-48.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-49.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-50.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/HHI25-51.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/King Alfronso XII.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/LoganMonument.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-01.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-02.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-04.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-05.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-06.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-07.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-08.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-09.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Coast-10.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Hotel.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Stock.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-1.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-3.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-4.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-5.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-6.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-7.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-8.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Nerja Sunrise-9.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Pebbles.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/Rooftop.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -01.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -02.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -03.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -04.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -05.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -06.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -07.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -08.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -09.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -10.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -11.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -13.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/St Andrew's -14.jpg",
+    "category": "chicago"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/chicago/TheSpearman.jpg",
+    "category": "chicago"
+  }
 ]

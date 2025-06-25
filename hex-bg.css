@@ -1,0 +1,35 @@
+/* hex-bg.css */
+:root {
+  --hex-base-size: 120px;    /* starting hex width */
+  --hex-rows: 8;             /* how many rows of hexes */
+  --glass-opacity: 0.12;     /* glass panel opacity */
+  --glass-blur: 6px;         /* backdrop blur amount */
+}
+
+html, body {
+  margin:0; padding:0;
+  height:100%; overflow-x:hidden;
+}
+
+#hex-bg {
+  position: fixed;
+  top: -20%; left: -20%;
+  width: 140%; height: 140%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: -1;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+}
+
+.hex {
+  position: absolute;
+  background: rgba(255,255,255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%, 75% 100%,
+    25% 100%, 0% 50%
+  );
+}

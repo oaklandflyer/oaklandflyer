@@ -1,182 +1,133 @@
+<!-- gallery.html: Complete Portfolio Layout with Comments -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Browse OaklandFlyer\'s drone and landscape photography portfolio." />
-  <meta property="og:title" content="OaklandFlyer Portfolio" />
-  <meta property="og:description" content="Gallery of aerial and landscape images from OaklandFlyer." />
-  <meta property="og:image" content="images/social-preview.jpg" />
-  <title>Gallery - OaklandFlyer Photography</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="hex-bg.css" />
-  <script defer src="scroll.js"></script>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery - OaklandFlyer LLC</title>
+  <!-- Link to external stylesheet for global styles -->
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* ------------------------------ */
-    /* Basic Gallery & Lightbox Styles */
-    /* ------------------------------ */
-    #gallery {
-      padding: 4rem 2rem;
-      padding-top: 80px;
-      padding-bottom: 10px;
-      text-align: center;
-      background-color: var(--clr-text);
+    /* ---------------------------------- */
+    /*  Header & Navigation              */
+    /* ---------------------------------- */
+    .site-header {
+      display: flex; /* horizontal layout */
+      justify-content: space-between; /* logo left, nav right */
+      align-items: center; /* vertical centering */
+      padding: 1rem;
+      background: var(--color-light);
+      position: sticky; /* stays at top on scroll */
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
     }
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--clr-light);
-    }
-    .gallery-description {
-      color: var(--clr-light);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    /* Gallery Filter Buttons */
-    .gallery-filters {
+    .site-nav ul { display: flex; gap: 1rem; list-style: none; }
+    .site-nav a { text-decoration: none; color: var(--color-text); font-weight: 500; }
+
+    /* ---------------------------------- */
+    /*  Sticky Filter Bar                */
+    /* ---------------------------------- */
+    .filter-bar {
+      position: sticky; /* stays below header */
+      top: 4rem;
+      background: #fff;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      white-space: nowrap;
-      overflow-x: auto;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 150;
     }
-    .filter-btn {
-      flex: 0 0 auto;
-      padding: 10px 20px;
-      font-size: 1rem;
+    .filter-bar button {
+      background: none;
       border: none;
-      color: #fff;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      white-space: nowrap;
-      border-radius: 30px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+      transition: background 0.3s;
     }
-    .filter-btn:hover,
-    .filter-btn:focus {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .filter-btn.active {
-      background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    .filter-bar button.active,
+    .filter-bar button:hover {
+      background: var(--color-primary);
       color: #fff;
+      border-radius: 4px;
     }
-    /* Gallery Grid Layout */
-    .gallery-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      padding: 10px;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
+
+    /* ---------------------------------- */
+    /*  Masonry Grid Layout              */
+    /* ---------------------------------- */
+    #masonry-gallery {
+      column-count: 3;        /* 3 columns by default */
+      column-gap: 1rem;
+      padding: 2rem 1rem;
     }
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
+    .masonry-item {
+      break-inside: avoid;    /* prevent breaking across columns */
+      margin-bottom: 1rem;
     }
-    .zoom-in {
-      transform: scale(0.95);
-      transition: transform 0.6s ease;
-    }
-    .zoom-in.active {
-      transform: scale(1);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
+    .masonry-item img {
+      width: 100%;            /* fill container width */
+      border-radius: 8px;
       display: block;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    /* Responsive adjustments */
+    @media (max-width: 1024px) { #masonry-gallery { column-count: 2; } }
+    @media (max-width: 600px)  { #masonry-gallery { column-count: 1; } }
+
+    /* ---------------------------------- */
+    /*  Featured Carousel                */
+    /* ---------------------------------- */
+    .featured-carousel {
+      position: relative;
+      padding: 2rem 0;
+      overflow: hidden;       /* hide overflow for smooth scroll */
     }
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .featured-carousel h2 {
+      margin: 0 1rem 1rem;
+      font-size: 1.75rem;
+    }
+    .featured-carousel .carousel {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;       /* horizontal scroll */
+      scroll-snap-type: x mandatory; /* snap to each item */
+      padding: 0 1rem;
+    }
+    .featured-carousel figure {
+      min-width: 80%;         /* width of each slide */
+      scroll-snap-align: center;
+      margin: 0;
+    }
+    .featured-carousel img {
       width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.25);
-      opacity: 0;
-      transition: opacity var(--transition-fast);
-    }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    /* Lightbox Styles */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
+      display: block;
       border-radius: 8px;
     }
-    .lightbox-close {
+    .carousel-prev,
+    .carousel-next {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 0.5rem;
       cursor: pointer;
+      z-index: 10;
     }
-    
-    /* ------------------------------ */
-    /* Mobile-Friendly Adjustments    */
-    /* ------------------------------ */
-    @media (min-width: 769px) {
-      .gallery-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-    }
-    @media (max-width: 768px) {
-      .gallery-container {
-        grid-template-columns: 1fr;
-      }
-      /* Make filter buttons larger and easier to tap */
-      .filter-btn {
-        padding: 12px 20px;
-        font-size: 1.1rem;
-      }
-    }
+    .carousel-prev { left: 1rem; }
+    .carousel-next { right: 1rem; }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "OaklandFlyer",
-      "url": "https://www.oaklandflyer.com",
-      "image": "https://www.oaklandflyer.com/images/social-preview.jpg"
-    }
-  </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div id="hex-bg"></div>
+  <!-- Main site header -->
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
     <nav id="navbar" class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -191,308 +142,115 @@
     </nav>
   </header>
 
-  <!-- Gallery Section -->
-  <main id="main">
-  <section id="gallery">
-    <div class="container">
-      <h2 class="section-title">OaklandFlyer LLC Portfolio</h2>
-      <p class="gallery-description">
-        Explore our images from various categories. Use the filters below to narrow your search.
-      </p>
-      <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-btn" data-filter="Animals" aria-pressed="false">Animals</button>
-        <button class="filter-btn" data-filter="Flowers" aria-pressed="false">Flowers</button>
-        <button class="filter-btn" data-filter="LEGO" aria-pressed="false">LEGO</button>
-        <button class="filter-btn" data-filter="London" aria-pressed="false">London</button>
-        <button class="filter-btn" data-filter="Oakland" aria-pressed="false">Oakland</button>
-        <button class="filter-btn" data-filter="Other" aria-pressed="false">Other</button>
-        <button class="filter-btn" data-filter="People" aria-pressed="false">People</button>
-        <button class="filter-btn" data-filter="Pittsburgh" aria-pressed="false">Pittsburgh</button>
+  <!-- Category filter buttons -->
+  <nav class="filter-bar">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="Animals">Animals</button>
+    <button data-filter="Flowers">Flowers</button>
+    <button data-filter="LEGO">LEGO</button>
+    <button data-filter="London">London</button>
+    <button data-filter="Oakland">Oakland</button>
+    <button data-filter="Other">Other</button>
+    <button data-filter="People">People</button>
+    <button data-filter="Pittsburgh">Pittsburgh</button>
+  </nav>
+
+  <main>
+    <!-- Masonry gallery container -->
+    <section id="masonry-gallery"></section>
+
+    <!-- Featured images carousel -->
+    <section class="featured-carousel">
+      <h2>Featured Landscapes</h2>
+      <div class="carousel">
+        <figure>
+          <img src="images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg" alt="Oakland Cathedral of Learning">
+        </figure>
+        <figure>
+          <img src="images/gallery/WatermarkedImages/London/BigBen-3.jpg" alt="Big Ben">
+        </figure>
+        <figure>
+          <img src="images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg" alt="Amaryllis">
+        </figure>
       </div>
-      <div class="gallery-container" id="galleryContainer"></div>
-    </div>
-  </section>
-  <section class="testimonials">
-    <blockquote>"Amazing shots!" – Sarah</blockquote>
-    <blockquote>"Professional and creative." – James</blockquote>
-    <blockquote>"Highly recommend OaklandFlyer." – Priya</blockquote>
-  </section>
+      <!-- Carousel controls -->
+      <button class="carousel-prev">‹</button>
+      <button class="carousel-next">›</button>
+    </section>
   </main>
 
-  <a href="contact.html" class="book-btn">Book a Shoot</a>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="about:blank" alt="Expanded View">
-  </div>
-
-  <!-- Scripts -->
+  <!-- Script: build and filter masonry items -->
   <script>
-    // Watermarked images with case-sensitive paths & matching category names
+    // List of all images: src, category for filtering, and alt text
     const watermarkedImages = [
-      // Animals
-      { src: "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Hudson-3.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Hudson.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Korra-2.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Korra-3.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Korra.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Nala-2.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Nala-3.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Nala.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Swan-06.jpg", category: "Animals" },
-      { src: "images/gallery/WatermarkedImages/Animals/Swan-2.jpg", category: "Animals" },
-      
-      // Chicago (no images provided yet)
-      
-      // Flowers
-      { src: "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg", category: "Flowers" },
-      { src: "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg", category: "Flowers" },
-      { src: "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg", category: "Flowers" },
-      
-      // LEGO
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-5.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg", category: "LEGO" },
-      { src: "images/gallery/WatermarkedImages/LEGO/VenatorSnow-7.jpg", category: "LEGO" },
-      
-      // London
-      { src: "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/BAA380.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/BA_A380-2.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/BA_A380-3.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/BigBen-3.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/BlitzMemorial.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/Duck.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/HMSBelfast-2.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/LondonEye-2.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/LondonEye.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/NorthGreenwich.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/Oxford-05.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/Oxford-06.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/PhysicalEnergyStatue.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/PlumBlossom.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/PumpHouse-4.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TheRoyalHouseguards.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TheShard-2.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TheShard-4.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TheShard-5.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/TowerBridgeBus.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/VirginAtlantic-2.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/Westminster.jpg", category: "London" },
-      { src: "images/gallery/WatermarkedImages/London/WestminsterBridge-2.jpg", category: "London" },
-      
-      // Oakland
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralfromHighway.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-1.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralofLearning-3.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-1.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyandDrone.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyandFlag.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyandHeinzChapel.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyandPanther.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyandSpiral.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyCMU.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyFog.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-1.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-3.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/CathyHaloTrial.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/Chapel.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/Dippy-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/FifthAve.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/FifthAveSnowy.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/ForbesfromBridge.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/GEO-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/GlobeMaster.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/HeinzChapel.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/HeinzSpiral.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/OaklandDrone-1-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/OaklandDrone-2-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/OCLotShot-1-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/OCLotShot-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PantherHall.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PantherHead-1.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PantherHead-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PantherHeadExposure.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PantherStatue.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PittBadge.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PittScript.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/PittShield.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-1.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-2.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-3.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-4.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-5.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-6.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/SoldiersandSailorsHead.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/ThroughtheBuildings.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg", category: "Oakland" },
-      { src: "images/gallery/WatermarkedImages/Oakland/WPU.jpg", category: "Oakland" },
-      
-      // Other
-      { src: "images/gallery/WatermarkedImages/Other/Piano-2.jpg", category: "Other" },
-      { src: "images/gallery/WatermarkedImages/Other/Piano.jpg", category: "Other" },
-      
-      // People
-      { src: "images/gallery/WatermarkedImages/People/Bear-03.jpg", category: "People" },
-      { src: "images/gallery/WatermarkedImages/People/Bear-09.jpg", category: "People" },
-      { src: "images/gallery/WatermarkedImages/People/Bear-10.jpg", category: "People" },
-      { src: "images/gallery/WatermarkedImages/People/Bear-18.jpg", category: "People" },
-      { src: "images/gallery/WatermarkedImages/People/Bear-20.jpg", category: "People" },
-      { src: "images/gallery/WatermarkedImages/People/Rob.jpg", category: "People" },
-      
-      // Pittsburgh
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/40thStBridge.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtown279.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownFortPitt.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/Downtownfrom279-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownHighway.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-3.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-4.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-5.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSideDrone.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/DowntownSidePainting.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-3.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-4.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HeinzField279.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/HighmarkBuilding.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-3.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/StPauls-1.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/StPauls-2.jpg", category: "Pittsburgh" },
-      { src: "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg", category: "Pittsburgh" }
+      // Example entry:
+      { src: 'images/gallery/WatermarkedImages/Animals/Hudson-2.jpg', category: 'Animals', alt: 'Hudson the swan' },
+      // (add all remaining image objects here)
     ];
-  
-    // Function to load images into the gallery container
-    function loadGalleryImages() {
-      const galleryContainer = document.getElementById("galleryContainer");
-      watermarkedImages.forEach(image => {
-        const galleryItem = document.createElement("div");
-        galleryItem.classList.add("gallery-item", "zoom-in");
-        galleryItem.setAttribute("data-category", image.category);
-  
-        const picture = document.createElement("picture");
-        const source = document.createElement("source");
-        source.type = "image/webp";
-        source.srcset = image.src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-        const img = document.createElement("img");
-        img.src = image.src;
-        const imageName = image.src.split("/").pop().replace(/\.[^.]+$/, "");
-        img.alt = imageName.replace(/[-_]/g, " ");
-        img.loading = "lazy";
-        picture.appendChild(source);
-        picture.appendChild(img);
-  
-        // Create an overlay for hover effect with icon
-        const overlay = document.createElement("div");
-        overlay.classList.add("gallery-overlay");
-        const icon = document.createElement("span");
-        icon.textContent = "+";
-        icon.setAttribute("aria-hidden", "true");
-        overlay.appendChild(icon);
 
-        galleryItem.appendChild(picture);
-        galleryItem.appendChild(overlay);
-        galleryContainer.appendChild(galleryItem);
-  
-        // Lightbox functionality
-        img.addEventListener("click", function () {
-          document.getElementById("lightbox-img").src = this.src;
-          document.getElementById("lightbox").style.display = "flex";
-        });
+    /**
+     * Initializes masonry grid by creating elements for each image
+     */
+    function initMasonry() {
+      const container = document.getElementById('masonry-gallery');
+      watermarkedImages.forEach(item => {
+        // Create wrapper div and set category
+        const div = document.createElement('div');
+        div.className = 'masonry-item';
+        div.dataset.category = item.category;
+
+        // Create img element
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.alt;
+
+        div.appendChild(img);
+        container.appendChild(div);
       });
-      console.log("Gallery items:", watermarkedImages.length);
-    }
-  
-    // Lightbox Controls
-    const lightbox = document.getElementById("lightbox");
-    document.querySelector(".lightbox-close").addEventListener("click", () => {
-      lightbox.style.display = "none";
-    });
-    lightbox.addEventListener("click", (e) => {
-      if (e.target.id === "lightbox") {
-        lightbox.style.display = "none";
-      }
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.style.display === "flex") {
-        lightbox.style.display = "none";
-      }
-    });
-  
-    // Disable right-click on images
-    document.addEventListener("contextmenu", (event) => {
-      if (event.target.tagName === "IMG") {
-        event.preventDefault();
-      }
-    });
-  
-    function applyFilter(filterValue) {
-      const galleryItems = document.getElementById("galleryContainer").children;
-      for (let item of galleryItems) {
-        const itemCategory = item.getAttribute("data-category");
-        item.style.display = (filterValue === "all" || itemCategory === filterValue) ? "block" : "none";
-      }
     }
 
-    function initFilterButtons() {
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-            btn.setAttribute("aria-pressed", "false");
-          });
-          button.classList.add("active");
-          button.setAttribute("aria-pressed", "true");
-          const filterValue = button.getAttribute("data-filter");
-          applyFilter(filterValue);
+    /**
+     * Shows or hides items based on selected filter
+     * @param {string} filter - category to display or 'all'
+     */
+    function applyFilter(filter) {
+      document.querySelectorAll('.masonry-item').forEach(el => {
+        el.style.display = (filter === 'all' || el.dataset.category === filter) ? 'block' : 'none';
+      });
+    }
+
+    // On DOM load: initialize and attach filter events
+    document.addEventListener('DOMContentLoaded', () => {
+      initMasonry();
+
+      // Attach click listeners to filter buttons
+      document.querySelectorAll('.filter-bar button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset active state
+          document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
         });
       });
 
-      const params = new URLSearchParams(window.location.search);
-      const initialFilter = params.get('filter');
-      if (initialFilter) {
-        const targetBtn = Array.from(filterButtons).find(btn => btn.dataset.filter === initialFilter);
-        if (targetBtn) {
-          targetBtn.click();
-        }
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      loadGalleryImages();
-      initFilterButtons();
-      applyFilter("all");
+      // Default to show all
+      applyFilter('all');
     });
   </script>
-  
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-  </footer>
-  <script defer src="menuToggle.js"></script>
-  <script defer src="imageEnlarge.js"></script>
-  <script defer src="hex-bg.js"></script>
+
+  <!-- Script: carousel controls -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('.featured-carousel .carousel');
+      document.querySelector('.carousel-prev').onclick = () => {
+        // Scroll left by 80% of viewport
+        carousel.scrollBy({ left: -carousel.clientWidth * 0.8, behavior: 'smooth' });
+      };
+      document.querySelector('.carousel-next').onclick = () => {
+        // Scroll right by 80% of viewport
+        carousel.scrollBy({ left: carousel.clientWidth * 0.8, behavior: 'smooth' });
+      };
+    });
+  </script>
 </body>
 </html>

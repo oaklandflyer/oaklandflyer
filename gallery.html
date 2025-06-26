@@ -1,298 +1,170 @@
-<!-- gallery.html: Complete Portfolio Layout with Comments -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery - OaklandFlyer LLC</title>
-  <!-- Link to external stylesheet for global styles -->
   <link rel="stylesheet" href="style.css">
+  <script defer src="menuToggle.js"></script>
   <style>
     /* ---------------------------------- */
-    /*  Header & Navigation Updated      */
+    /*  Header & Navigation              */
     /* ---------------------------------- */
     .site-header {
-      background: var(--color-dark);          /* Dark theme header */
-      color: var(--color-light);              /* Light text */
-      font-family: 'Poppins', sans-serif;
-      display: flex;                          /* Logo & nav side by side */
+      background: var(--color-dark);
+      color: var(--color-light);
+      font-family: var(--font-family-base);
+      display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 200;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
     }
-    .site-header .logo-link img {
-      height: 40px;                           /* Consistent logo size */
+    .logo-link img {
+      height: 40px;
+      width: auto;
     }
-    .site-nav ul {
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.75rem;
+      color: var(--color-light);
+      display: none;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+    }
+    .nav-list {
+      list-style: none;
       display: flex;
       gap: 1.5rem;
-      list-style: none;
-      margin: 0;
     }
-    .site-nav a {
+    .nav-list a {
+      color: var(--color-light);
       text-decoration: none;
-      color: var(--color-light);
-      font-weight: 600;
-      transition: color 0.2s;
+      font-weight: 500;
+      transition: opacity 0.2s ease;
     }
-    .site-nav a:hover,
-    .site-nav a:focus {
-      color: var(--color-primary);
+    .nav-list a:hover,
+    .nav-list a.active {
+      opacity: 0.7;
     }
-    #menu-toggle {
-      display: none;                          /* Hidden on desktop */
-      background: none;
-      border: none;
-      color: var(--color-light);
-      font-size: 1.5rem;
-      cursor: pointer;
+
+    /* ---------------------------------- */
+    /*  Gallery Section                  */
+    /* ---------------------------------- */
+    #gallery {
+      padding: 4rem 2rem;
+      background-color: var(--color-bg);
     }
+    .section-title {
+      font-size: var(--font-size-h2);
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: var(--color-dark);
+    }
+    .gallery-description {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: var(--color-text);
+    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ---------------------------------- */
+    /*  Responsive: Mobile Navigation     */
+    /* ---------------------------------- */
     @media (max-width: 768px) {
-      #menu-toggle { display: block; }
-      .site-nav ul {
-        flex-direction: column;
-        background: var(--color-dark);
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
         position: absolute;
         top: 100%;
+        left: 0;
         right: 0;
-        width: 200px;
-        transform: translateX(100%);           /* Hidden off-canvas */
-        transition: transform 0.3s;
+        background: var(--color-dark);
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
       }
-      .site-nav ul.open { transform: translateX(0); }
+      .nav-links.open {
+        max-height: 300px;
+      }
+      .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
     }
-
-    /* ---------------------------------- */
-    /*  Sticky Filter Bar                */
-    /* ---------------------------------- */
-    .filter-bar {
-      position: sticky; /* stays below header */
-      top: 4rem;
-      background: #fff;
-      display: flex;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index: 150;
-    }
-    .filter-bar button {
-      background: none;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .filter-bar button.active,
-    .filter-bar button:hover {
-      background: var(--color-primary);
-      color: #fff;
-      border-radius: 4px;
-    }
-
-    /* ---------------------------------- */
-    /*  Masonry Grid Layout              */
-    /* ---------------------------------- */
-    #masonry-gallery {
-      column-count: 3;        /* 3 columns by default */
-      column-gap: 1rem;
-      padding: 2rem 1rem;
-    }
-    .masonry-item {
-      break-inside: avoid;    /* prevent breaking across columns */
-      margin-bottom: 1rem;
-    }
-    .masonry-item img {
-      width: 100%;            /* fill container width */
-      border-radius: 8px;
-      display: block;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 1024px) { #masonry-gallery { column-count: 2; } }
-    @media (max-width: 600px)  { #masonry-gallery { column-count: 1; } }
-
-    /* ---------------------------------- */
-    /*  Featured Carousel                */
-    /* ---------------------------------- */
-    .featured-carousel {
-      position: relative;
-      padding: 2rem 0;
-      overflow: hidden;       /* hide overflow for smooth scroll */
-    }
-    .featured-carousel h2 {
-      margin: 0 1rem 1rem;
-      font-size: 1.75rem;
-    }
-    .featured-carousel .carousel {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;       /* horizontal scroll */
-      scroll-snap-type: x mandatory; /* snap to each item */
-      padding: 0 1rem;
-    }
-    .featured-carousel figure {
-      min-width: 80%;         /* width of each slide */
-      scroll-snap-align: center;
-      margin: 0;
-    }
-    .featured-carousel img {
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
-    .carousel-prev,
-    .carousel-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      padding: 0.5rem;
-      cursor: pointer;
-      z-index: 10;
-    }
-    .carousel-prev { left: 1rem; }
-    .carousel-next { right: 1rem; }
   </style>
 </head>
 <body>
-  <!-- Main site header -->
+  <!-- Site Header with Responsive Nav -->
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-      ☰
-    </button>
-    <nav id="navbar" class="site-nav">
-      <ul>
+    <button id="menu-icon" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="nav-links">
+      <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Portfolio</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="videos.html">Videos</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Category filter buttons -->
-  <nav class="filter-bar">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="Animals">Animals</button>
-    <button data-filter="Flowers">Flowers</button>
-    <button data-filter="LEGO">LEGO</button>
-    <button data-filter="London">London</button>
-    <button data-filter="Oakland">Oakland</button>
-    <button data-filter="Other">Other</button>
-    <button data-filter="People">People</button>
-    <button data-filter="Pittsburgh">Pittsburgh</button>
-  </nav>
-
-  <main>
-
-
-    <!-- Featured images carousel -->
-    <section class="featured-carousel">
-      <h2>Featured Landscapes</h2>
-      <div class="carousel">
-        <figure>
-          <img src="images/gallery/WatermarkedImages/pittsburgh/DowntownSide-1.jpg" alt="Pittsburgh">
-        </figure>
-        <figure>
-          <img src="images/gallery/WatermarkedImages/London/BigBen-3.jpg" alt="Big Ben">
-        </figure>
-        <figure>
-          <img src="images/gallery/WatermarkedImages/Nerja/Nerja Sunrise-2.jpg" alt="Nerja Sunrise">
-        </figure>
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h1 class="section-title">My Photography</h1>
+    <p class="gallery-description">A curated collection of my favorite shots.</p>
+    <div class="gallery-container">
+      <!-- Example Gallery Item -->
+      <div class="gallery-item">
+        <img src="images/photo1.jpg" alt="Sample description">
       </div>
-          <!-- Masonry gallery container -->
-    <section id="masonry-gallery"></section>
-      <!-- Carousel controls -->
-      <button class="carousel-prev">‹</button>
-      <button class="carousel-next">›</button>
-    </section>
-  </main>
+      <!-- Add more .gallery-item blocks as needed -->
+    </div>
+  </section>
 
-  <!-- Script: build and filter masonry items -->
+  <!-- Site Footer -->
+  <footer class="site-footer" style="text-align:center; padding:2rem 0; background:var(--color-dark); color:var(--color-light);">
+    <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
+  </footer>
+
+  <!-- Mobile Nav Toggle Script -->
   <script>
-    function applyFilter(filter) {
-      document.querySelectorAll('.masonry-item').forEach(el => {
-        el.style.display =
-          filter === 'all' || el.dataset.category === filter ? 'block' : 'none';
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('imagePaths.json')
-        .then((r) => r.json())
-        .then((images) => {
-          const container = document.getElementById('masonry-gallery');
-          images.forEach(({ src, category }) => {
-            const div = document.createElement('div');
-            div.className = 'masonry-item';
-            div.dataset.category = category;
-
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = src
-              .split('/')
-              .pop()
-              .replace(/[-_]/g, ' ')
-              .replace(/\.[^/.]+$/, '');
-
-            div.appendChild(img);
-            container.appendChild(div);
-          });
-
-          const params = new URLSearchParams(window.location.search);
-          const startFilter = params.get('filter') || 'all';
-
-          const active = document.querySelector(
-            `.filter-bar button[data-filter="${startFilter}"]`
-          );
-          if (active) {
-            document
-              .querySelectorAll('.filter-bar button')
-              .forEach((b) => b.classList.remove('active'));
-            active.classList.add('active');
-          }
-
-          applyFilter(startFilter);
-        });
-
-      document.querySelectorAll('.filter-bar button').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          document
-            .querySelectorAll('.filter-bar button')
-            .forEach((b) => b.classList.remove('active'));
-          btn.classList.add('active');
-          applyFilter(btn.dataset.filter);
-        });
-      });
-    });
-  </script>
-
-  <!-- Script: carousel controls -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.querySelector('.featured-carousel .carousel');
-      document.querySelector('.carousel-prev').onclick = () => {
-        // Scroll left by 80% of viewport
-        carousel.scrollBy({ left: -carousel.clientWidth * 0.8, behavior: 'smooth' });
-      };
-      document.querySelector('.carousel-next').onclick = () => {
-        // Scroll right by 80% of viewport
-        carousel.scrollBy({ left: carousel.clientWidth * 0.8, behavior: 'smooth' });
-      };
-    });
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('navbar');
+    menuIcon.addEventListener('click', () => navLinks.classList.toggle('open'));
   </script>
 </body>
 </html>

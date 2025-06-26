@@ -93,6 +93,18 @@
       border-radius: 4px;
     }
 
+    /* Mobile enhancements */
+    @media (max-width: 600px) {
+      .filter-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .filter-bar button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+    }
+
     /* ---------------------------------- */
     /*  Masonry Grid Layout              */
     /* ---------------------------------- */

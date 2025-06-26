@@ -288,19 +288,6 @@ img {
   text-decoration: none;
   min-height: 44px;
 }
-.hero.parallax {
-  position: relative;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  z-index: 1;
-}
 
 
 /* Services */
@@ -609,3 +596,65 @@ img {
   filter: grayscale(0%);
 }
 
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #fdfdfd;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+}
+
+.book-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #ff6600;
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+}

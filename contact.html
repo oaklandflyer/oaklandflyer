@@ -16,63 +16,68 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <div id="hex-bg"></div>
 
-    <header class="site-header">
-        <a href="index.html" class="logo-link">
-            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
+    </a>
+    <button
+      id="menu-toggle"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="navbar" class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Portfolio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a
+            href="https://oaklandflyerllc.pixieset.com/"
+            target="_blank"
+            rel="noopener"
+          >Buy Prints</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Contact Section -->
+<main id="main">
+  <section id="contact" class="contact-section">
+    <div class="container fade-up">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/xovvrygq" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="social-links modern-social">
+        <p>Or connect with me on:</p>
+        <a href="https://www.instagram.com/oaklandflyer/" target="_blank" aria-label="Instagram">
+          <img src="images/instagram-icon.png" alt="Instagram" />
         </a>
-        <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
-        <nav id="navbar" class="site-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Portfolio</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contact Section -->
-    <main id="main">
-    <section id="contact">
-        <div class="container fade-up">
-            <h2 class="section-title">Get in Touch</h2>
-            <p>Have a project in mind, or want to collaborate? Feel free to reach out using the form below.</p>
-
-            <!-- Contact Form -->
-            <form action="https://formspree.io/f/xovvrygq" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-
-            <!-- Social Links -->
-            <div class="social-links">
-                <h3>Follow Me</h3>
-                <a href="https://www.instagram.com/oaklandflyer/" target="_blank" aria-label="Instagram">
-                    <img src="images/instagram-icon.png" alt="Instagram" loading="lazy">
-                </a>
-                <a href="https://www.linkedin.com/in/andrew-coutinho" target="_blank" aria-label="LinkedIn">
-                    <img src="images/linkedin-icon.png" alt="LinkedIn" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container fade-up">
-            <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script defer src="menuToggle.js"></script>
-    <script defer src="imageEnlarge.js"></script>
-    <script defer src="hex-bg.js"></script>
-</body>
-</html>
+        <a href="https://www.linkedin.com/in/andrew-coutinho" target="_blank" aria-label="LinkedIn">
+          <img src="images/linkedin-icon.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.youtube.com/@oaklandflyer" target="_blank" aria-label="YouTube">
+          <img src="images/youtube-icon.png" alt="YouTube" />
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

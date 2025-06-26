@@ -16,52 +16,66 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <div id="hex-bg"></div>
 
-    <header class="site-header">
-        <a href="index.html" class="logo-link">
-            <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
-        </a>
-        <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
-        <nav id="navbar" class="site-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Portfolio</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
+    </a>
+    <button
+      id="menu-toggle"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="navbar" class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Portfolio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a
+            href="https://oaklandflyerllc.pixieset.com/"
+            target="_blank"
+            rel="noopener"
+          >Buy Prints</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Video Section -->
 <!-- Video Section -->
 <main id="main">
-<section id="videos">
-    <h2 class="section-title">Videos</h2>
+  <section id="videos" class="video-section">
+    <h2 class="section-title">Featured Videos</h2>
 
     <!-- Video Gallery Grid -->
     <div class="video-container">
-        <!-- Existing Video -->
-        <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" allowfullscreen></iframe>
-        <!-- New Video -->
-        <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" allowfullscreen></iframe>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" 
+                title="Video 1" 
+                allowfullscreen 
+                loading="lazy"></iframe>
+      </div>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" 
+                title="Video 2" 
+                allowfullscreen 
+                loading="lazy"></iframe>
+      </div>
     </div>
-</section>
+
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <p>Follow OaklandFlyer for more visuals:</p>
+      <a href="https://www.youtube.com/@oaklandflyerLLC" target="_blank" class="social-btn">YouTube</a>
+      <a href="https://www.instagram.com/oaklandflyer" target="_blank" class="social-btn">Instagram</a>
+    </div>
+  </section>
 </main>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script defer src="menuToggle.js"></script>
-    <script defer src="imageEnlarge.js"></script>
-    <script defer src="hex-bg.js"></script>
-
-</body>
-</html>

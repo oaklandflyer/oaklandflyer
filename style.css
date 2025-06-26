@@ -20,15 +20,7 @@
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --breakpoint-md: 768px;
-
-  /* hex-background */
-  --hex-base-size: 120px;
-  --hex-rows: 8;
-  --glass-opacity: 0.12;
-  --glass-blur: 6px;
-  --hex-border-color: rgba(255, 255, 255, 0.25);
 }
-
 
 
 * {
@@ -55,31 +47,7 @@ img {
   -webkit-user-drag: none;
   user-select: none;
 }
-#hex-bg {
-  position: fixed;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background-color: var(--hex-bg-color);
-  pointer-events: none;
-  z-index: -1;
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-}
 
-.hex {
-  position: absolute;
-  background-color: rgba(255, 255, 255, var(--glass-opacity));
-  border: 1px solid var(--hex-border-color);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  clip-path: polygon(
-    25% 0%, 75% 0%,
-    100% 50%, 75% 100%,
-    25% 100%, 0% 50%
-  );
-}
 
 /* Skip link */
 .skip-link {
@@ -248,25 +216,28 @@ img {
 
 /* Hero */
 .hero {
-  height: 100vh;
+  background-image: url('images/DowntownCloudsReduced.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: scroll; /* safe default; remove if using parallax elsewhere */
+
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
-  padding: 0 1rem;
+  padding: 2rem;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
   z-index: 0;
 }
 
@@ -274,6 +245,7 @@ img {
   position: relative;
   z-index: 2;
   max-width: 700px;
+  color: white;
 }
 
 .hero-text h1 {
@@ -299,6 +271,21 @@ img {
 
 .btn:hover {
   background-color: #ff6600;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+  }
 }
 
 

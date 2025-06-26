@@ -1,133 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - OaklandFlyer LLC</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="menuToggle.js"></script>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* ---------------------------------- */
-    /*  Header & Navigation              */
-    /* ---------------------------------- */
+    :root {
+      --color-dark: #1a1a1a;
+      --color-light: #f5f5f5;
+      --color-bg: #eeeeee;
+      --color-text: #333;
+      --container-width: 1200px;
+      --font-family-base: 'Poppins', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family-base);
+      margin: 0;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+
     .site-header {
       background: var(--color-dark);
       color: var(--color-light);
-      font-family: var(--font-family-base);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
+
     .logo-link img {
       height: 40px;
-      width: auto;
     }
-    .menu-toggle {
+
+    #menu-toggle {
       background: none;
       border: none;
-      font-size: 1.75rem;
-      color: var(--color-light);
-      display: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      gap: 4px;
       cursor: pointer;
     }
-    .nav-links {
-      display: flex;
+
+    .bar {
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-light);
     }
-    .nav-list {
+
+    .site-nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
+      margin: 0;
+      padding: 0;
     }
-    .nav-list a {
+
+    .site-nav a {
       color: var(--color-light);
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.2s ease;
-    }
-    .nav-list a:hover,
-    .nav-list a.active {
-      opacity: 0.7;
     }
 
-    /* ---------------------------------- */
-    /*  Gallery Section                  */
-    /* ---------------------------------- */
     #gallery {
       padding: 4rem 2rem;
-      background-color: var(--color-bg);
-    }
-    .section-title {
-      font-size: var(--font-size-h2);
-      margin-bottom: 0.5rem;
-      text-align: center;
-      color: var(--color-dark);
-    }
-    .gallery-description {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      color: var(--color-text);
-    }
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
       max-width: var(--container-width);
       margin: 0 auto;
     }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-category-title {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--color-dark);
+      border-bottom: 2px solid var(--color-dark);
+      padding-bottom: 0.5rem;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
     .gallery-item {
       position: relative;
       overflow: hidden;
       border-radius: 8px;
     }
+
     .gallery-item img {
       width: 100%;
       height: auto;
       display: block;
       transition: transform 0.3s ease;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
+
     .gallery-item:hover img {
       transform: scale(1.05);
     }
 
-    /* ---------------------------------- */
-    /*  Responsive: Mobile Navigation     */
-    /* ---------------------------------- */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: #111;
+      color: #fff;
+    }
+
+    /* Disable right-click, long-press, dragging */
+    body, img {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    img {
+      pointer-events: none;
+    }
+
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--color-dark);
+      .site-nav ul {
         flex-direction: column;
-        align-items: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-      }
-      .nav-links.open {
-        max-height: 300px;
-      }
-      .nav-list {
-        flex-direction: column;
-        width: 100%;
         gap: 1rem;
-        padding: 1rem 0;
       }
     }
   </style>
+  <script>
+    // Theft protection
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("dragstart", e => e.preventDefault());
+    document.addEventListener("mousedown", e => {
+      if (e.target.tagName === "IMG") e.preventDefault();
+    });
+    document.addEventListener("touchstart", e => {
+      if (e.target.tagName === "IMG") e.preventDefault();
+    });
+  </script>
 </head>
+
 <body>
-  <!-- Site Header with Responsive Nav -->
-<header class="site-header">
+  <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
     </a>
@@ -161,24 +193,51 @@
     </nav>
   </header>
 
-  <!-- Gallery Section -->
-  <section id="gallery">
+  <main id="gallery">
     <h1 class="section-title">My Photography</h1>
-    <p class="gallery-description">A curated collection of my favorite shots.</p>
-    <div class="gallery-container">
-      <!-- Example Gallery Item -->
-      <div class="gallery-item">
-        <img src="images/photo1.jpg" alt="Sample description" loading="lazy">
-      </div>
-      <!-- Add more .gallery-item blocks as needed -->
-    </div>
-  </section>
- <a href="contact.html" class="book-btn">Book a Shoot</a>
-  <!-- Site Footer -->
-  <footer class="site-footer" style="text-align:center; padding:2rem 0; background:var(--color-dark); color:var(--color-light);">
+    <div class="gallery-container"></div>
+  </main>
+
+  <footer class="site-footer">
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
 
+  <script>
+    fetch('imagePaths.json')
+      .then(res => res.json())
+      .then(images => {
+        const container = document.querySelector('.gallery-container');
+        const categories = [...new Set(images.map(img => img.category))];
+
+        categories.forEach(category => {
+          const title = document.createElement('h2');
+          title.textContent = category;
+          title.className = 'gallery-category-title';
+          container.appendChild(title);
+
+          const grid = document.createElement('div');
+          grid.className = 'category-grid';
+
+          images.filter(img => img.category === category).forEach(img => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+
+            const image = document.createElement('img');
+            image.src = img.src;
+            image.alt = category + ' photo';
+            image.loading = 'lazy';
+            image.draggable = false;
+
+            item.appendChild(image);
+            grid.appendChild(item);
+          });
+
+          container.appendChild(grid);
+        });
+      })
+      .catch(err => console.error('Failed to load gallery:', err));
+  </script>
+  <script defer src="menuToggle.js"></script>
   <script defer src="imageEnlarge.js"></script>
 </body>
 </html>

@@ -120,16 +120,22 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--clr-header-bg);
+
+  background-color: rgba(26, 26, 26, 0.433); /* semi-transparent black */
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* Safari support */
   box-shadow: 0 2px 4px var(--clr-header-shadow);
+
   padding: clamp(var(--spacing-sm), 2vw, var(--spacing-md));
   transition: box-shadow 0.3s ease;
 }
 
 .site-header.scrolled {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(83, 83, 83, 0.245);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Logo sizing */
 .logo-link img {

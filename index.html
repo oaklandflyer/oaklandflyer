@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="hex-bg.css">
 </head>
 <body>
-  <!-- Procedural hexagon background -->
-  <div id="hex-bg"></div>
+
+
 
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -133,8 +133,11 @@
   <script defer src="scroll.js"></script>
   <script defer src="menuToggle.js"></script>
   <script defer src="imageEnlarge.js"></script>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
 
-  <!-- Hexagon‐background script (deferred) -->
-  <script defer src="hex-bg.js"></script>
 </body>
 </html>

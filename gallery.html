@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - OaklandFlyer LLC</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style.css">
   <script defer src="scroll.js"></script>
-  <script defer src="imageEnlarge.js"></script>
+  <script defer src="menuToggle.js"></script>
   <style>
     :root {
       --clr-dark: #1a1a1a;
       --clr-light: #f5f5f5;
-      --clr-bg: rgb(190, 236, 255);
+      --clr-bg: #eaf6fa;
       --clr-text: #333;
       --clr-accent: #ff6600;
       --container-width: 1200px;
@@ -80,7 +79,8 @@
 
     .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin-bottom: 2rem;
     }
 
@@ -98,52 +98,53 @@
       background: var(--clr-dark);
       color: var(--clr-light);
       font-weight: 500;
+      transition: background 0.3s ease;
     }
 
-    .filter-btn.active {
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--clr-accent);
     }
 
     .gallery-category {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     .gallery-category-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       border-bottom: 2px solid var(--clr-dark);
-      margin: 1rem 0;
-      padding-bottom: 0.25rem;
+      margin: 1.5rem 0;
+      padding-bottom: 0.5rem;
+      text-transform: capitalize;
     }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
-      display: block;
-      border-radius: 8px;
-      cursor: pointer;
+      border-radius: 10px;
       transition: transform 0.3s ease;
+      cursor: pointer;
       pointer-events: none;
       user-select: none;
       -webkit-user-drag: none;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
-    /* Lightbox overlay */
     #img-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       justify-content: center;
       align-items: center;
       z-index: 2000;
@@ -162,23 +163,22 @@
       color: #fff;
     }
 
-    /* Disable right-click, long-press, dragging */
-    body, img {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
     @media (max-width: 768px) {
       .site-nav ul {
         flex-direction: column;
-        gap: 1rem;
+        background: var(--clr-dark);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+      }
+
+      .site-nav.open ul {
+        display: flex;
       }
     }
   </style>
-
   <script>
     document.addEventListener("contextmenu", e => e.preventDefault());
     document.addEventListener("dragstart", e => e.preventDefault());
@@ -190,7 +190,6 @@
     });
   </script>
 </head>
-
 <body>
   <header class="site-header">
     <a href="index.html" class="logo-link">
@@ -214,21 +213,17 @@
       </ul>
     </nav>
   </header>
-
   <main id="gallery">
     <h1 class="section-title">My Photography</h1>
     <div class="filters" id="filterButtons"></div>
     <div class="gallery-container" id="galleryContainer"></div>
   </main>
-
   <footer class="site-footer">
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
-
   <div id="img-overlay">
     <img src="" alt="enlarged" />
   </div>
-
   <script>
     fetch('imagePaths.json')
       .then(res => res.json())
@@ -240,7 +235,6 @@
 
         const categories = [...new Set(images.map(i => i.category))];
 
-        // Filter buttons
         categories.forEach(category => {
           const btn = document.createElement('button');
           btn.className = 'filter-btn';
@@ -268,24 +262,22 @@
           const grid = document.createElement('div');
           grid.className = 'category-grid';
 
-          images
-            .filter(img => img.category === category)
-            .forEach(img => {
-              const div = document.createElement('div');
-              div.className = 'gallery-item';
+          images.filter(img => img.category === category).forEach(img => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
 
-              const image = document.createElement('img');
-              image.src = img.src;
-              image.alt = img.alt || category;
-              image.loading = 'lazy';
-              image.onclick = () => {
-                overlayImg.src = image.src;
-                overlay.style.display = 'flex';
-              };
+            const image = document.createElement('img');
+            image.src = img.src;
+            image.alt = img.alt || category;
+            image.loading = 'lazy';
+            image.onclick = () => {
+              overlayImg.src = image.src;
+              overlay.style.display = 'flex';
+            };
 
-              div.appendChild(image);
-              grid.appendChild(div);
-            });
+            div.appendChild(image);
+            grid.appendChild(div);
+          });
 
           section.appendChild(grid);
           container.appendChild(section);
@@ -297,7 +289,5 @@
         };
       });
   </script>
-  <script defer src="scroll.js"></script>
-  <script defer src="menuToggle.js"></script>
 </body>
 </html>

@@ -6,8 +6,11 @@
   <title>OaklandFlyer – Editorial Layout</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="editorial.css" />
+  <link rel="stylesheet" href="hex-bg.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="hex-bg"></div>
   <header class="hero fade-in">
     <div class="hero-text">
       <h1>OaklandFlyer</h1>
@@ -17,7 +20,7 @@
 
   <section class="feature-block fade-in">
     <div class="image-left">
-      <img src="images/DowntownSunset.jpg" alt="Sunset over Pittsburgh" />
+      <img src="images/DowntownSunset.jpg" alt="Sunset over Pittsburgh" loading="lazy" />
     </div>
     <div class="text-right">
       <h2>Framing Nature</h2>
@@ -27,7 +30,7 @@
 
   <section class="feature-block reverse fade-in">
     <div class="image-right">
-      <img src="images/DJI_0455-2.jpg" alt="Aerial cityscape" />
+      <img src="images/DJI_0455-2.jpg" alt="Aerial cityscape" loading="lazy" />
     </div>
     <div class="text-left">
       <h2>The Aerial Perspective</h2>
@@ -38,5 +41,7 @@
   <footer>
     <p>&copy; 2025 OaklandFlyer | Capturing the Earth from Above</p>
   </footer>
+  <script defer src="imageEnlarge.js"></script>
+  <script defer src="hex-bg.js"></script>
 </body>
 </html>

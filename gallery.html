@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery - OaklandFlyer LLC</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="menuToggle.js"></script>
+<link rel="icon" href="images/OFLogo.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery - OaklandFlyer LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="hex-bg.css">
+<script defer src="scroll.js"></script>
+<script defer src="menuToggle.js"></script>
   <style>
     /* ---------------------------------- */
     /*  Header & Navigation              */
@@ -127,17 +132,23 @@
 </head>
 <body>
   <!-- Site Header with Responsive Nav -->
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="hex-bg"></div>
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
     </a>
-    <button id="menu-icon" class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <nav id="navbar" class="nav-links">
-      <ul class="nav-list">
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Portfolio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
   </header>
@@ -146,13 +157,7 @@
   <section id="gallery">
     <h1 class="section-title">My Photography</h1>
     <p class="gallery-description">A curated collection of my favorite shots.</p>
-    <div class="gallery-container">
-      <!-- Example Gallery Item -->
-      <div class="gallery-item">
-        <img src="images/photo1.jpg" alt="Sample description">
-      </div>
-      <!-- Add more .gallery-item blocks as needed -->
-    </div>
+    <div class="gallery-container"></div>
   </section>
 
   <!-- Site Footer -->
@@ -160,11 +165,9 @@
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile Nav Toggle Script -->
-  <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navLinks = document.getElementById('navbar');
-    menuIcon.addEventListener('click', () => navLinks.classList.toggle('open'));
-  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script defer src="gallery.js"></script>
+  <script defer src="imageEnlarge.js"></script>
+  <script defer src="hex-bg.js"></script>
 </body>
 </html>

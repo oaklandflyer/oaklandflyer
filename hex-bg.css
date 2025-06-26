@@ -4,8 +4,8 @@
   --hex-rows: 8;               /* number of hexagon rows */
   --glass-opacity: 0.12;       /* glass panel opacity */
   --glass-blur: 6px;           /* backdrop‐blur intensity */
-  --hex-border-color: rgba(255,255,255,0.25); /* faint outline */
-  --hex-bg-color: #f0f0f0;     /* background behind the glass tiles */
+  --hex-border-color: rgba(255,255,255,0.3); /* faint outline */
+  --hex-bg-color: #eaf6ff;     /* background behind the glass tiles */
 }
 
 html,

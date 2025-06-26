@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery - OaklandFlyer LLC</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hex-bg.css">
   <script defer src="menuToggle.js"></script>
   <style>
     /* ---------------------------------- */
@@ -127,17 +128,23 @@
 </head>
 <body>
   <!-- Site Header with Responsive Nav -->
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="hex-bg"></div>
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
     </a>
-    <button id="menu-icon" class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <nav id="navbar" class="nav-links">
-      <ul class="nav-list">
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav id="navbar" class="site-nav">
+      <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Portfolio</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="videos.html">Videos</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
   </header>
@@ -149,7 +156,7 @@
     <div class="gallery-container">
       <!-- Example Gallery Item -->
       <div class="gallery-item">
-        <img src="images/photo1.jpg" alt="Sample description">
+        <img src="images/photo1.jpg" alt="Sample description" loading="lazy">
       </div>
       <!-- Add more .gallery-item blocks as needed -->
     </div>
@@ -160,11 +167,7 @@
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
 
-  <!-- Mobile Nav Toggle Script -->
-  <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navLinks = document.getElementById('navbar');
-    menuIcon.addEventListener('click', () => navLinks.classList.toggle('open'));
-  </script>
+  <script defer src="imageEnlarge.js"></script>
+  <script defer src="hex-bg.js"></script>
 </body>
 </html>

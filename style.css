@@ -473,14 +473,24 @@ img {
   min-height: 44px;
   z-index: 1500;
 }
-
-.testimonials {
-  padding: 2rem 1rem;
-  text-align: center;
+.floating-dark-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 5.5rem; /* placed above .book-btn */
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  z-index: 1500;
+  transition: background 0.3s ease;
 }
-.testimonials blockquote {
-  font-style: italic;
-  margin: 0 0 1rem;
+.floating-dark-toggle:hover {
+  background: var(--clr-accent);
 }
 .video-section {
   padding: 3rem 2rem;
@@ -664,34 +674,4 @@ img {
     font-size: 1rem;
   }
 }
-#menu-toggle {
-  width: 32px;
-  height: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  z-index: 1001;
-}
-
-#menu-toggle .bar {
-  height: 4px;
-  background: var(--clr-light);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-#menu-toggle.open .top {
-  transform: rotate(45deg) translateY(10px);
-}
-
-#menu-toggle.open .middle {
-  opacity: 0;
-}
-
-#menu-toggle.open .bottom {
-  transform: rotate(-45deg) translateY(-10px);
-}
+ 

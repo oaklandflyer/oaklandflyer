@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - OaklandFlyer LLC</title>
@@ -288,6 +289,7 @@
   <main id="gallery">
     <h1 class="section-title">My Photography</h1>
     <div class="filters" id="filterButtons"></div>
+    <button class="filter-btn" data-category="all">View All</button>
     <div class="gallery-container" id="galleryContainer"></div>
   </main>
 
@@ -295,8 +297,7 @@
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
 
-  <div id="img-overlay" onclick="this.style.display='none'; this.querySelector('img').src = '';">
-    <img src="" alt="Enlarged Image" />
+
   </div>
 
 <script>
@@ -325,17 +326,19 @@
           btn.textContent = category;
           btn.onclick = () => {
             document.querySelectorAll('.gallery-category').forEach(div => {
-              const isMatch = div.dataset.category === category;
+              const isMatch = category === 'all' || div.dataset.category === category;
               div.style.display = isMatch ? 'block' : 'none';
-              if (isMatch) {
-                div.classList.add('expanded'); // shows full grid
+              if (isMatch && category !== 'all') {
+                div.classList.add('expanded');
               } else {
                 div.classList.remove('expanded');
               }
             });
+
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
           };
+
 
           filters.appendChild(btn);
 
@@ -366,30 +369,45 @@
           viewBtn.className = 'filter-btn';
           const grid = document.createElement('div');
           grid.className = 'category-grid hidden-grid';
-          viewBtn.onclick = () => {
+         viewBtn.onclick = () => {
             section.classList.add('expanded');
             previewContainer.style.display = 'none';
             viewBtn.style.display = 'none';
             grid.classList.remove('hidden-grid');
+
+            const collapseBtn = document.createElement('button');
+            collapseBtn.textContent = 'Collapse Gallery';
+            collapseBtn.className = 'filter-btn';
+            collapseBtn.onclick = () => {
+              section.classList.remove('expanded');
+              previewContainer.style.display = 'block';
+              viewBtn.style.display = 'inline-block';
+              grid.classList.add('hidden-grid');
+              collapseBtn.remove();
+            };
+            section.appendChild(collapseBtn);
           };
+
           section.appendChild(viewBtn);
 
           images.filter(img => img.category === category).forEach(img => {
             const div = document.createElement('div');
             div.className = 'gallery-item';
 
-            const image = document.createElement('img');
-            image.src = img.src;
-            image.onload = () => image.classList.add('loaded');
-            image.alt = img.alt || category;
-            image.loading = 'lazy';
-            image.onclick = () => {
-              overlayImg.src = image.src;
-              overlay.style.display = 'flex';
-            };
+            const link = document.createElement('a');
+              link.href = img.src;
+              link.setAttribute('data-lightbox', category);
+              link.setAttribute('data-title', img.alt || '');
+              link.className = 'gallery-item';
 
-            div.appendChild(image);
-            grid.appendChild(div);
+              const image = document.createElement('img');
+              image.src = img.src;
+              image.onload = () => image.classList.add('loaded');
+              image.alt = img.alt || category;
+              image.loading = 'lazy';
+
+              link.appendChild(image);
+              grid.appendChild(link);
           });
 
           section.appendChild(grid);
@@ -398,5 +416,6 @@
       });
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>

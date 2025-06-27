@@ -119,6 +119,45 @@
     .filter-btn:hover {
       background: var(--clr-accent);
     }
+    /* Stacked Preview Style */
+    .stacked-preview {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .stacked-preview img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      opacity: 0.8;
+      border-radius: 8px;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .stacked-preview img:nth-child(1) {
+      top: 0;
+      z-index: 3;
+    }
+    .stacked-preview img:nth-child(2) {
+      top: 10px;
+      z-index: 2;
+    }
+    .stacked-preview img:nth-child(3) {
+      top: 20px;
+      z-index: 1;
+    }
+
+    /* Hidden grid before expand */
+    .category-grid.hidden-grid {
+      display: none;
+    }
+
+    /* Reveal grid when activated */
+    .gallery-category.expanded .category-grid {
+      display: grid;
+    }
 
     .gallery-category {
       margin-bottom: 3rem;
@@ -202,7 +241,6 @@
       <span class="bar middle"></span>
       <span class="bar bottom"></span>
     </button>
-    <script defer src="menuToggle.js"></script>
     <nav id="navbar" class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -234,6 +272,18 @@
   </div>
 
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Menu toggle logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+      });
+    }
+
+    // Gallery loader logic
     fetch('imagePaths.json')
       .then(res => res.json())
       .then(images => {
@@ -257,6 +307,33 @@
           };
           filters.appendChild(btn);
         });
+            images.forEach(img => {
+      // create preview images (3 max per category)
+      const previewImages = images.filter(i => i.category === category).slice(0, 3);
+
+      const previewContainer = document.createElement('div');
+      previewContainer.className = 'stacked-preview';
+
+      previewImages.forEach(preview => {
+        const previewImg = document.createElement('img');
+        previewImg.src = preview.src;
+        previewImg.alt = preview.alt || category;
+        previewImg.loading = 'lazy';
+        previewContainer.appendChild(previewImg);
+      });
+
+      section.appendChild(previewContainer);
+
+      const viewBtn = document.createElement('button');
+      viewBtn.textContent = 'View Gallery';
+      viewBtn.className = 'filter-btn';
+      viewBtn.onclick = () => {
+        section.classList.add('expanded');
+        previewContainer.style.display = 'none';
+        viewBtn.style.display = 'none';
+      };
+      section.appendChild(viewBtn);
+    });
 
         categories.forEach(category => {
           const section = document.createElement('div');
@@ -292,10 +369,7 @@
           container.appendChild(section);
         });
       });
-
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.querySelector('.site-nav').classList.toggle('open');
-    });
-  </script>
+  });
+</script>
 </body>
 </html>

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="images/OFLogo.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - OaklandFlyer LLC</title>
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
   <link rel="stylesheet" href="style.css" />
-  <script defer src="scroll.js"></script>
-  <script defer src="menuToggle.js"></script>
   <style>
     :root {
       --clr-dark: #1a1a1a;
@@ -24,6 +22,12 @@
       margin: 0;
       background: var(--clr-bg);
       color: var(--clr-text);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode {
+      background: var(--clr-dark);
+      color: var(--clr-light);
     }
 
     .site-header {
@@ -71,8 +75,18 @@
       font-weight: 500;
     }
 
+    .dark-toggle {
+      background: none;
+      border: 2px solid var(--clr-light);
+      color: var(--clr-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
     #gallery {
-      padding: 4rem 2rem;
+      padding: 2rem;
       max-width: var(--container-width);
       margin: auto;
     }
@@ -87,6 +101,7 @@
     .filters {
       text-align: center;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
 
     .filter-btn {
@@ -98,7 +113,6 @@
       background: var(--clr-dark);
       color: var(--clr-light);
       font-weight: 500;
-      transition: background 0.3s ease;
     }
 
     .filter-btn.active,
@@ -111,17 +125,16 @@
     }
 
     .gallery-category-title {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       border-bottom: 2px solid var(--clr-dark);
-      margin: 1.5rem 0;
-      padding-bottom: 0.5rem;
-      text-transform: capitalize;
+      margin: 1rem 0;
+      padding-bottom: 0.25rem;
     }
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
     }
 
     .gallery-item img {
@@ -130,29 +143,26 @@
       border-radius: 10px;
       transition: transform 0.3s ease;
       cursor: pointer;
-      pointer-events: none;
-      user-select: none;
-      -webkit-user-drag: none;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
 
     #img-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.95);
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
       z-index: 2000;
     }
 
     #img-overlay img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 95vw;
+      max-height: 90vh;
       border-radius: 10px;
     }
 
@@ -173,29 +183,18 @@
         width: 200px;
         display: none;
       }
-
       .site-nav.open ul {
         display: flex;
       }
     }
   </style>
-  <script>
-    document.addEventListener("contextmenu", e => e.preventDefault());
-    document.addEventListener("dragstart", e => e.preventDefault());
-    document.addEventListener("mousedown", e => {
-      if (e.target.tagName === "IMG") e.preventDefault();
-    });
-    document.addEventListener("touchstart", e => {
-      if (e.target.tagName === "IMG") e.preventDefault();
-    });
-  </script>
 </head>
 <body>
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo" loading="lazy">
+      <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
-    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="menu-toggle">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -212,18 +211,23 @@
         <li><a href="https://oaklandflyerllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
+    <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
   </header>
+
   <main id="gallery">
     <h1 class="section-title">My Photography</h1>
     <div class="filters" id="filterButtons"></div>
     <div class="gallery-container" id="galleryContainer"></div>
   </main>
+
   <footer class="site-footer">
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
-  <div id="img-overlay">
-    <img src="" alt="enlarged" />
+
+  <div id="img-overlay" onclick="this.style.display='none'; this.querySelector('img').src = '';">
+    <img src="" alt="Enlarged Image" />
   </div>
+
   <script>
     fetch('imagePaths.json')
       .then(res => res.json())
@@ -282,12 +286,11 @@
           section.appendChild(grid);
           container.appendChild(section);
         });
-
-        overlay.onclick = () => {
-          overlay.style.display = 'none';
-          overlayImg.src = '';
-        };
       });
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.querySelector('.site-nav').classList.toggle('open');
+    });
   </script>
 </body>
 </html>

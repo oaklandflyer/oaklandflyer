@@ -175,28 +175,29 @@
 
     @media (max-width: 768px) {
       .site-nav ul {
-        flex-direction: column;
-        background: var(--clr-dark);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        display: none;
-      }
-      .site-nav.open ul {
-        display: flex;
-      }
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.site-nav.open ul {
+  max-height: 500px; /* large enough for menu */
+}
+
     }
   </style>
 </head>
-<button class="floating-dark-toggle" onclick="document.body.classList.toggle('dark-mode')">
+
+<body>
+  <button class="floating-dark-toggle" onclick="document.body.classList.toggle('dark-mode')">
   ☾ Dark Mode
 </button>
-<body>
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="OaklandFlyer Logo">
     </a>
+     <button id="menu-toggle" aria-label="Toggle navigation">
       <span class="bar top"></span>
       <span class="bar middle"></span>
       <span class="bar bottom"></span>

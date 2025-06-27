@@ -111,49 +111,9 @@
     "src": "images/gallery/WatermarkedImages/Animals/Swan-2.jpg",
     "category": "Animals"
   },
-  {
-    "src": "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg",
-    "category": "Flowers"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg",
-    "category": "Flowers"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg",
-    "category": "Flowers"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg",
-    "category": "LEGO"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg",
-    "category": "LEGO"
+    {
+    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg",
+    "category": "London"
   },
   {
     "src": "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg",
@@ -233,10 +193,6 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/London/TheShard-5.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg",
     "category": "London"
   },
   {
@@ -395,125 +351,9 @@
     "src": "images/gallery/WatermarkedImages/Oakland/WebsterHall.jpg",
     "category": "Oakland"
   },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-01.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-02.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-03.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-04.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-05.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-06.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-07.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-08.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-18.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-25.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-26.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-27.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-28.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-30.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-33.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-34.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-35.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/Bear-03.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/Bear-09.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/Bear-10.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/Bear-18.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-02.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-15.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-16.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-18.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-20.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-23.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-25.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-27.jpg",
-    "category": "People"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-36.jpg",
-    "category": "People"
+    {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSideDrone.jpg",
+    "category": "Pittsburgh"
   },
   {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-1.jpg",
@@ -525,10 +365,6 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-3.jpg",
-    "category": "Pittsburgh"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSideDrone.jpg",
     "category": "Pittsburgh"
   },
   {
@@ -814,7 +650,170 @@
   {
     "src": "images/gallery/WatermarkedImages/spain/Rooftop.jpg",
     "category": "Spain"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-01.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-02.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-03.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-04.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-05.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-06.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-07.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-08.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-18.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-25.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-26.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-27.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-28.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-30.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-33.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-34.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/AndrewGrad-35.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-03.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-09.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-10.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/Bear-18.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-02.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-15.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-16.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-18.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-20.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-23.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-25.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-27.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-36.jpg",
+    "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Amaryllis.jpg",
+    "category": "Flowers"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Anthurium.jpg",
+    "category": "Flowers"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Flowers/Florist-Kalanchoe.jpg",
+    "category": "Flowers"
+  },
+    {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-1.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-2.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/SaturnVCrash-3.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-1.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-2.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-3.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-4.jpg",
+    "category": "LEGO"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/LEGO/VenatorSnow-6.jpg",
+    "category": "LEGO"
   }
-
 ]
  

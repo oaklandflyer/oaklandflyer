@@ -315,8 +315,7 @@
       .then(images => {
         const container = document.getElementById('galleryContainer');
         const filters = document.getElementById('filterButtons');
-        const overlay = document.getElementById('img-overlay');
-        const overlayImg = overlay.querySelector('img');
+
 
         const categories = [...new Set(images.map(i => i.category))];
 

@@ -297,9 +297,6 @@
     <p>&copy; 2025 OaklandFlyer LLC. All rights reserved.</p>
   </footer>
 
-
-  </div>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById('menu-toggle');
@@ -310,107 +307,134 @@
       });
     }
 
+    const viewAllBtn = document.querySelector('button[data-category="all"]');
     fetch('imagePaths.json')
       .then(res => res.json())
       .then(images => {
         const container = document.getElementById('galleryContainer');
         const filters = document.getElementById('filterButtons');
 
-
         const categories = [...new Set(images.map(i => i.category))];
 
         categories.forEach(category => {
+          // Category Filter Button
           const btn = document.createElement('button');
           btn.className = 'filter-btn';
           btn.textContent = category;
-          btn.onclick = () => {
+          btn.addEventListener('click', () => {
             document.querySelectorAll('.gallery-category').forEach(div => {
-              const isMatch = category === 'all' || div.dataset.category === category;
+              const isMatch = div.dataset.category === category;
               div.style.display = isMatch ? 'block' : 'none';
-              if (isMatch && category !== 'all') {
-                div.classList.add('expanded');
-              } else {
-                div.classList.remove('expanded');
-              }
+              div.classList.toggle('expanded', isMatch);
+              const grid = div.querySelector('.category-grid');
+              const preview = div.querySelector('.stacked-preview');
+              const collapse = div.querySelector('.collapse-btn');
+              if (grid) grid.classList.toggle('hidden-grid', !isMatch);
+              if (preview) preview.style.display = isMatch ? 'none' : 'block';
+              if (collapse) collapse.style.display = isMatch ? 'inline-block' : 'none';
             });
 
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-          };
-
+          });
 
           filters.appendChild(btn);
 
+          // Section container
           const section = document.createElement('div');
           section.className = 'gallery-category';
           section.dataset.category = category;
 
+          const titleWrapper = document.createElement('div');
+          titleWrapper.style.display = 'flex';
+          titleWrapper.style.justifyContent = 'space-between';
+          titleWrapper.style.alignItems = 'center';
+
           const title = document.createElement('h2');
           title.className = 'gallery-category-title';
           title.textContent = category;
-          section.appendChild(title);
 
+          const collapseBtn = document.createElement('button');
+          collapseBtn.textContent = 'Collapse';
+          collapseBtn.className = 'filter-btn collapse-btn';
+          collapseBtn.style.display = 'none';
+          collapseBtn.addEventListener('click', () => {
+            section.classList.remove('expanded');
+            previewContainer.style.display = 'block';
+            viewBtn.style.display = 'inline-block';
+            grid.classList.add('hidden-grid');
+            collapseBtn.style.display = 'none';
+          });
 
-          const previewImages = images.filter(i => i.category === category).slice(0, 3);
+          titleWrapper.appendChild(title);
+          titleWrapper.appendChild(collapseBtn);
+          section.appendChild(titleWrapper);
+
           const previewContainer = document.createElement('div');
           previewContainer.className = 'stacked-preview';
-
+          const previewImages = images.filter(i => i.category === category).slice(0, 3);
           previewImages.forEach(preview => {
-            const previewImg = document.createElement('img');
-            previewImg.src = preview.src;
-            previewImg.alt = preview.alt || category;
-            previewImg.loading = 'lazy';
-            previewContainer.appendChild(previewImg);
+            const img = document.createElement('img');
+            img.src = preview.src;
+            img.alt = preview.alt || category;
+            img.loading = 'lazy';
+            previewContainer.appendChild(img);
           });
           section.appendChild(previewContainer);
+
           const viewBtn = document.createElement('button');
-          viewBtn.textContent = 'View Gallery';
           viewBtn.className = 'filter-btn';
-          const grid = document.createElement('div');
-          grid.className = 'category-grid hidden-grid';
-         viewBtn.onclick = () => {
+          viewBtn.textContent = 'View Gallery';
+          viewBtn.addEventListener('click', () => {
             section.classList.add('expanded');
             previewContainer.style.display = 'none';
             viewBtn.style.display = 'none';
             grid.classList.remove('hidden-grid');
-
-            const collapseBtn = document.createElement('button');
-            collapseBtn.textContent = 'Collapse Gallery';
-            collapseBtn.className = 'filter-btn';
-            collapseBtn.onclick = () => {
-              section.classList.remove('expanded');
-              previewContainer.style.display = 'block';
-              viewBtn.style.display = 'inline-block';
-              grid.classList.add('hidden-grid');
-              collapseBtn.remove();
-            };
-            section.appendChild(collapseBtn);
-          };
-
+            collapseBtn.style.display = 'inline-block';
+          });
           section.appendChild(viewBtn);
 
+          const grid = document.createElement('div');
+          grid.className = 'category-grid hidden-grid';
+
           images.filter(img => img.category === category).forEach(img => {
-            const div = document.createElement('div');
-            div.className = 'gallery-item';
-
             const link = document.createElement('a');
-              link.href = img.src;
-              link.setAttribute('data-lightbox', category);
-              link.setAttribute('data-title', img.alt || '');
-              link.className = 'gallery-item';
+            link.href = img.src;
+            link.setAttribute('data-lightbox', category);
+            link.setAttribute('data-title', img.alt || '');
+            link.className = 'gallery-item';
 
-              const image = document.createElement('img');
-              image.src = img.src;
-              image.onload = () => image.classList.add('loaded');
-              image.alt = img.alt || category;
-              image.loading = 'lazy';
+            const image = document.createElement('img');
+            image.src = img.src;
+            image.alt = img.alt || category;
+            image.loading = 'lazy';
+            image.onload = () => image.classList.add('loaded');
 
-              link.appendChild(image);
-              grid.appendChild(link);
+            link.appendChild(image);
+            grid.appendChild(link);
           });
 
           section.appendChild(grid);
           container.appendChild(section);
+        });
+
+        // View All logic (added after all sections)
+        viewAllBtn.addEventListener('click', () => {
+          document.querySelectorAll('.gallery-category').forEach(div => {
+            div.style.display = 'block';
+            div.classList.remove('expanded');
+            const grid = div.querySelector('.category-grid');
+            const preview = div.querySelector('.stacked-preview');
+            const collapse = div.querySelector('.collapse-btn');
+            const view = [...div.querySelectorAll('.filter-btn')].find(b => b.textContent === 'View Gallery');
+            if (grid) grid.classList.add('hidden-grid');
+            if (preview) preview.style.display = 'block';
+            if (collapse) collapse.style.display = 'none';
+            if (view) view.style.display = 'inline-block';
+          });
+
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          viewAllBtn.classList.add('active');
         });
       });
   });

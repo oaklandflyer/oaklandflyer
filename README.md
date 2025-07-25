@@ -10,7 +10,7 @@ Welcome to my photography portfolio! This website showcases my work, including d
 - Sample editorial layout in **editorial.html** demonstrating a minimal, modern design.
 
 ## How to View the Website
-You can access the live version of this site at https://oaklandflyer.com/ or the GitHub Pages version at [username.github.io](https://username.github.io).
+You can access the live version of this site at https://asfvisuals412.com/ or the GitHub Pages version at [asfvisuals.github.io](https://asfvisuals.github.io).
 
 The `gallery-categories.html` page provides quick links to filtered views of the portfolio.
 

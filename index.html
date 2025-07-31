@@ -25,8 +25,15 @@
     href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
   >
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Main stylesheet (minified for faster load) -->
+  <link rel="stylesheet" href="style.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
 
 </head>
 <body>
@@ -51,20 +58,16 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="videos.html">Videos</a></li>
+        <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li>
-          <a
-            href="https://asfvisualsllc.pixieset.com/"
-            target="_blank"
-            rel="noopener"
-          >Buy Prints</a>
-        </li>
       </ul>
     </nav>
+    <div class="cta-buttons">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </header>
 
   <main id="main">
@@ -97,11 +100,41 @@
         </article>
       </div>
     </section>
+
+    <section class="testimonials" id="testimonials">
+      <h2>What Clients Say</h2>
+      <div class="testimonial-grid">
+        <figure>
+          <blockquote>"ASF Visuals captured our wedding beautifully."
+          </blockquote>
+          <figcaption>- Jordan M.</figcaption>
+        </figure>
+        <figure>
+          <blockquote>"The aerial shots were stunning and exactly what we needed."
+          </blockquote>
+          <figcaption>- Casey L.</figcaption>
+        </figure>
+        <figure>
+          <blockquote>"Professional, creative, and timely service!"
+          </blockquote>
+          <figcaption>- Riley P.</figcaption>
+        </figure>
+      </div>
+    </section>
   </main>
 
   <a href="https://asfvisualsllc.pixieset.com/" class="book-btn">Buy Prints</a>
 
   <footer class="site-footer">
+    <form class="subscribe-form" aria-label="Newsletter signup">
+      <label for="footer-email" class="visually-hidden">Email</label>
+      <input id="footer-email" type="email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="footer-cta">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
     <div class="social-links">
       <a
@@ -128,10 +161,10 @@
     defer
     src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"
   ></script>
-  <script defer src="gallery.js"></script>
-  <script defer src="scroll.js"></script>
-  <script defer src="menuToggle.js"></script>
-  <script defer src="imageEnlarge.js"></script>
+  <script defer src="gallery.min.js"></script>
+  <script defer src="scroll.min.js"></script>
+  <script defer src="menuToggle.min.js"></script>
+  <script defer src="imageEnlarge.min.js"></script>
   <script>
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';

@@ -674,4 +674,67 @@ img {
     font-size: 1rem;
   }
 }
+
+/* CTA buttons in header/footer */
+.cta-buttons, .footer-cta {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+.subscribe-form input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.subscribe-form button {
+  padding: 0.5rem 1rem;
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  border: none;
+  border-radius: 4px;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  padding: var(--spacing-md);
+}
+.testimonial-grid blockquote {
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+.vlog-main .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.subscribe-btn {
+  margin-top: var(--spacing-sm);
+  background: var(--clr-primary);
+  color: var(--clr-light);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 30px;
+}
  

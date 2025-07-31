@@ -10,7 +10,14 @@
   <meta name="description" content="Browse the ASF Visuals photography gallery featuring drone, portrait and landscape images.">
   <meta name="keywords" content="gallery, drone photos, portraits, landscapes">
   <link rel="canonical" href="https://www.asfvisuals412.com/gallery.html">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.min.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
   <style>
     :root {
       --clr-dark: #1a1a1a;
@@ -277,14 +284,16 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="videos.html">Videos</a></li>
+        <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://asfvisualsllc.pixieset.com/" target="_blank" rel="noopener">Buy Prints</a></li>
       </ul>
     </nav>
+    <div class="cta-buttons">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
     
 
   </header>
@@ -297,6 +306,15 @@
   </main>
 
   <footer class="site-footer">
+    <form class="subscribe-form" aria-label="Newsletter signup">
+      <label for="footer-email" class="visually-hidden">Email</label>
+      <input id="footer-email" type="email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="footer-cta">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
   </footer>
 

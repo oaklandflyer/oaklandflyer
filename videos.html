@@ -9,10 +9,17 @@
     <link rel="canonical" href="https://www.asfvisuals412.com/videos.html">
     <title>Videos - ASF Visuals</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
     <link rel="stylesheet" href="hex-bg.css">
-    <script defer src="scroll.js"></script>
-    <script defer src="menuToggle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
+    <script defer src="scroll.min.js"></script>
+    <script defer src="menuToggle.min.js"></script>
 </head>
 
 <body>
@@ -37,20 +44,16 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="videos.html">Videos</a></li>
+        <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li>
-          <a
-            href="https://asfvisualsllc.pixieset.com/"
-            target="_blank"
-            rel="noopener"
-          >Buy Prints</a>
-        </li>
       </ul>
     </nav>
+    <div class="cta-buttons">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </header>
 
 <!-- Video Section -->
@@ -78,6 +81,15 @@
      <a href="contact.html" class="book-btn">Book a Shoot</a>
 
   <footer class="site-footer">
+    <form class="subscribe-form" aria-label="Newsletter signup">
+      <label for="footer-email" class="visually-hidden">Email</label>
+      <input id="footer-email" type="email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="footer-cta">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
     <div class="social-links">
       <a

@@ -8,9 +8,8 @@
   <link rel="canonical" href="https://www.asfvisuals412.com/vlog.html">
   <link rel="icon" href="images/OFLogo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Main minified CSS -->
-  <link rel="stylesheet" href="style.min.css" media="all">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
@@ -21,7 +20,6 @@
   </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" loading="lazy">
@@ -112,11 +110,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="subscribe-form">
+    <form class="subscribe-form" aria-label="Newsletter signup" action="https://formspree.io/f/xovvrygq" method="POST">
       <label for="footer-email" class="visually-hidden">Email</label>
       <input id="footer-email" type="email" placeholder="you@example.com" required>
       <button type="submit">Subscribe</button>
-    </div>
+    </form>
     <div class="footer-cta">
       <a href="vlog.html" class="btn">Watch Our Vlog</a>
       <a href="contact.html" class="btn">Contact Us</a>
@@ -130,6 +128,6 @@
 
   <!-- Minified JS -->
   <script defer src="scroll.min.js"></script>
-  <script defer src="menuToggle.min.js"></script>
+  <script defer src="menuToggle.js"></script>
 </body>
 </html>

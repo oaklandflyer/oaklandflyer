@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const galleryContainer = document.querySelector(".gallery-container");
     const filterButtons = document.querySelectorAll(".filter-btn");
 
@@ -7,55 +7,56 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Load image data from JSON
     fetch("imagePaths.json")
-        .then(response => response.json())
+        .then(res => res.json())
         .then(images => {
-            galleryContainer.innerHTML = ""; // Clear gallery before loading
+            galleryContainer.innerHTML = ""; // Clear existing gallery content
 
-            images.forEach(image => {
-                const linkElement = document.createElement("a");
-                linkElement.href = image.src;
-                linkElement.setAttribute("data-fancybox", "gallery");
-                linkElement.setAttribute("data-category", image.category);
-                linkElement.setAttribute("data-caption", image.src.split('/').pop());
+            images.forEach(({ src, category }) => {
+                const link = document.createElement("a");
+                link.href = src;
+                link.setAttribute("data-fancybox", "gallery");
+                link.setAttribute("data-category", category);
+                link.setAttribute("data-caption", src.split("/").pop());
 
-                const imgElement = document.createElement("img");
-                imgElement.src = image.src;
-                imgElement.alt = "Gallery Photo";
-                imgElement.loading = "lazy";
+                const img = document.createElement("img");
+                img.src = src;
+                img.alt = "Gallery Photo";
+                img.loading = "lazy";
 
-                // Log errors if an image fails to load
-                imgElement.onerror = function () {
-                    console.error("Image not found:", imgElement.src);
+                img.onerror = () => {
+                    console.error("Image not found:", src);
                 };
 
-                linkElement.appendChild(imgElement);
-                galleryContainer.appendChild(linkElement);
+                link.appendChild(img);
+                galleryContainer.appendChild(link);
             });
 
-            // Initialize Fancybox
+            // Activate Fancybox
             Fancybox.bind("[data-fancybox]", {});
 
-            // Enable Filtering
+            // Filter logic
             filterButtons.forEach(button => {
                 button.addEventListener("click", () => {
-                    const category = button.dataset.category;
+                    const selectedCategory = button.dataset.category;
 
-                    // Remove active class from buttons
+                    // Toggle active button class
                     filterButtons.forEach(btn => btn.classList.remove("active"));
                     button.classList.add("active");
 
-                    // Show/hide images based on category
+                    // Show/hide images
                     document.querySelectorAll(".gallery-container a").forEach(item => {
-                        if (category === "all" || item.getAttribute("data-category") === category) {
-                            item.style.display = "block";
-                        } else {
-                            item.style.display = "none";
-                        }
+                        const itemCategory = item.getAttribute("data-category");
+                        item.style.display =
+                            selectedCategory === "all" || itemCategory === selectedCategory
+                                ? "block"
+                                : "none";
                     });
                 });
             });
-
         })
-        .catch(error => console.error("Error loading images:", error));
+        .catch(err => {
+            console.error("Error loading images:", err);
+        });
 });

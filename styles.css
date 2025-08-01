@@ -27,6 +27,55 @@ body {
   overflow-x: hidden;
 }
 
+body.dark-mode {
+  background: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+body.dark-mode .site-nav a,
+body.dark-mode #menu-toggle span {
+  color: var(--clr-light);
+  background: var(--clr-light);
+}
+
+body.dark-mode .site-header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Floating Buttons */
+.book-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--clr-accent);
+  color: var(--clr-light);
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
+  z-index: 1500;
+}
+
+.floating-dark-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 5.5rem; /* placed above .book-btn */
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  z-index: 1500;
+  transition: background 0.3s ease;
+}
+.floating-dark-toggle:hover {
+  background: var(--clr-accent);
+}
+
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;

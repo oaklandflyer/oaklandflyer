@@ -1,0 +1,114 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --accent: #ff6600;
+}
+body.dark {
+  --bg: #1a1a1a;
+  --text: #f5f5f5;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.site-header {
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.logo {
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.mode-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .site-nav.open { max-height: 300px; }
+  .site-nav ul { flex-direction: column; padding: 1rem; }
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 80px auto 2rem;
+  padding: 0 1rem;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+.gallery-item .title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover .title { opacity: 1; }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0);} }

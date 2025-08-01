@@ -32,7 +32,7 @@ function collectImages(dir, category = path.basename(dir)) {
 // Write the output to a JSON file
 function saveImagePaths(outputFile) {
   const images = collectImages(imageFolder);
-  fs.writeFileSync(outputFile, JSON.stringify(images, null, 2));
+  fs.writeFileSync(outputFile, JSON.stringify(images, null, 2) + '\n');
   console.log(`Image paths saved to ${outputFile}`);
 }
 

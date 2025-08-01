@@ -447,6 +447,15 @@
           container.appendChild(section);
         });
 
+        // Apply filter from URL if present
+        const params = new URLSearchParams(window.location.search);
+        const initial = params.get('filter');
+        if (initial) {
+          const btn = [...filters.querySelectorAll('.filter-btn')]
+            .find(b => b.textContent.toLowerCase() === initial.toLowerCase());
+          if (btn) btn.click();
+        }
+
         // View All logic (added after all sections)
         viewAllBtn.addEventListener('click', () => {
           document.querySelectorAll('.gallery-category').forEach(div => {

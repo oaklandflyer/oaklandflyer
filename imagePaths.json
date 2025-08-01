@@ -1,106 +1,38 @@
 [
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-01.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-1.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-09.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-2.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-10.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-3.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-11.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-4.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-13.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-5.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-14.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-6.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-15.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-7.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-18.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-8.jpg",
     "category": "Animals"
   },
   {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-21.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-23.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-24.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-26.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-34.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-39.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-42.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-43.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/HHI25-49.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Hudson-2.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Hudson-3.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Hudson.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Korra-2.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Korra-3.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Korra.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Nala-2.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Nala-3.jpg",
-    "category": "Animals"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Animals/Nala.jpg",
+    "src": "images/gallery/WatermarkedImages/Animals/MussoDogs-9.jpg",
     "category": "Animals"
   },
   {
@@ -124,6 +56,98 @@
     "category": "Flowers"
   },
   {
+    "src": "images/gallery/WatermarkedImages/France/Annecy-2.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-01.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-02.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-03.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-04.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-05.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-06.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-07.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-08.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-09.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-10.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-11.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-12.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-13.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-14.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-15.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-16.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-17.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-18.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-19.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-20.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/France/Chamonix-21.jpg",
+    "category": "France"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-01.jpg",
+    "category": "Hilton Head"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-03.jpg",
     "category": "Hilton Head"
   },
@@ -136,7 +160,87 @@
     "category": "Hilton Head"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-06.jpg",
+    "category": "Hilton Head"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-07.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-08.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-09.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-10.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-11.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-12.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-13.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-14.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-15.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-16.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-17.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-18.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-19.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-20.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-21.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-22.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-23.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-24.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-25.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-26.jpg",
     "category": "Hilton Head"
   },
   {
@@ -148,7 +252,63 @@
     "category": "Hilton Head"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-29.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-30.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-31.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-32.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-33.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-34.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-35.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-36.jpg",
+    "category": "Hilton Head"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-37.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-38.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-39.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-40.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-41.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-42.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-43.jpg",
     "category": "Hilton Head"
   },
   {
@@ -156,7 +316,27 @@
     "category": "Hilton Head"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-45.jpg",
+    "category": "Hilton Head"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-46.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-47.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-48.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-49.jpg",
+    "category": "Hilton Head"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Hilton Head/HHI25-50.jpg",
     "category": "Hilton Head"
   },
   {
@@ -192,104 +372,36 @@
     "category": "LEGO"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/AlbertMemorial.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/Piano-1.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/BAA380.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/Piano-2.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/BA_A380-2.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/Piano-3.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/BA_A380-3.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/Piano-4.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/BigBen-3.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/Piano.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/BlitzMemorial.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/STBLightPainting-1.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/Duck.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/STBLightPainting-2.jpg",
+    "category": "Misc"
   },
   {
-    "src": "images/gallery/WatermarkedImages/London/HMSBelfast-2.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/LondonEye-2.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/LondonEye.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/NorthGreenwich.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/Oxford-05.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/Oxford-06.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/PhysicalEnergyStatue.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/PlumBlossom.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/PumpHouse-4.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TheRoyalHouseguards.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TheShard-2.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TheShard-4.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TheShard-5.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBlitz.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/TowerBridgeBus.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/VirginAtlantic-2.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/Westminster.jpg",
-    "category": "London"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/London/WestminsterBridge-2.jpg",
-    "category": "London"
+    "src": "images/gallery/WatermarkedImages/Misc/STBLightPainting-3.jpg",
+    "category": "Misc"
   },
   {
     "src": "images/gallery/WatermarkedImages/Oakland/CathedralTopDown-1.jpg",
@@ -320,6 +432,10 @@
     "category": "Oakland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyFog.jpg",
+    "category": "Oakland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Oakland/CathyHaloTrial.jpg",
     "category": "Oakland"
   },
@@ -340,7 +456,23 @@
     "category": "Oakland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-2.jpg",
+    "category": "Oakland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Oakland/CathyfromFalk-3.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/Chapel.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/Dippy-2.jpg",
     "category": "Oakland"
   },
   {
@@ -348,7 +480,19 @@
     "category": "Oakland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Oakland/FifthAveSnowy.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/ForbesfromBridge.jpg",
+    "category": "Oakland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Oakland/GEO-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/GlobeMaster.jpg",
     "category": "Oakland"
   },
   {
@@ -380,7 +524,15 @@
     "category": "Oakland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHead-1.jpg",
+    "category": "Oakland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Oakland/PantherHead-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/PantherHeadExposure.jpg",
     "category": "Oakland"
   },
   {
@@ -392,7 +544,15 @@
     "category": "Oakland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Oakland/PittScript.jpg",
+    "category": "Oakland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Oakland/PittShield.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/Rob.jpg",
     "category": "Oakland"
   },
   {
@@ -401,6 +561,10 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-2.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailors-3.jpg",
     "category": "Oakland"
   },
   {
@@ -417,6 +581,14 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/Oakland/SoldiersandSailorsHead.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/StPauls-1.jpg",
+    "category": "Oakland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Oakland/StPauls-2.jpg",
     "category": "Oakland"
   },
   {
@@ -516,6 +688,10 @@
     "category": "People"
   },
   {
+    "src": "images/gallery/WatermarkedImages/People/Bear-20.jpg",
+    "category": "People"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-02.jpg",
     "category": "People"
   },
@@ -548,8 +724,24 @@
     "category": "People"
   },
   {
+    "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-30.jpg",
+    "category": "People"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/People/ZiZiGrad-36.jpg",
     "category": "People"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-1.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownGoldGarage-2.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownHighway.jpg",
+    "category": "Pittsburgh"
   },
   {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-1.jpg",
@@ -561,6 +753,14 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-3.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-4.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/DowntownSide-5.jpg",
     "category": "Pittsburgh"
   },
   {
@@ -584,20 +784,148 @@
     "category": "Pittsburgh"
   },
   {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField-4.jpg",
+    "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Pittsburgh/HeinzField279.jpg",
+    "category": "Pittsburgh"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/HighmarkBuilding.jpg",
-    "category": "Pittsburgh"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-1.jpg",
-    "category": "Pittsburgh"
-  },
-  {
-    "src": "images/gallery/WatermarkedImages/Pittsburgh/STBLightPainting-2.jpg",
     "category": "Pittsburgh"
   },
   {
     "src": "images/gallery/WatermarkedImages/Pittsburgh/ThePoint.jpg",
     "category": "Pittsburgh"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-01.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-02.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-03.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-04.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-05.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-06.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-08.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-11.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-12.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-14.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva-15.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Geneva.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-1-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-1.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-2-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-3-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-3.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-4.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Interlaken-5.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Jet d'Eau.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Lac de Leman-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Lauterbrunnen-1.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Lauterbrunnen-2.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Lauterbrunnen-3.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Lauterbrunnen-4.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-1.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-3.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-4.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-5.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-6.jpg",
+    "category": "Switzerland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/Switzerland/Montreux-7.jpg",
+    "category": "Switzerland"
   },
   {
     "src": "images/gallery/WatermarkedImages/chicago/BronzeLion.jpg",
@@ -624,6 +952,10 @@
     "category": "chicago"
   },
   {
+    "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-6.jpg",
+    "category": "chicago"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/chicago/DowntownChicago-7.jpg",
     "category": "chicago"
   },
@@ -640,6 +972,106 @@
     "category": "chicago"
   },
   {
+    "src": "images/gallery/WatermarkedImages/england/AlbertMemorial.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/BAA380.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/BA_A380-2.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/BA_A380-3.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/BigBen-3.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/BlitzMemorial.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/Duck.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/HMSBelfast-2.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/LondonEye-2.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/LondonEye.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/NorthGreenwich.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/Oxford-05.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/Oxford-06.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/PhysicalEnergyStatue.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/PlumBlossom.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/PumpHouse-4.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TheRoyalHouseguards.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TheShard-2.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TheShard-4.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TheShard-5.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TowerBridgeBlitz.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/TowerBridgeBus.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/VirginAtlantic-2.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/Westminster.jpg",
+    "category": "england"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/england/WestminsterBridge-2.jpg",
+    "category": "england"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/Crail-01.jpg",
     "category": "scotland"
   },
@@ -648,11 +1080,23 @@
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/Crail-03.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/Crail-04.jpg",
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/Crail-05.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/Crail-07.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/Crail-08.jpg",
     "category": "scotland"
   },
   {
@@ -661,6 +1105,10 @@
   },
   {
     "src": "images/gallery/WatermarkedImages/scotland/Crail-10.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/Crail-11.jpg",
     "category": "scotland"
   },
   {
@@ -688,6 +1136,10 @@
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/Edinburgh-06.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/Edinburgh-07.jpg",
     "category": "scotland"
   },
@@ -700,11 +1152,27 @@
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/Edinburgh-10.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/Edinburgh-11.jpg",
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -01.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -02.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -03.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -04.jpg",
     "category": "scotland"
   },
   {
@@ -720,7 +1188,27 @@
     "category": "scotland"
   },
   {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -08.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -09.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -10.jpg",
+    "category": "scotland"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -11.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -13.jpg",
+    "category": "scotland"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/scotland/St Andrew's -14.jpg",
     "category": "scotland"
   },
   {
@@ -740,6 +1228,10 @@
     "category": "spain"
   },
   {
+    "src": "images/gallery/WatermarkedImages/spain/Calles de Nerja-3.jpg",
+    "category": "spain"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/spain/Guitarist.jpg",
     "category": "spain"
   },
@@ -756,11 +1248,23 @@
     "category": "spain"
   },
   {
+    "src": "images/gallery/WatermarkedImages/spain/Nerja Coast-04.jpg",
+    "category": "spain"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/spain/Nerja Coast-05.jpg",
+    "category": "spain"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/spain/Nerja Coast-06.jpg",
     "category": "spain"
   },
   {
     "src": "images/gallery/WatermarkedImages/spain/Nerja Coast-07.jpg",
+    "category": "spain"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/spain/Nerja Coast-08.jpg",
     "category": "spain"
   },
   {
@@ -792,7 +1296,15 @@
     "category": "spain"
   },
   {
+    "src": "images/gallery/WatermarkedImages/spain/Nerja Sunrise-4.jpg",
+    "category": "spain"
+  },
+  {
     "src": "images/gallery/WatermarkedImages/spain/Nerja Sunrise-5.jpg",
+    "category": "spain"
+  },
+  {
+    "src": "images/gallery/WatermarkedImages/spain/Nerja Sunrise-6.jpg",
     "category": "spain"
   },
   {

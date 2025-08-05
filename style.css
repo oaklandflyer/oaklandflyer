@@ -43,6 +43,14 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  scroll-margin-top: 100px;
+}
+
+main {
+  padding-top: 100px;
+}
+
 img {
   -webkit-user-drag: none;
   user-select: none;
@@ -80,8 +88,8 @@ img {
 }
 
 /* Header */
-.site-header {
-  position: fixed;
+header.site-header {
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -89,7 +97,7 @@ img {
   justify-content: space-between;
   align-items: center;
 
-  background-color: rgba(26, 26, 26, 0.433); /* semi-transparent black */
+  background-color: inherit; /* keep your existing header background */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px); /* Safari support */
   box-shadow: 0 2px 4px var(--clr-header-shadow);

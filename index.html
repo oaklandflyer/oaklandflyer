@@ -33,6 +33,7 @@
       color: #172135;
       scroll-behavior: smooth;
     }
+    /* --- HEADER --- */
     .site-header {
       display: flex;
       align-items: center;
@@ -40,15 +41,24 @@
       padding: 12px 5vw 12px 5vw;
       background: rgba(255,255,255,0.94);
       box-shadow: 0 2px 8px rgba(16,67,122,0.06);
-      position: sticky; top: 0; z-index: 100;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: top 0.32s cubic-bezier(.37,1.15,.43,0.96);
     }
     .logo-link img {
-  height: 62px;
-  width: auto;
-  max-width: 180px; /* optional: so it doesn't get huge on big screens */
-  object-fit: contain;
-  display: block;
-}
+      height: 62px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
+    .site-nav ul {
+      display: flex;
+      gap: 2vw;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
     .site-nav a {
       font-weight: 600;
       text-decoration: none;
@@ -86,8 +96,6 @@
       background: var(--cta-hover);
       color: #111;
     }
-
-    /* Hamburger Styles */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -112,8 +120,6 @@
     .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
     .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
     .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
-
-    /* Hide nav on mobile, show hamburger */
     @media (max-width: 800px) {
       .menu-toggle { display: flex; }
       .site-nav {
@@ -137,8 +143,43 @@
       }
       .site-header { flex-wrap: wrap; }
     }
-
-    /* HERO */
+    /* --- FLOATING BUY PRINTS BUTTON --- */
+    .floating-buy-btn {
+      position: fixed;
+      right: 32px;
+      bottom: 32px;
+      z-index: 1001;
+      background: var(--accent);
+      color: #173046;
+      font-weight: 800;
+      font-size: 1.16rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      padding: 16px 36px;
+      letter-spacing: 0.01em;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      display: block;
+      opacity: 0.98;
+    }
+    .floating-buy-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 8px 28px rgba(16,67,122,0.18);
+    }
+    @media (max-width: 600px) {
+      .floating-buy-btn {
+        right: 12px;
+        bottom: 16px;
+        padding: 12px 18px;
+        font-size: 1rem;
+      }
+    }
+    /* --- HERO --- */
     .hero {
       position: relative;
       min-height: 55vh;
@@ -149,6 +190,7 @@
       border-radius: 0 0 var(--radius) var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
+      margin-top: 82px;
     }
     .hero-text {
       position: relative;
@@ -177,8 +219,7 @@
       color: #253451;
       font-weight: 400;
     }
-
-    /* SERVICE CARDS */
+    /* --- SERVICES --- */
     .services {
       max-width: 1120px;
       margin: 60px auto 0 auto;
@@ -242,73 +283,7 @@
       text-decoration: underline;
       font-weight: 600;
     }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      max-width: 900px;
-      margin: 74px auto 0 auto;
-      padding: 0 5vw;
-    }
-    .testimonials h2 {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 28px;
-    }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 32px;
-    }
-    .testimonial-grid figure {
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 32px 24px 18px 24px;
-      margin: 0;
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .testimonial-grid blockquote {
-      font-size: 1.09rem;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: #333;
-      margin: 0 0 18px 0;
-      text-align: center;
-    }
-    .testimonial-grid figcaption {
-      font-size: 0.96em;
-      color: #666;
-    }
-
-    /* BOOK PRINTS BUTTON */
-    .book-btn {
-      display: block;
-      margin: 50px auto 0 auto;
-      padding: 14px 40px;
-      background: var(--accent);
-      color: #173046;
-      font-weight: 800;
-      font-size: 1.16rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s;
-      max-width: 300px;
-      letter-spacing: 0.01em;
-    }
-    .book-btn:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    /* FOOTER */
+    /* --- FOOTER --- */
     .site-footer {
       background: #10233a;
       color: #f5f5f5;
@@ -371,7 +346,7 @@
       .footer-cta { flex-direction: column; gap: 7px; }
       .site-footer { padding: 36px 2vw 24px 2vw; }
     }
-    /* Animation */
+    /* --- Animations --- */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(28px); }
       to { opacity: 1; transform: translateY(0); }
@@ -395,11 +370,10 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="62" loading="lazy">
     </a>
-    <!-- Hamburger button goes here -->
     <button id="menu-toggle"
       aria-controls="navbar"
       aria-expanded="false"
@@ -459,7 +433,10 @@
       </div>
     </section>
   </main>
-  <a href="https://asfvisualsllc.pixieset.com/" class="book-btn">Buy Prints</a>
+
+  <!-- Floating Buy Prints Button -->
+  <a href="https://asfvisualsllc.pixieset.com/" class="floating-buy-btn" target="_blank" rel="noopener">Buy Prints</a>
+
   <footer class="site-footer">
     <form class="subscribe-form" aria-label="Newsletter signup" action="https://formspree.io/f/xovvrygq" method="POST">
       <label for="footer-email" class="visually-hidden">Email</label>
@@ -496,6 +473,7 @@
           }
         });
       });
+
       // Fade-in on scroll
       const faders = document.querySelectorAll('.fade-section');
       const appearOptions = { threshold: 0.17 };
@@ -508,6 +486,26 @@
         });
       }, appearOptions);
       faders.forEach(fader => appearOnScroll.observe(fader));
+
+      // Header show/hide on scroll
+      let lastScrollY = window.scrollY;
+      const header = document.getElementById('site-header');
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            if (window.scrollY > lastScrollY && window.scrollY > 120) {
+              header.style.top = "-90px";
+            } else {
+              header.style.top = "0";
+            }
+            lastScrollY = window.scrollY;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll);
     });
   </script>
 </body>

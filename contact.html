@@ -40,7 +40,13 @@
       top: 0;
       z-index: 1000;
     }
-    .logo-link img { height: 62px; }
+    .logo-link img {
+  height: 62px;
+  width: auto;
+  max-width: 180px; /* optional: so it doesn't get huge on big screens */
+  object-fit: contain;
+  display: block;
+}
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -262,10 +268,7 @@
       <input id="footer-email" type="email" placeholder="you@example.com" required autocomplete="email">
       <button type="submit">Subscribe</button>
     </form>
-    <div class="footer-cta">
-      <a href="vlog.html" class="btn">Watch Our Vlog</a>
-      <a href="contact.html" class="btn">Contact Us</a>
-    </div>
+
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
   </footer>
   <script>

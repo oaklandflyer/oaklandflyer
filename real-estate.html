@@ -40,7 +40,13 @@
       box-shadow: 0 2px 8px rgba(16,67,122,0.06);
       position: sticky; top: 0; z-index: 100;
     }
-    .logo-link img { height: 62px; }
+    .logo-link img {
+  height: 62px;
+  width: auto;
+  max-width: 180px; /* optional: so it doesn't get huge on big screens */
+  object-fit: contain;
+  display: block;
+}
     .site-nav ul {
       display: flex;
       gap: 2vw;
@@ -347,7 +353,6 @@
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="62" loading="lazy">
@@ -374,10 +379,6 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="cta-buttons">
-      <a href="vlog.html" class="btn">Watch Our Vlog</a>
-      <a href="contact.html" class="btn">Contact Us</a>
-    </div>
   </header>
 
   <main id="main">

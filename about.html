@@ -37,13 +37,13 @@
       box-shadow: 0 2px 8px rgba(16,67,122,0.06);
       position: sticky; top: 0; z-index: 100;
     }
-    .logo-link img { height: 62px; }
-    .site-nav ul {
-      display: flex;
-      gap: 2vw;
-      list-style: none;
-      margin: 0; padding: 0;
-    }
+    .logo-link img {
+  height: 62px;
+  width: auto;
+  max-width: 180px; /* optional: so it doesn't get huge on big screens */
+  object-fit: contain;
+  display: block;
+}
     .site-nav a {
       font-weight: 600;
       text-decoration: none;
@@ -483,10 +483,6 @@
       <input id="footer-email" type="email" placeholder="you@example.com" required autocomplete="email">
       <button type="submit">Subscribe</button>
     </form>
-    <div class="footer-cta">
-      <a href="vlog.html" class="btn">Watch Our Vlog</a>
-      <a href="contact.html" class="btn">Contact Us</a>
-    </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/company/asfvisualsllc/" target="_blank" rel="noopener" aria-label="LinkedIn">

@@ -87,6 +87,57 @@
       color: #111;
     }
 
+    /* Hamburger Styles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 150;
+    }
+    .menu-toggle .bar {
+      display: block;
+      width: 28px;
+      height: 4px;
+      margin: 4px 0;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
+    .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
+
+    /* Hide nav on mobile, show hamburger */
+    @media (max-width: 800px) {
+      .menu-toggle { display: flex; }
+      .site-nav {
+        position: fixed;
+        top: 70px; right: 0;
+        background: #fff;
+        box-shadow: -2px 0 16px #0002;
+        width: 65vw; max-width: 340px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.25s cubic-bezier(.4,2.2,.3,1);
+        z-index: 101;
+        display: block;
+        padding: 38px 0 0 0;
+      }
+      .site-nav.open { transform: translateX(0); }
+      .site-nav ul {
+        flex-direction: column;
+        gap: 12px;
+        padding-left: 32px;
+      }
+      .site-header { flex-wrap: wrap; }
+    }
+
     /* HERO */
     .hero {
       position: relative;
@@ -348,6 +399,17 @@
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="62" loading="lazy">
     </a>
+    <!-- Hamburger button goes here -->
+    <button id="menu-toggle"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="menu-toggle"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <nav id="navbar" class="site-nav" aria-label="Main Navigation">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -396,23 +458,6 @@
         </article>
       </div>
     </section>
-    <section class="testimonials fade-section" id="testimonials">
-      <h2>What Clients Say</h2>
-      <div class="testimonial-grid">
-        <figure>
-          <blockquote>"ASF Visuals captured our wedding beautifully. The shots were magical!"</blockquote>
-          <figcaption>- Jordan M.</figcaption>
-        </figure>
-        <figure>
-          <blockquote>"The aerial shots were stunning and exactly what we needed."</blockquote>
-          <figcaption>- Casey L.</figcaption>
-        </figure>
-        <figure>
-          <blockquote>"Professional, creative, and timely service! Highly recommend."</blockquote>
-          <figcaption>- Riley P.</figcaption>
-        </figure>
-      </div>
-    </section>
   </main>
   <a href="https://asfvisualsllc.pixieset.com/" class="book-btn">Buy Prints</a>
   <footer class="site-footer">
@@ -436,8 +481,26 @@
     </div>
   </footer>
   <script>
-    // Fade-in on scroll
-    document.addEventListener("DOMContentLoaded", () => {
+    // Hamburger menu toggle
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("navbar");
+      toggle.addEventListener("click", function() {
+        const open = nav.classList.toggle("open");
+        this.classList.toggle("open");
+        this.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      // Optional: close menu when a link is clicked (for single-page feel)
+      nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 800) {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+      // Fade-in on scroll
       const faders = document.querySelectorAll('.fade-section');
       const appearOptions = { threshold: 0.17 };
       const appearOnScroll = new IntersectionObserver(function(entries, observer) {

@@ -1,30 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/OFLogo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Watch the latest video content from ASF Visuals.">
-    <meta name="keywords" content="drone videos, cinematography, portfolio">
-    <link rel="canonical" href="https://www.asfvisualsllc.com/videos.html">
-    <title>Videos - ASF Visuals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="hex-bg.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX');
-    </script>
-    <script defer src="scroll.min.js"></script>
-    <script defer src="menuToggle.js"></script>
+  <meta charset="UTF-8">
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Watch the latest video content from ASF Visuals.">
+  <meta name="keywords" content="drone videos, cinematography, portfolio">
+  <link rel="canonical" href="https://www.asfvisualsllc.com/videos.html">
+  <title>Videos - ASF Visuals LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hex-bg.css">
+  <style>
+    :root {
+      --primary: #10437a;
+      --accent: #e8bc56;
+      --bg: #fafbfc;
+      --card-bg: rgba(255,255,255,0.96);
+      --shadow: 0 8px 32px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --cta: #10437a;
+      --cta-hover: #e8bc56;
+      --container-width: 1120px;
+      --font: 'Montserrat', Arial, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      margin: 0;
+      background: var(--bg);
+      color: #172135;
+    }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 5vw 12px 5vw;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 2px 8px rgba(16,67,122,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-link img { height: 62px; }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 150;
+    }
+    .menu-toggle .bar {
+      display: block;
+      width: 28px;
+      height: 4px;
+      margin: 4px 0;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2vw;
+      margin: 0;
+      padding: 0;
+    }
+    .site-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      transition: background 0.2s, color 0.2s;
+    }
+    .site-nav a.active, .site-nav a:hover {
+      background: var(--accent);
+      color: #111;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    .btn, .book-btn {
+      background: var(--cta);
+      color: #fff;
+      font-weight: 700;
+      padding: 11px 28px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      outline: none;
+      border: none;
+      display: inline-block;
+    }
+    .btn:hover, .btn:focus, .book-btn:hover, .book-btn:focus {
+      background: var(--cta-hover);
+      color: #111;
+    }
+    @media (max-width: 800px) {
+      .menu-toggle { display: flex; }
+      .site-nav {
+        position: fixed;
+        top: 70px; right: 0;
+        background: #fff;
+        box-shadow: -2px 0 16px #0002;
+        width: 65vw; max-width: 340px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.25s cubic-bezier(.4,2.2,.3,1);
+        z-index: 101;
+        display: block;
+        padding: 38px 0 0 0;
+      }
+      .site-nav.open { transform: translateX(0); }
+      .site-nav ul {
+        flex-direction: column;
+        gap: 12px;
+        padding-left: 32px;
+      }
+      .site-header { flex-wrap: wrap; }
+    }
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
+    .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
+    /* Video Section */
+    .video-section {
+      max-width: 900px;
+      margin: 42px auto 0 auto;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 20px 34px 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 36px;
+      align-items: start;
+      justify-items: center;
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 16 / 9;
+      background: #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px #0001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .video-section { padding: 14px 0 26px 0; }
+      .video-container { gap: 19px; }
+      .video-embed { max-width: 99vw; }
+    }
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #fff;
+    }
+    .footer-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 18px;
+      margin-top: 16px;
+    }
+    .social-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 18px;
+    }
+    .social-links img {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 1px 8px #0001;
+      padding: 2px;
+    }
+  </style>
 </head>
-
 <body>
-    <div id="hex-bg"></div>
-
+  <div id="hex-bg"></div>
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" loading="lazy">
@@ -34,16 +222,18 @@
       aria-controls="navbar"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      class="menu-toggle"
     >
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <nav id="navbar" class="site-nav">
+    <nav id="navbar" class="site-nav" aria-label="Main Navigation">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
         <li><a href="real-estate.html">Real Estate</a></li>
+        <li><a href="videos.html" class="active">Videos</a></li>
         <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -55,31 +245,27 @@
       <a href="contact.html" class="btn">Contact Us</a>
     </div>
   </header>
-
-<!-- Video Section -->
-<main id="main">
-  <section id="videos" class="video-section">
-    <h2 class="section-title">Featured Videos</h2>
-
-    <!-- Video Gallery Grid -->
-    <div class="video-container">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" 
-                title="Video 1" 
-                allowfullscreen 
-                loading="lazy"></iframe>
+  <!-- Video Section -->
+  <main id="main">
+    <section id="videos" class="video-section">
+      <h2 class="section-title">Featured Videos</h2>
+      <div class="video-container">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" 
+                  title="Video 1" 
+                  allowfullscreen 
+                  loading="lazy"></iframe>
+        </div>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" 
+                  title="Video 2" 
+                  allowfullscreen 
+                  loading="lazy"></iframe>
+        </div>
       </div>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" 
-                title="Video 2" 
-                allowfullscreen 
-                loading="lazy"></iframe>
-      </div>
-    </div>
-
-    <!-- Social Media Links -->
-     <a href="contact.html" class="book-btn">Book a Shoot</a>
-
+      <a href="contact.html" class="book-btn" style="margin: 0 auto 24px auto; display: block; max-width: 300px;">Book a Shoot</a>
+    </section>
+  </main>
   <footer class="site-footer">
     <form class="subscribe-form" aria-label="Newsletter signup" action="https://formspree.io/f/xovvrygq" method="POST">
       <label for="footer-email" class="visually-hidden">Email</label>
@@ -110,5 +296,28 @@
       </a>
     </div>
   </footer>
-  </section>
-</main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hamburger menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('navbar');
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function () {
+          const open = nav.classList.toggle('open');
+          this.classList.toggle('open');
+          this.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth <= 800) {
+              nav.classList.remove('open');
+              menuToggle.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

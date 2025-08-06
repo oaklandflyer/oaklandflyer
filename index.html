@@ -59,7 +59,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
-        <li><a href="#real-estate">Real Estate</a></li>
+        <li><a href="real-estate.html">Real Estate</a></li>
         <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -74,7 +74,7 @@
 
   <main id="main">
     <section class="hero fade-section" id="hero">
-      <img src="images/DowntownCloudsReduced.jpg" alt="Downtown skyline" width="1920" height="1080" loading="lazy">
+      <img src="images/DowntownCloudsReduced.jpg" alt="Downtown skyline" width="1920" height="1080" loading="lazy" decoding="async">
       <div class="hero-text">
         <h1>Capturing Moments, Telling Stories</h1>
         <p>Explore breathtaking drone and landscape photography by ASF Visuals.</p>
@@ -88,19 +88,19 @@
       <h2>Our Services</h2>
       <div class="service-grid">
         <article class="service-card">
-          <img src="images/about-preview.jpg" alt="Portrait session" width="400" height="300" loading="lazy">
+          <img data-src="images/about-preview.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Portrait session" width="400" height="300" loading="lazy" decoding="async">
           <h3>Portraits</h3>
           <p>Personalized sessions capturing you!</p>
           <a href="gallery.html" class="work-link">View our work</a>
         </article>
         <article class="service-card">
-          <img src="images/DJI_0441.JPG" alt="Drone aerial" width="400" height="300" loading="lazy">
+          <img data-src="images/DJI_0441.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Drone aerial" width="400" height="300" loading="lazy" decoding="async">
           <h3>Drone Aerials</h3>
           <p>High-quality aerial imagery for inspections and real estate.</p>
           <a href="gallery.html" class="work-link">View our work</a>
         </article>
         <article class="service-card">
-          <img src="images/portfolio-preview.jpg" alt="Landscape photography" width="400" height="300" loading="lazy">
+          <img data-src="images/portfolio-preview.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Landscape photography" width="400" height="300" loading="lazy" decoding="async">
           <h3>Landscape Photography</h3>
           <p>Authentic scenes that tell compelling stories.</p>
           <a href="gallery.html" class="work-link">View our work</a>
@@ -118,7 +118,7 @@
       <div class="property-grid">
         <article class="property-card" data-type="residential" data-price="350000">
           <div class="image-wrapper">
-            <img data-src="images/DJI_0441.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Sunny residence" width="400" height="300" loading="lazy">
+            <img data-src="images/DJI_0441.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Sunny residence" width="400" height="300" loading="lazy" decoding="async">
             <span class="price-badge">$350k</span>
           </div>
           <h3>123 Maple Ave</h3>
@@ -127,7 +127,7 @@
         </article>
         <article class="property-card" data-type="commercial" data-price="800000">
           <div class="image-wrapper">
-            <img data-src="images/DJI_0454.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Modern office" width="400" height="300" loading="lazy">
+            <img data-src="images/DJI_0454.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Modern office" width="400" height="300" loading="lazy" decoding="async">
             <span class="price-badge">$800k</span>
           </div>
           <h3>456 Market St</h3>
@@ -194,11 +194,5 @@
 
   <!-- JavaScript -->
   <script defer src="src/js/site.js"></script>
-  <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-  </script>
-
 </body>
 </html>

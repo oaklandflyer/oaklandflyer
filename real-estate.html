@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="images/OFLogo.png" type="image/png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ASF Visuals offers professional real estate photography and aerial services to showcase properties at their best.">
-  <meta name="keywords" content="real estate photography, property photos, drone real estate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore ASF Visuals' real estate portfolio featuring high-quality property imagery.">
+  <meta property="og:title" content="Real Estate Portfolio - ASF Visuals">
+  <meta property="og:description" content="Browse professional real estate photos by ASF Visuals.">
+  <meta property="og:image" content="https://www.asfvisuals412.com/images/social-preview.jpg">
   <link rel="canonical" href="https://www.asfvisuals412.com/real-estate.html">
-  <title>Real Estate Photography - ASF Visuals</title>
+  <title>Real Estate Portfolio - ASF Visuals</title>
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preload" href="src/css/main.css" as="style">
+  <link rel="preload" href="images/DJI_0441.JPG" as="image">
+  <link rel="stylesheet" href="src/css/main.css">
+  <link rel="stylesheet" href="src/css/real-estate.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,19 +25,13 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXX');
   </script>
-  <script defer src="scroll.min.js"></script>
 </head>
 <body>
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" loading="lazy">
+      <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="80" loading="lazy" decoding="async">
     </a>
-    <button
-      id="menu-toggle"
-      aria-controls="navbar"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -38,6 +40,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
+        <li><a href="real-estate.html">Real Estate</a></li>
         <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -51,20 +54,57 @@
   </header>
 
   <main id="main">
-    <section id="real-estate" class="fade-up">
-      <div class="container">
-        <h2>Real Estate Photography Services</h2>
-        <p>Showcase your property with crisp, compelling visuals. Our real estate packages include interior and exterior coverage along with optional aerial perspectives.</p>
-        <ul>
-          <li>High-resolution interior and exterior photography</li>
-          <li>Drone imagery for aerial views</li>
-          <li>24–48 hour turnaround on edited photos</li>
-        </ul>
-        <div class="portfolio-grid">
-          <img src="images/DJI_0441.JPG" alt="Sample property exterior" loading="lazy">
-          <img src="images/DJI_0454.JPG" alt="Sample property interior" loading="lazy">
-        </div>
-        <p><a href="contact.html" class="btn">Request a Quote</a></p>
+    <section class="hero real-estate-hero fade-section" id="hero">
+      <img src="images/DJI_0441.JPG" alt="Modern property" width="1920" height="1080" loading="lazy" decoding="async">
+      <div class="hero-text">
+        <h1>Real Estate Portfolio</h1>
+      </div>
+    </section>
+
+    <section class="real-estate fade-section" id="properties">
+      <h2>Properties</h2>
+      <div class="filter-controls">
+        <button type="button" class="btn" data-filter="all">All</button>
+        <button type="button" class="btn" data-filter="residential">Residential</button>
+        <button type="button" class="btn" data-filter="commercial">Commercial</button>
+      </div>
+      <div class="property-grid">
+        <article class="property-card" data-type="residential" data-price="350000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0441.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Sunny residence" width="400" height="300" loading="lazy" decoding="async">
+            <span class="price-badge">$350k</span>
+          </div>
+          <h3>123 Maple Ave</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 123 Maple Ave">View Details</button>
+        </article>
+        <article class="property-card" data-type="commercial" data-price="800000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0454.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Modern office" width="400" height="300" loading="lazy" decoding="async">
+            <span class="price-badge">$800k</span>
+          </div>
+          <h3>456 Market St</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 456 Market St">View Details</button>
+        </article>
+        <article class="property-card" data-type="residential" data-price="450000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0455-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Suburban home" width="400" height="300" loading="lazy" decoding="async">
+            <span class="price-badge">$450k</span>
+          </div>
+          <h3>789 Oak St</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 789 Oak St">View Details</button>
+        </article>
+        <article class="property-card" data-type="commercial" data-price="600000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0511-HDR.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Retail space" width="400" height="300" loading="lazy" decoding="async">
+            <span class="price-badge">$600k</span>
+          </div>
+          <h3>101 Center Plaza</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 101 Center Plaza">View Details</button>
+        </article>
       </div>
     </section>
   </main>
@@ -82,26 +122,15 @@
     </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
     <div class="social-links">
-      <a
-        href="https://www.linkedin.com/company/asf-visuals-llc/"
-        target="_blank"
-        rel="noopener"
-        aria-label="LinkedIn"
-      >
-        <img src="images/linkedin-icon.png" alt="LinkedIn" loading="lazy">
+      <a href="https://www.linkedin.com/company/asf-visuals-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="images/linkedin-icon.png" alt="LinkedIn" width="24" height="24" loading="lazy" decoding="async">
       </a>
-      <a
-        href="https://www.instagram.com/asfvisuals/"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-      >
-        <img src="images/instagram-icon.png" alt="Instagram" loading="lazy">
+      <a href="https://www.instagram.com/asfvisuals/" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="images/instagram-icon.png" alt="Instagram" width="24" height="24" loading="lazy" decoding="async">
       </a>
     </div>
   </footer>
 
-  <script defer src="menuToggle.js"></script>
-  <script defer src="imageEnlarge.min.js"></script>
+  <script defer src="src/js/site.js"></script>
 </body>
 </html>

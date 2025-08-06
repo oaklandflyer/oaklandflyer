@@ -26,7 +26,9 @@
   >
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="src/css/main.css" as="style">
+  <link rel="preload" as="image" href="images/DowntownCloudsReduced.jpg">
+  <link rel="stylesheet" href="src/css/main.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,7 +43,7 @@
 
   <header class="site-header">
     <a href="index.html" class="logo-link">
-      <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" loading="lazy">
+      <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="80" loading="lazy">
     </a>
     <button
       id="menu-toggle"
@@ -57,6 +59,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
+        <li><a href="#real-estate">Real Estate</a></li>
         <li><a href="vlog.html">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -70,7 +73,8 @@
   </header>
 
   <main id="main">
-    <section class="hero parallax" style="background-image: url('images/DowntownCloudsReduced.jpg');">
+    <section class="hero fade-section" id="hero">
+      <img src="images/DowntownCloudsReduced.jpg" alt="Downtown skyline" width="1920" height="1080" loading="lazy">
       <div class="hero-text">
         <h1>Capturing Moments, Telling Stories</h1>
         <p>Explore breathtaking drone and landscape photography by ASF Visuals.</p>
@@ -80,20 +84,23 @@
     </section>
 
 
-    <section class="services" id="services">
+    <section class="services fade-section" id="services">
       <h2>Our Services</h2>
       <div class="service-grid">
         <article class="service-card">
+          <img src="images/about-preview.jpg" alt="Portrait session" width="400" height="300" loading="lazy">
           <h3>Portraits</h3>
           <p>Personalized sessions capturing you!</p>
           <a href="gallery.html" class="work-link">View our work</a>
         </article>
         <article class="service-card">
+          <img src="images/DJI_0441.JPG" alt="Drone aerial" width="400" height="300" loading="lazy">
           <h3>Drone Aerials</h3>
           <p>High-quality aerial imagery for inspections and real estate.</p>
           <a href="gallery.html" class="work-link">View our work</a>
         </article>
         <article class="service-card">
+          <img src="images/portfolio-preview.jpg" alt="Landscape photography" width="400" height="300" loading="lazy">
           <h3>Landscape Photography</h3>
           <p>Authentic scenes that tell compelling stories.</p>
           <a href="gallery.html" class="work-link">View our work</a>
@@ -101,7 +108,36 @@
       </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
+    <section id="real-estate" class="real-estate fade-section">
+      <h2>Real Estate</h2>
+      <div class="filter-controls">
+        <button type="button" class="btn" data-filter="all">All</button>
+        <button type="button" class="btn" data-filter="residential">Residential</button>
+        <button type="button" class="btn" data-filter="commercial">Commercial</button>
+      </div>
+      <div class="property-grid">
+        <article class="property-card" data-type="residential" data-price="350000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0441.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Sunny residence" width="400" height="300" loading="lazy">
+            <span class="price-badge">$350k</span>
+          </div>
+          <h3>123 Maple Ave</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 123 Maple Ave">View Details</button>
+        </article>
+        <article class="property-card" data-type="commercial" data-price="800000">
+          <div class="image-wrapper">
+            <img data-src="images/DJI_0454.JPG" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Modern office" width="400" height="300" loading="lazy">
+            <span class="price-badge">$800k</span>
+          </div>
+          <h3>456 Market St</h3>
+          <p>Pittsburgh, PA</p>
+          <button class="btn" aria-label="View details for 456 Market St">View Details</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials fade-section" id="testimonials">
       <h2>What Clients Say</h2>
       <div class="testimonial-grid">
         <figure>
@@ -143,7 +179,7 @@
         rel="noopener"
         aria-label="LinkedIn"
       >
-        <img src="images/linkedin-icon.png" alt="LinkedIn" loading="lazy">
+        <img src="images/linkedin-icon.png" alt="LinkedIn" width="24" height="24" loading="lazy">
       </a>
       <a
         href="https://www.instagram.com/asfvisuals/"
@@ -151,20 +187,13 @@
         rel="noopener"
         aria-label="Instagram"
       >
-        <img src="images/instagram-icon.png" alt="Instagram" loading="lazy">
+        <img src="images/instagram-icon.png" alt="Instagram" width="24" height="24" loading="lazy">
       </a>
     </div>
   </footer>
 
-  <!-- JavaScript libraries & plugins (deferred) -->
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"
-  ></script>
-  <script defer src="gallery.min.js"></script>
-  <script defer src="scroll.min.js"></script>
-  <script defer src="menuToggle.js"></script>
-  <script defer src="imageEnlarge.min.js"></script>
+  <!-- JavaScript -->
+  <script defer src="src/js/site.js"></script>
   <script>
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <link rel="icon" href="images/OFLogo.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Watch the latest video content from ASF Visuals.">
-  <meta name="keywords" content="drone videos, cinematography, portfolio">
-  <link rel="canonical" href="https://www.asfvisualsllc.com/videos.html">
-  <title>Videos - ASF Visuals LLC</title>
+  <meta name="description" content="Watch behind-the-scenes, travel, and creator vlog content from ASF Visuals LLC.">
+  <meta name="keywords" content="vlog, behind the scenes, drone, travel, pittsburgh, asf visuals">
+  <link rel="canonical" href="https://www.asfvisualsllc.com/vlog.html">
+  <title>Vlog - ASF Visuals LLC</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="hex-bg.css">
@@ -42,12 +42,12 @@
       z-index: 1000;
     }
     .logo-link img {
-  height: 62px;
-  width: auto;
-  max-width: 180px; /* optional: so it doesn't get huge on big screens */
-  object-fit: contain;
-  display: block;
-}
+      height: 62px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -140,8 +140,8 @@
     .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
     .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
     .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
-    /* Video Section */
-    .video-section {
+    /* Vlog Section */
+    .vlog-section {
       max-width: 900px;
       margin: 42px auto 0 auto;
       background: #fff;
@@ -157,7 +157,13 @@
       font-weight: 700;
       margin-bottom: 32px;
     }
-    .video-container {
+    .vlog-intro {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: #294472;
+    }
+    .vlog-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
@@ -165,28 +171,51 @@
       align-items: start;
       justify-items: center;
     }
-    .video-embed {
+    .vlog-entry {
       width: 100%;
       max-width: 520px;
-      aspect-ratio: 16 / 9;
-      background: #eee;
-      border-radius: 12px;
-      overflow: hidden;
+      background: #f7f9fa;
+      border-radius: 14px;
       box-shadow: 0 3px 12px #0001;
+      padding: 1.1em 1.2em 1.3em 1.2em;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
+      transition: box-shadow 0.19s;
     }
-    .video-embed iframe {
+    .vlog-entry:hover {
+      box-shadow: 0 6px 24px #e8bc5666;
+    }
+    .vlog-entry iframe, .vlog-entry video {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16/9;
       border: none;
+      border-radius: 8px;
+      margin-bottom: 13px;
+      background: #222;
       display: block;
     }
+    .vlog-entry h3 {
+      margin: 0 0 0.3em 0;
+      font-size: 1.18em;
+      color: var(--primary);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .vlog-entry p {
+      margin: 0 0 0.5em 0;
+      color: #375177;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+    .vlog-entry .btn {
+      margin-top: 0.7em;
+      width: fit-content;
+    }
     @media (max-width: 900px) {
-      .video-section { padding: 14px 0 26px 0; }
-      .video-container { gap: 19px; }
-      .video-embed { max-width: 99vw; }
+      .vlog-section { padding: 14px 0 26px 0; }
+      .vlog-list { gap: 19px; }
+      .vlog-entry { max-width: 99vw; }
     }
     /* Footer */
     .site-footer {
@@ -239,52 +268,62 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Portfolio</a></li>
         <li><a href="real-estate.html">Real Estate</a></li>
-        <li><a href="videos.html" class="active">Videos</a></li>
-        <li><a href="vlog.html">Vlog</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="vlog.html" class="active">Vlog</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="cta-buttons">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </header>
-  <!-- Video Section -->
+
   <main id="main">
-    <section id="videos" class="video-section">
-      <h2 class="section-title">Featured Videos</h2>
-      <div class="video-container">
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" 
-                  title="Video 1" 
-                  allowfullscreen 
-                  loading="lazy"></iframe>
+    <section class="vlog-section">
+      <h2 class="section-title">ASF Visuals Vlog</h2>
+      <div class="vlog-intro">
+        <p>
+          Welcome to the ASF Visuals Vlog! Get a behind-the-scenes look at shoots, travel stories, and creator insights from Pittsburgh and beyond.
+        </p>
+      </div>
+      <div class="vlog-list">
+        <!-- Vlog 1 -->
+        <div class="vlog-entry">
+          <iframe src="https://www.youtube.com/embed/NojHOWKeHuY" title="Vlog: Urban Aerial Adventures" allowfullscreen loading="lazy"></iframe>
+          <h3>Urban Aerial Adventures</h3>
+          <p>
+            Flying high above downtown Pittsburgh. See how I plan, shoot, and edit my favorite cityscapes—plus get some drone piloting tips.
+          </p>
+          <a href="contact.html" class="btn">Book a Session</a>
         </div>
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" 
-                  title="Video 2" 
-                  allowfullscreen 
-                  loading="lazy"></iframe>
+        <!-- Vlog 2 -->
+        <div class="vlog-entry">
+          <iframe src="https://www.youtube.com/embed/YfNUNxiMGCo" title="Vlog: Early Morning Sunrise" allowfullscreen loading="lazy"></iframe>
+          <h3>Early Morning Sunrise</h3>
+          <p>
+            Tag along for a sunrise shoot—capturing golden light and quiet city moments. A peek at my gear setup and creative process.
+          </p>
+          <a href="contact.html" class="btn">Work With Me</a>
         </div>
+        <!-- Add more entries here -->
       </div>
       <a href="contact.html" class="book-btn" style="margin: 0 auto 24px auto; display: block; max-width: 300px;">Book a Shoot</a>
     </section>
   </main>
   <footer class="site-footer">
+    <div class="footer-cta">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
     <div class="social-links">
-      <a
-        href="https://www.linkedin.com/company/asf-visuals-llc/"
-        target="_blank"
-        rel="noopener"
-        aria-label="LinkedIn"
-      >
+      <a href="https://www.linkedin.com/company/asf-visuals-llc/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <img src="images/linkedin-icon.png" alt="LinkedIn" loading="lazy">
       </a>
-      <a
-        href="https://www.instagram.com/asfvisuals/"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-      >
+      <a href="https://www.instagram.com/asfvisuals/" target="_blank" rel="noopener" aria-label="Instagram">
         <img src="images/instagram-icon.png" alt="Instagram" loading="lazy">
       </a>
     </div>

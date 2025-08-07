@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - ASF Visuals LLC</title>
-  <link rel="icon" href="images/OFLogo.png" type="image/png">
   <meta name="description" content="Browse the ASF Visuals photography gallery featuring drone, portrait and landscape images.">
   <meta name="keywords" content="gallery, drone photos, portraits, landscapes">
   <link rel="canonical" href="https://www.asfvisualsllc.com/gallery.html">
+  <link rel="icon" href="images/OFLogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
   <style>
     :root {
-      --clr-dark: #1a1a1a;
+      --clr-dark: #181c22;
       --clr-light: #f5f5f5;
       --clr-bg: #eaf6fa;
-      --clr-text: #333;
+      --clr-header-bg: #fff;
+      --clr-header-text: #10437a;
+      --clr-nav-link: #10437a;
+      --clr-nav-link-hover: #ff6600;
+      --clr-footer-bg: #111;
+      --clr-footer-text: #fff;
       --clr-accent: #ff6600;
       --container-width: 1200px;
       --font: 'Montserrat', sans-serif;
     }
-
+    .dark-mode {
+      --clr-bg: #161a1f;
+      --clr-header-bg: #232932;
+      --clr-header-text: #f5f5f5;
+      --clr-nav-link: #e8bc56;
+      --clr-nav-link-hover: #10437a;
+      --clr-footer-bg: #1a1a1a;
+      --clr-footer-text: #eee;
+      --clr-accent: #e8bc56;
+    }
     body {
       font-family: var(--font);
       margin: 0;
       background: var(--clr-bg);
-      color: var(--clr-text);
-      transition: background 0.3s ease, color 0.3s ease;
+      color: var(--clr-header-text);
+      transition: background 0.3s, color 0.3s;
     }
-
-    .dark-mode {
-      background: var(--clr-dark);
-      color: var(--clr-light);
-      --clr-bg: var(--clr-dark);
-      --clr-text: var(--clr-light);
-    }
-
-    /* HEADER & NAV - matches home page */
+    /* HEADER & NAV */
     .site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 12px 5vw 12px 5vw;
-      background: rgba(255,255,255,0.94);
+      background: var(--clr-header-bg);
+      color: var(--clr-header-text);
       box-shadow: 0 2px 8px rgba(16,67,122,0.06);
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: background 0.3s;
     }
     .logo-link img {
-  height: 62px;
-  width: auto;
-  max-width: 180px; /* optional: so it doesn't get huge on big screens */
-  object-fit: contain;
-  display: block;
-}
+      height: 62px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -80,7 +81,7 @@
       width: 28px;
       height: 4px;
       margin: 4px 0;
-      background: #10437a;
+      background: var(--clr-nav-link);
       border-radius: 2px;
       transition: 0.3s;
     }
@@ -92,7 +93,7 @@
       padding: 0;
     }
     .site-nav a {
-      color: #10437a;
+      color: var(--clr-nav-link);
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.01em;
@@ -101,15 +102,15 @@
       transition: background 0.2s, color 0.2s;
     }
     .site-nav a.active, .site-nav a:hover {
-      background: #e8bc56;
-      color: #111;
+      background: var(--clr-nav-link-hover);
+      color: #fff;
     }
     .cta-buttons {
       display: flex;
       gap: 12px;
     }
     .btn {
-      background: #10437a;
+      background: var(--clr-nav-link);
       color: #fff;
       font-weight: 700;
       padding: 11px 28px;
@@ -125,7 +126,7 @@
       border: none;
     }
     .btn:hover, .btn:focus {
-      background: #e8bc56;
+      background: var(--clr-accent);
       color: #111;
     }
 
@@ -134,12 +135,12 @@
       .site-nav {
         position: fixed;
         top: 70px; right: 0;
-        background: #fff;
+        background: var(--clr-header-bg);
         box-shadow: -2px 0 16px #0002;
         width: 65vw; max-width: 340px;
         height: 100vh;
         transform: translateX(100%);
-        transition: transform 0.25s cubic-bezier(.4,2.2,.3,1);
+        transition: transform 0.25s cubic-bezier(.4,2.2,.3,1), background 0.3s;
         z-index: 101;
         display: block;
         padding: 38px 0 0 0;
@@ -152,45 +153,41 @@
       }
       .site-header { flex-wrap: wrap; }
     }
-
     .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
     .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
     .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
-
-    /* GALLERY & REST - unchanged */
+    /* GALLERY */
     #gallery {
       padding: 2rem;
       max-width: var(--container-width);
       margin: auto;
     }
-
     .section-title {
       text-align: center;
       font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 2rem;
     }
-
     .filters {
       text-align: center;
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
-
     .filter-btn {
       padding: 0.5rem 1rem;
       border: none;
       margin: 0.25rem;
       border-radius: 4px;
       cursor: pointer;
-      background: #10437a;
-      color: #f5f5f5;
+      background: var(--clr-nav-link);
+      color: var(--clr-light);
       font-weight: 500;
+      transition: background 0.2s, color 0.2s;
     }
-
     .filter-btn.active,
     .filter-btn:hover {
-      background: #ff6600;
+      background: var(--clr-accent);
+      color: #111;
     }
     .stacked-preview {
       position: relative;
@@ -198,7 +195,6 @@
       overflow: hidden;
       margin-bottom: 1rem;
     }
-
     .stacked-preview img {
       position: absolute;
       width: 100%;
@@ -207,28 +203,18 @@
       border-radius: 8px;
       transition: transform 0.4s ease, opacity 0.3s ease;
     }
-
-    .stacked-preview img:nth-child(1) {
-      top: 0;
-      z-index: 3;
-    }
-    .stacked-preview img:nth-child(2) {
-      top: 10px;
-      z-index: 2;
-    }
-    .stacked-preview img:nth-child(3) {
-      top: 20px;
-      z-index: 1;
-    }
-
+    .stacked-preview img:nth-child(1) { top: 0; z-index: 3;}
+    .stacked-preview img:nth-child(2) { top: 10px; z-index: 2;}
+    .stacked-preview img:nth-child(3) { top: 20px; z-index: 1;}
     .category-grid.hidden-grid { display: none; }
     .gallery-category.expanded .category-grid { display: grid; }
     .gallery-category { margin-bottom: 3rem; }
     .gallery-category-title {
       font-size: 1.5rem;
-      border-bottom: 2px solid #10437a;
+      border-bottom: 2px solid var(--clr-nav-link);
       margin: 1rem 0;
       padding-bottom: 0.25rem;
+      color: var(--clr-header-text);
     }
     .category-grid {
       display: grid;
@@ -239,12 +225,18 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, opacity 0.6s;
       cursor: pointer;
+      opacity: 0;
+      background: #ececec;
+      filter: blur(8px);
     }
-    .gallery-item:hover img {
-      transform: scale(1.03);
+    .gallery-item img.loaded {
+      opacity: 1;
+      filter: blur(0);
+      transition: filter 0.4s, opacity 0.5s;
     }
+    .gallery-item:hover img { transform: scale(1.03);}
     #img-overlay {
       display: none;
       position: fixed;
@@ -263,31 +255,25 @@
     .site-footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #111;
-      color: #fff;
+      background: var(--clr-footer-bg);
+      color: var(--clr-footer-text);
+      transition: background 0.3s, color 0.3s;
     }
-
     @media (max-width: 768px) {
       .site-nav ul {
-        transition: max-height 0.3s ease;
+        transition: max-height 0.3s;
         max-height: 0;
         overflow: hidden;
         flex-direction: column;
       }
       .site-nav.open ul { max-height: 500px; }
     }
-
-    @media (max-width: 500px) {
-      .stacked-preview { display: none; }
-    }
-
+    @media (max-width: 500px) { .stacked-preview { display: none; } }
     img { -webkit-user-drag: none; user-select: none; }
-    .gallery-item img { pointer-events: auto; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.3s ease; }
-    .gallery-item img.loaded { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body oncontextmenu="return false">
-  <button class="floating-dark-toggle">☾ Dark Mode</button>
+  <button class="floating-dark-toggle" aria-label="Toggle dark mode">☾ Dark Mode</button>
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="62" loading="lazy">
@@ -313,28 +299,24 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <div class="cta-buttons">
+      <a href="vlog.html" class="btn">Watch Our Vlog</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </header>
-
   <main id="gallery">
     <h1 class="section-title">My Photography</h1>
     <div class="filters" id="filterButtons"></div>
     <button class="filter-btn" data-category="all">View All</button>
     <div class="gallery-container" id="galleryContainer"></div>
   </main>
-
   <footer class="site-footer">
-    <form class="subscribe-form" aria-label="Newsletter signup" action="https://formspree.io/f/xovvrygq" method="POST">
-      <label for="footer-email" class="visually-hidden">Email</label>
-      <input id="footer-email" type="email" placeholder="you@example.com" required>
-      <button type="submit">Subscribe</button>
-    </form>
     <div class="footer-cta">
       <a href="vlog.html" class="btn">Watch Our Vlog</a>
       <a href="contact.html" class="btn">Contact Us</a>
     </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
   </footer>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // Hamburger menu toggle
@@ -366,16 +348,14 @@
       });
     }
 
-    // Gallery filter logic (unchanged)
+    // Gallery filter logic & better image loading
     const viewAllBtn = document.querySelector('button[data-category="all"]');
     fetch('imagePaths.json')
       .then(res => res.json())
       .then(images => {
         const container = document.getElementById('galleryContainer');
         const filters = document.getElementById('filterButtons');
-
         const categories = [...new Set(images.map(i => i.category))];
-
         categories.forEach(category => {
           // Category Filter Button
           const btn = document.createElement('button');
@@ -393,11 +373,9 @@
               if (preview) preview.style.display = isMatch ? 'none' : 'block';
               if (collapse) collapse.style.display = isMatch ? 'inline-block' : 'none';
             });
-
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
           });
-
           filters.appendChild(btn);
 
           // Section container
@@ -438,6 +416,7 @@
             img.src = preview.src;
             img.alt = preview.alt || category;
             img.loading = 'lazy';
+            img.style.opacity = "0.6";
             previewContainer.appendChild(img);
           });
           section.appendChild(previewContainer);
@@ -464,11 +443,22 @@
             link.setAttribute('data-title', img.alt || '');
             link.className = 'gallery-item';
 
+            // LAZY LOAD with fade in
             const image = document.createElement('img');
-            image.src = img.src;
             image.alt = img.alt || category;
             image.loading = 'lazy';
-            image.onload = () => image.classList.add('loaded');
+            image.src = img.src;
+
+            // Start blurred/hidden until loaded
+            image.addEventListener('load', () => {
+              image.classList.add('loaded');
+            });
+            image.addEventListener('error', () => {
+              image.classList.add('loaded');
+              image.style.opacity = '0.7';
+              image.style.filter = 'grayscale(1)';
+              image.alt = 'Image failed to load';
+            });
 
             link.appendChild(image);
             grid.appendChild(link);
@@ -478,7 +468,7 @@
           container.appendChild(section);
         });
 
-        // View All logic (added after all sections)
+        // View All logic
         viewAllBtn.addEventListener('click', () => {
           document.querySelectorAll('.gallery-category').forEach(div => {
             div.style.display = 'block';
@@ -492,7 +482,6 @@
             if (collapse) collapse.style.display = 'none';
             if (view) view.style.display = 'inline-block';
           });
-
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           viewAllBtn.classList.add('active');
         });

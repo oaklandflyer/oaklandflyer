@@ -27,9 +27,10 @@ async function main() {
     throw new Error(`Missing ${INPUT} in project root.`);
   }
 
-  const client = new vision.ImageAnnotatorClient({
-    keyFilename: './service-account-key.json'
-  });
+const client = new vision.ImageAnnotatorClient({
+  keyFilename: "C:\\keys\\asf-vision-key.json"  // double backslashes on Windows
+});
+
 
   const images = await fs.readJson(INPUT);
   const existing = (await fs.pathExists(OUTPUT)) ? await fs.readJson(OUTPUT) : [];

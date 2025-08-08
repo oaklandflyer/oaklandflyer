@@ -10,16 +10,19 @@
   <link rel="icon" href="images/OFLogo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VBF13JPLGF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VBF13JPLGF');
-</script>
+  <!-- Leaflet (maps) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VBF13JPLGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-VBF13JPLGF');
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
   <style>
     :root {
       --clr-dark: #181c22;
@@ -45,257 +48,75 @@
       --clr-footer-text: #eee;
       --clr-accent: #e8bc56;
     }
-    body {
-      font-family: var(--font);
-      margin: 0;
-      background: var(--clr-bg);
-      color: var(--clr-header-text);
-      transition: background 0.3s, color 0.3s;
-    }
+    body { font-family: var(--font); margin: 0; background: var(--clr-bg); color: var(--clr-header-text); transition: background .3s, color .3s; }
+
     /* HEADER & NAV */
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 5vw 12px 5vw;
-      background: var(--clr-header-bg);
-      color: var(--clr-header-text);
-      box-shadow: 0 2px 8px rgba(16,67,122,0.06);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: background 0.3s;
-    }
-    .logo-link img {
-      height: 62px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      display: block;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 150;
-    }
-    .menu-toggle .bar {
-      display: block;
-      width: 28px;
-      height: 4px;
-      margin: 4px 0;
-      background: var(--clr-nav-link);
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-    .site-nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2vw;
-      margin: 0;
-      padding: 0;
-    }
-    .site-nav a {
-      color: var(--clr-nav-link);
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      padding: 6px 14px;
-      border-radius: 18px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .site-nav a.active, .site-nav a:hover {
-      background: var(--clr-nav-link-hover);
-      color: #fff;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 12px;
-    }
-    .btn {
-      background: var(--clr-nav-link);
-      color: #fff;
-      font-weight: 700;
-      padding: 11px 28px;
-      border-radius: 18px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      font-size: 1rem;
-      transition: background 0.2s, color 0.2s;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      outline: none;
-      border: none;
-    }
-    .btn:hover, .btn:focus {
-      background: var(--clr-accent);
-      color: #111;
-    }
+    .site-header { display:flex; align-items:center; justify-content:space-between; padding:12px 5vw; background:var(--clr-header-bg); color:var(--clr-header-text); box-shadow:0 2px 8px rgba(16,67,122,.06); position:sticky; top:0; z-index:1000; transition: background .3s; }
+    .logo-link img { height:62px; width:auto; max-width:180px; object-fit:contain; display:block; }
+    .menu-toggle { display:none; flex-direction:column; justify-content:center; align-items:center; width:44px; height:44px; background:none; border:none; cursor:pointer; z-index:150; }
+    .menu-toggle .bar { display:block; width:28px; height:4px; margin:4px 0; background:var(--clr-nav-link); border-radius:2px; transition:.3s; }
+    .site-nav ul { list-style:none; display:flex; gap:2vw; margin:0; padding:0; }
+    .site-nav a { color:var(--clr-nav-link); text-decoration:none; font-weight:600; letter-spacing:.01em; padding:6px 14px; border-radius:18px; transition: background .2s, color .2s; }
+    .site-nav a.active, .site-nav a:hover { background:var(--clr-nav-link-hover); color:#fff; }
+    .btn { background:var(--clr-nav-link); color:#fff; font-weight:700; padding:11px 28px; border-radius:18px; border:none; cursor:pointer; box-shadow:0 8px 32px rgba(0,0,0,.08); font-size:1rem; transition: background .2s, color .2s; text-decoration:none; letter-spacing:.02em; outline:none; }
+    .btn:hover, .btn:focus { background:var(--clr-accent); color:#111; }
 
     @media (max-width: 800px) {
-      .menu-toggle { display: flex; }
-      .site-nav {
-        position: fixed;
-        top: 70px; right: 0;
-        background: var(--clr-header-bg);
-        box-shadow: -2px 0 16px #0002;
-        width: 65vw; max-width: 340px;
-        height: 100vh;
-        transform: translateX(100%);
-        transition: transform 0.25s cubic-bezier(.4,2.2,.3,1), background 0.3s;
-        z-index: 101;
-        display: block;
-        padding: 38px 0 0 0;
-      }
-      .site-nav.open { transform: translateX(0); }
-      .site-nav ul {
-        flex-direction: column;
-        gap: 12px;
-        padding-left: 32px;
-      }
-      .site-header { flex-wrap: wrap; }
+      .menu-toggle { display:flex; }
+      .site-nav { position:fixed; top:70px; right:0; background:var(--clr-header-bg); box-shadow:-2px 0 16px #0002; width:65vw; max-width:340px; height:100vh; transform:translateX(100%); transition: transform .25s cubic-bezier(.4,2.2,.3,1), background .3s; z-index:101; display:block; padding:38px 0 0 0; }
+      .site-nav.open { transform:translateX(0); }
+      .site-nav ul { flex-direction:column; gap:12px; padding-left:32px; }
+      .site-header { flex-wrap:wrap; }
     }
-    .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
-    .menu-toggle.open .bar:nth-child(2) { opacity: 0;}
-    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
     /* GALLERY */
-    #gallery {
-      padding: 2rem;
-      max-width: var(--container-width);
-      margin: auto;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 2rem;
-    }
-    .filters {
-      text-align: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 0.5rem 1rem;
-      border: none;
-      margin: 0.25rem;
-      border-radius: 4px;
-      cursor: pointer;
-      background: var(--clr-nav-link);
-      color: var(--clr-light);
-      font-weight: 500;
-      transition: background 0.2s, color 0.2s;
-    }
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--clr-accent);
-      color: #111;
-    }
-    .stacked-preview {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
-    .stacked-preview img {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      opacity: 0.8;
-      border-radius: 8px;
-      transition: transform 0.4s ease, opacity 0.3s ease;
-    }
-    .stacked-preview img:nth-child(1) { top: 0; z-index: 3;}
-    .stacked-preview img:nth-child(2) { top: 10px; z-index: 2;}
-    .stacked-preview img:nth-child(3) { top: 20px; z-index: 1;}
-    .category-grid.hidden-grid { display: none; }
-    .gallery-category.expanded .category-grid { display: grid; }
-    .gallery-category { margin-bottom: 3rem; }
-    .gallery-category-title {
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--clr-nav-link);
-      margin: 1rem 0;
-      padding-bottom: 0.25rem;
-      color: var(--clr-header-text);
-    }
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s ease, opacity 0.6s;
-      cursor: pointer;
-      opacity: 0;
-      background: #ececec;
-      filter: blur(8px);
-    }
-    .gallery-item img.loaded {
-      opacity: 1;
-      filter: blur(0);
-      transition: filter 0.4s, opacity 0.5s;
-    }
-    .gallery-item:hover img { transform: scale(1.03);}
-    #img-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    #img-overlay img {
-      max-width: 95vw;
-      max-height: 90vh;
-      border-radius: 10px;
-    }
-    .site-footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--clr-footer-bg);
-      color: var(--clr-footer-text);
-      transition: background 0.3s, color 0.3s;
-    }
-    @media (max-width: 768px) {
-      .site-nav ul {
-        transition: max-height 0.3s;
-        max-height: 0;
-        overflow: hidden;
-        flex-direction: column;
-      }
-      .site-nav.open ul { max-height: 500px; }
-    }
-    @media (max-width: 500px) { .stacked-preview { display: none; } }
-    img { -webkit-user-drag: none; user-select: none; }
+    #gallery { padding:2rem; max-width:var(--container-width); margin:auto; }
+    .section-title { text-align:center; font-size:2.5rem; font-weight:bold; margin-bottom:2rem; }
+    .filters { text-align:center; margin-bottom:2rem; flex-wrap:wrap; }
+    .filter-btn { padding:.5rem 1rem; border:none; margin:.25rem; border-radius:4px; cursor:pointer; background:var(--clr-nav-link); color:var(--clr-light); font-weight:500; transition: background .2s, color .2s; }
+    .filter-btn.active, .filter-btn:hover { background:var(--clr-accent); color:#111; }
+    .stacked-preview { position:relative; height:200px; overflow:hidden; margin-bottom:1rem; }
+    .stacked-preview img { position:absolute; width:100%; height:auto; opacity:.8; border-radius:8px; transition: transform .4s ease, opacity .3s ease; }
+    .stacked-preview img:nth-child(1){top:0;z-index:3;} .stacked-preview img:nth-child(2){top:10px;z-index:2;} .stacked-preview img:nth-child(3){top:20px;z-index:1;}
+    .category-grid.hidden-grid { display:none; }
+    .gallery-category { margin-bottom:3rem; }
+    .gallery-category.expanded .category-grid { display:grid; }
+    .gallery-category-title { font-size:1.5rem; border-bottom:2px solid var(--clr-nav-link); margin:1rem 0; padding-bottom:.25rem; color:var(--clr-header-text); }
+    .category-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; }
+    .gallery-item { position:relative; display:block; }
+    .gallery-item img { width:100%; height:auto; border-radius:10px; transition: transform .3s ease, opacity .6s; cursor:pointer; opacity:0; background:#ececec; filter: blur(8px); }
+    .gallery-item img.loaded { opacity:1; filter: blur(0); transition: filter .4s, opacity .5s; }
+    .gallery-item:hover img { transform: scale(1.03); }
+
+    /* Footer */
+    .site-footer { text-align:center; padding:2rem 1rem; background:var(--clr-footer-bg); color:var(--clr-footer-text); transition: background .3s, color .3s; }
+    @media (max-width:768px){ .site-nav ul { transition:max-height .3s; max-height:0; overflow:hidden; flex-direction:column; } .site-nav.open ul { max-height:500px; } }
+    @media (max-width:500px){ .stacked-preview { display:none; } }
+    img { -webkit-user-drag:none; user-select:none; }
+
+    /* ===== Map Overlay (image + map) ===== */
+    #map-overlay { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; z-index:3000; backdrop-filter: blur(4px); }
+    #map-overlay.open { display:flex; }
+    #map-overlay .mo-content { width:min(1100px,94vw); max-height:90vh; background:var(--clr-header-bg); color:var(--clr-header-text); border-radius:16px; box-shadow:0 12px 48px rgba(0,0,0,.35); display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:14px; }
+    #mo-photo { width:100%; height:60vh; object-fit:contain; border-radius:12px; background:#000; }
+    #mo-map { width:100%; height:60vh; border-radius:12px; overflow:hidden; }
+    #map-overlay .mo-close { position:absolute; top:10px; right:16px; background:transparent; color:#fff; border:none; font-size:36px; cursor:pointer; line-height:1; }
+    .gallery-item.has-location::after { content:"📍"; position:absolute; top:8px; right:10px; font-size:20px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
+    @media (max-width:900px){ #map-overlay .mo-content{ grid-template-columns:1fr; max-height:92vh; } #mo-photo, #mo-map{ height:40vh; } }
   </style>
 </head>
 <body oncontextmenu="return false">
   <button class="floating-dark-toggle" aria-label="Toggle dark mode">☾ Dark Mode</button>
+
   <header class="site-header">
     <a href="index.html" class="logo-link">
       <img src="images/TransparentLogo.png" alt="ASF Visuals Logo" width="200" height="62" loading="lazy">
     </a>
-    <button id="menu-toggle"
-      aria-controls="navbar"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      class="menu-toggle"
-    >
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+    <button id="menu-toggle" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="menu-toggle">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
     </button>
     <nav id="navbar" class="site-nav" aria-label="Main Navigation">
       <ul>
@@ -308,12 +129,23 @@
       </ul>
     </nav>
   </header>
+
   <main id="gallery">
     <h1 class="section-title">My Photography</h1>
     <div class="filters" id="filterButtons"></div>
     <button class="filter-btn" data-category="all">View All</button>
     <div class="gallery-container" id="galleryContainer"></div>
   </main>
+
+  <!-- Image + Map Overlay -->
+  <div id="map-overlay" aria-hidden="true">
+    <button class="mo-close" aria-label="Close overlay">×</button>
+    <div class="mo-content">
+      <img id="mo-photo" alt="" />
+      <div id="mo-map"></div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-cta">
       <a href="vlog.html" class="btn">Watch Our Vlog</a>
@@ -321,177 +153,224 @@
     </div>
     <p>&copy; 2025 ASF Visuals LLC. All rights reserved.</p>
   </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Hamburger menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('navbar');
-    if (menuToggle && nav) {
-      menuToggle.addEventListener('click', function () {
-        const open = nav.classList.toggle('open');
-        this.classList.toggle('open');
-        this.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 800) {
-            nav.classList.remove('open');
-            menuToggle.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Lightbox2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // ===== Hamburger menu =====
+      const menuToggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('navbar');
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function () {
+          const open = nav.classList.toggle('open');
+          this.classList.toggle('open');
+          this.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
-      });
-    }
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth <= 800) {
+              nav.classList.remove('open');
+              menuToggle.classList.remove('open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      }
 
-    // Dark mode toggle
-    const darkToggle = document.querySelector('.floating-dark-toggle');
-    if (darkToggle) {
-      darkToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀ Light Mode' : '☾ Dark Mode';
-      });
-    }
+      // ===== Dark mode toggle =====
+      const darkToggle = document.querySelector('.floating-dark-toggle');
+      if (darkToggle) {
+        darkToggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀ Light Mode' : '☾ Dark Mode';
+        });
+      }
 
-    // Gallery filter logic & better image loading
-    const viewAllBtn = document.querySelector('button[data-category="all"]');
-    fetch('imagePaths.json')
-      .then(res => res.json())
-      .then(images => {
-        const container = document.getElementById('galleryContainer');
-        const filters = document.getElementById('filterButtons');
-        const categories = [...new Set(images.map(i => i.category))];
-        categories.forEach(category => {
-          // Category Filter Button
-          const btn = document.createElement('button');
-          btn.className = 'filter-btn';
-          btn.textContent = category;
-          btn.addEventListener('click', () => {
+      // ===== Map Overlay refs =====
+      const overlay = document.getElementById('map-overlay');
+      const closeBtn = overlay.querySelector('.mo-close');
+      const moPhoto = document.getElementById('mo-photo');
+      let mapInstance = null;
+
+      function openMapOverlay(record) {
+        moPhoto.src = record.src;
+        moPhoto.alt = record.alt || record.landmark || 'Photo';
+        if (mapInstance) { mapInstance.remove(); mapInstance = null; }
+        requestAnimationFrame(() => {
+          mapInstance = L.map('mo-map', { scrollWheelZoom: false }).setView([record.lat, record.lng], 13);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+          }).addTo(mapInstance);
+          L.marker([record.lat, record.lng]).addTo(mapInstance)
+            .bindPopup(record.landmark || record.alt || 'Photo location')
+            .openPopup();
+        });
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeMapOverlay() {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        moPhoto.src = '';
+        const mapNode = document.getElementById('mo-map');
+        mapNode.innerHTML = '';
+        if (mapInstance) { mapInstance.remove(); mapInstance = null; }
+      }
+
+      closeBtn.addEventListener('click', closeMapOverlay);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeMapOverlay(); });
+
+      // ===== Build gallery from precomputed imageData.json =====
+      const viewAllBtn = document.querySelector('button[data-category="all"]');
+
+      fetch('imageData.json')
+        .then(res => res.json())
+        .then(images => {
+          const container = document.getElementById('galleryContainer');
+          const filters = document.getElementById('filterButtons');
+          const categories = [...new Set(images.map(i => i.category))];
+
+          categories.forEach(category => {
+            // Filter button
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.textContent = category;
+            btn.addEventListener('click', () => {
+              document.querySelectorAll('.gallery-category').forEach(div => {
+                const isMatch = div.dataset.category === category;
+                div.style.display = isMatch ? 'block' : 'none';
+                div.classList.toggle('expanded', isMatch);
+                const grid = div.querySelector('.category-grid');
+                const preview = div.querySelector('.stacked-preview');
+                const collapse = div.querySelector('.collapse-btn');
+                if (grid) grid.classList.toggle('hidden-grid', !isMatch);
+                if (preview) preview.style.display = isMatch ? 'none' : 'block';
+                if (collapse) collapse.style.display = isMatch ? 'inline-block' : 'none';
+              });
+              document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+            });
+            filters.appendChild(btn);
+
+            // Section
+            const section = document.createElement('div');
+            section.className = 'gallery-category';
+            section.dataset.category = category;
+
+            const titleWrapper = document.createElement('div');
+            titleWrapper.style.display = 'flex';
+            titleWrapper.style.justifyContent = 'space-between';
+            titleWrapper.style.alignItems = 'center';
+
+            const title = document.createElement('h2');
+            title.className = 'gallery-category-title';
+            title.textContent = category;
+
+            const collapseBtn = document.createElement('button');
+            collapseBtn.textContent = 'Collapse';
+            collapseBtn.className = 'filter-btn collapse-btn';
+            collapseBtn.style.display = 'none';
+            collapseBtn.addEventListener('click', () => {
+              section.classList.remove('expanded');
+              previewContainer.style.display = 'block';
+              viewBtn.style.display = 'inline-block';
+              grid.classList.add('hidden-grid');
+              collapseBtn.style.display = 'none';
+            });
+
+            titleWrapper.appendChild(title);
+            titleWrapper.appendChild(collapseBtn);
+            section.appendChild(titleWrapper);
+
+            const previewContainer = document.createElement('div');
+            previewContainer.className = 'stacked-preview';
+            const previewImages = images.filter(i => i.category === category).slice(0, 3);
+            previewImages.forEach(preview => {
+              const img = document.createElement('img');
+              img.src = preview.src;
+              img.alt = preview.alt || category;
+              img.loading = 'lazy';
+              img.style.opacity = "0.6";
+              previewContainer.appendChild(img);
+            });
+            section.appendChild(previewContainer);
+
+            const viewBtn = document.createElement('button');
+            viewBtn.className = 'filter-btn';
+            viewBtn.textContent = 'View Gallery';
+            viewBtn.addEventListener('click', () => {
+              section.classList.add('expanded');
+              previewContainer.style.display = 'none';
+              viewBtn.style.display = 'none';
+              grid.classList.remove('hidden-grid');
+              collapseBtn.style.display = 'inline-block';
+            });
+            section.appendChild(viewBtn);
+
+            const grid = document.createElement('div');
+            grid.className = 'category-grid hidden-grid';
+
+            images.filter(img => img.category === category).forEach(record => {
+              const link = document.createElement('a');
+              link.href = record.src;
+              link.setAttribute('data-lightbox', category);
+              link.setAttribute('data-title', record.alt || '');
+              link.className = 'gallery-item';
+
+              const hasLoc = Number.isFinite(record.lat) && Number.isFinite(record.lng);
+              if (hasLoc) link.classList.add('has-location');
+
+              link.addEventListener('click', (evt) => {
+                if (hasLoc) {
+                  evt.preventDefault();
+                  openMapOverlay(record);
+                }
+              });
+
+              const image = document.createElement('img');
+              image.alt = record.alt || category;
+              image.loading = 'lazy';
+              image.src = record.src;
+              image.addEventListener('load', () => image.classList.add('loaded'));
+              image.addEventListener('error', () => {
+                image.classList.add('loaded');
+                image.style.opacity = '0.7';
+                image.style.filter = 'grayscale(1)';
+                image.alt = 'Image failed to load';
+              });
+
+              link.appendChild(image);
+              grid.appendChild(link);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+          });
+
+          // View All
+          viewAllBtn.addEventListener('click', () => {
             document.querySelectorAll('.gallery-category').forEach(div => {
-              const isMatch = div.dataset.category === category;
-              div.style.display = isMatch ? 'block' : 'none';
-              div.classList.toggle('expanded', isMatch);
+              div.style.display = 'block';
+              div.classList.remove('expanded');
               const grid = div.querySelector('.category-grid');
               const preview = div.querySelector('.stacked-preview');
               const collapse = div.querySelector('.collapse-btn');
-              if (grid) grid.classList.toggle('hidden-grid', !isMatch);
-              if (preview) preview.style.display = isMatch ? 'none' : 'block';
-              if (collapse) collapse.style.display = isMatch ? 'inline-block' : 'none';
+              const view = [...div.querySelectorAll('.filter-btn')].find(b => b.textContent === 'View Gallery');
+              if (grid) grid.classList.add('hidden-grid');
+              if (preview) preview.style.display = 'block';
+              if (collapse) collapse.style.display = 'none';
+              if (view) view.style.display = 'inline-block';
             });
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            viewAllBtn.classList.add('active');
           });
-          filters.appendChild(btn);
-
-          // Section container
-          const section = document.createElement('div');
-          section.className = 'gallery-category';
-          section.dataset.category = category;
-
-          const titleWrapper = document.createElement('div');
-          titleWrapper.style.display = 'flex';
-          titleWrapper.style.justifyContent = 'space-between';
-          titleWrapper.style.alignItems = 'center';
-
-          const title = document.createElement('h2');
-          title.className = 'gallery-category-title';
-          title.textContent = category;
-
-          const collapseBtn = document.createElement('button');
-          collapseBtn.textContent = 'Collapse';
-          collapseBtn.className = 'filter-btn collapse-btn';
-          collapseBtn.style.display = 'none';
-          collapseBtn.addEventListener('click', () => {
-            section.classList.remove('expanded');
-            previewContainer.style.display = 'block';
-            viewBtn.style.display = 'inline-block';
-            grid.classList.add('hidden-grid');
-            collapseBtn.style.display = 'none';
-          });
-
-          titleWrapper.appendChild(title);
-          titleWrapper.appendChild(collapseBtn);
-          section.appendChild(titleWrapper);
-
-          const previewContainer = document.createElement('div');
-          previewContainer.className = 'stacked-preview';
-          const previewImages = images.filter(i => i.category === category).slice(0, 3);
-          previewImages.forEach(preview => {
-            const img = document.createElement('img');
-            img.src = preview.src;
-            img.alt = preview.alt || category;
-            img.loading = 'lazy';
-            img.style.opacity = "0.6";
-            previewContainer.appendChild(img);
-          });
-          section.appendChild(previewContainer);
-
-          const viewBtn = document.createElement('button');
-          viewBtn.className = 'filter-btn';
-          viewBtn.textContent = 'View Gallery';
-          viewBtn.addEventListener('click', () => {
-            section.classList.add('expanded');
-            previewContainer.style.display = 'none';
-            viewBtn.style.display = 'none';
-            grid.classList.remove('hidden-grid');
-            collapseBtn.style.display = 'inline-block';
-          });
-          section.appendChild(viewBtn);
-
-          const grid = document.createElement('div');
-          grid.className = 'category-grid hidden-grid';
-
-          images.filter(img => img.category === category).forEach(img => {
-            const link = document.createElement('a');
-            link.href = img.src;
-            link.setAttribute('data-lightbox', category);
-            link.setAttribute('data-title', img.alt || '');
-            link.className = 'gallery-item';
-
-            // LAZY LOAD with fade in
-            const image = document.createElement('img');
-            image.alt = img.alt || category;
-            image.loading = 'lazy';
-            image.src = img.src;
-
-            // Start blurred/hidden until loaded
-            image.addEventListener('load', () => {
-              image.classList.add('loaded');
-            });
-            image.addEventListener('error', () => {
-              image.classList.add('loaded');
-              image.style.opacity = '0.7';
-              image.style.filter = 'grayscale(1)';
-              image.alt = 'Image failed to load';
-            });
-
-            link.appendChild(image);
-            grid.appendChild(link);
-          });
-
-          section.appendChild(grid);
-          container.appendChild(section);
         });
-
-        // View All logic
-        viewAllBtn.addEventListener('click', () => {
-          document.querySelectorAll('.gallery-category').forEach(div => {
-            div.style.display = 'block';
-            div.classList.remove('expanded');
-            const grid = div.querySelector('.category-grid');
-            const preview = div.querySelector('.stacked-preview');
-            const collapse = div.querySelector('.collapse-btn');
-            const view = [...div.querySelectorAll('.filter-btn')].find(b => b.textContent === 'View Gallery');
-            if (grid) grid.classList.add('hidden-grid');
-            if (preview) preview.style.display = 'block';
-            if (collapse) collapse.style.display = 'none';
-            if (view) view.style.display = 'inline-block';
-          });
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          viewAllBtn.classList.add('active');
-        });
-      });
-  });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
+    });
+  </script>
 </body>
 </html>
